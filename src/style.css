@@ -23,8 +23,7 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: 'Inter', system-ui, sans-serif;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
+    font-family: 'DM Sans', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -46,7 +45,7 @@
 
 /* ── Font families ── */
 .font-display {
-  font-family: 'Instrument Serif', Georgia, serif;
+  font-family: 'Sora', system-ui, sans-serif;
 }
 
 .font-mono {
@@ -64,15 +63,15 @@
 /* ── Scroll animations ── */
 [data-animate] {
   opacity: 0;
-  transform: translateY(12px) scale(0.98);
+  transform: translateY(16px);
   transition:
-    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 [data-animate].animate-in {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
 }
 
 /* ── Glow-pulse for embeds ── */
@@ -93,25 +92,221 @@
   animation: glow-pulse 4s ease-in-out infinite;
 }
 
-/* ── Workflow chain fade ── */
-.workflow-step {
-  transition: opacity 0.3s;
+/* ── Topographic grid background ── */
+.topo-grid {
+  position: relative;
+  overflow: hidden;
 }
 
-.workflow-step:nth-child(1) { opacity: 1; }
-.workflow-step:nth-child(2) { opacity: 0.75; }
-.workflow-step:nth-child(3) { opacity: 0.55; }
-.workflow-step:nth-child(4) { opacity: 0.35; }
-.workflow-step:nth-child(5) { opacity: 0.18; }
-
-/* ── Hairline borders with hover ── */
-.hairline {
-  border: 1px solid var(--border);
-  transition: border-color 0.3s;
+.topo-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(oklch(1 0 0 / 3%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(1 0 0 / 3%) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.hairline:hover {
+/* ── Use case cards ── */
+.use-case-card {
+  transition: border-color 0.4s, transform 0.3s, box-shadow 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+
+.use-case-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.use-case-card:hover {
   border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px oklch(0 0 0 / 40%), 0 0 0 1px oklch(1 0 0 / 4%);
+}
+
+.use-case-card:hover::before {
+  opacity: 1;
+}
+
+/* ── Feature visual panels ── */
+.feature-visual {
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, oklch(0.646 0.222 160 / 6%) 1px, transparent 1px),
+    radial-gradient(circle at 60% 70%, oklch(0.706 0.196 262 / 5%) 1px, transparent 1px),
+    radial-gradient(circle at 80% 20%, oklch(0.646 0.222 160 / 4%) 1px, transparent 1px),
+    radial-gradient(circle at 40% 80%, oklch(0.706 0.196 262 / 5%) 1px, transparent 1px);
+  background-size: 40px 40px, 50px 50px, 35px 35px, 45px 45px;
+  pointer-events: none;
+}
+
+/* ── How it works step connector ── */
+@media (min-width: 768px) {
+  .step-connector {
+    position: relative;
+  }
+
+  .step-connector::after {
+    content: '';
+    position: absolute;
+    top: 4.5rem;
+    right: -1.5rem;
+    width: 3rem;
+    height: 1px;
+    background: linear-gradient(90deg, var(--primary), transparent);
+    opacity: 0.2;
+  }
+
+  .step-connector:last-child::after {
+    display: none;
+  }
+}
+
+/* ── Mini viz cards in "Pick a visualization" step ── */
+.viz-card {
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.viz-card:hover {
+  border-color: var(--border-hover);
+  background-color: oklch(0.208 0.042 265.755 / 80%);
+}
+
+/* ── FAQ accordion ── */
+.faq-item summary {
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item {
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.faq-item:hover {
+  border-color: var(--border-hover);
+}
+
+.faq-item[open] {
+  border-color: var(--border-hover);
+  box-shadow: 0 4px 20px oklch(0 0 0 / 30%);
+}
+
+.faq-item .faq-answer {
+  animation: faq-reveal 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes faq-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Credibility strip animation ── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.credibility-text {
+  background: linear-gradient(
+    90deg,
+    var(--foreground) 0%,
+    var(--primary) 50%,
+    var(--foreground) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 8s linear infinite;
+}
+
+/* ── CTA button enhanced ── */
+.cta-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, var(--primary), var(--accent), var(--primary));
+  background-size: 200% 200%;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s;
+  animation: gradient-shift 3s ease-in-out infinite;
+}
+
+.cta-button:hover::before {
+  opacity: 1;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* ── Audience badge pulse ── */
+@keyframes badge-glow {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.646 0.222 160 / 0%); }
+  50% { box-shadow: 0 0 12px 2px oklch(0.646 0.222 160 / 12%); }
+}
+
+.audience-badge {
+  animation: badge-glow 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* ── Nav link hover indicator ── */
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 1px;
+  background: var(--primary);
+  transition: width 0.3s, left 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 /* ── Smooth scroll ── */
@@ -129,4 +324,36 @@ a:focus-visible {
 /* ── Selection ── */
 ::selection {
   background: oklch(0.646 0.222 160 / 20%);
+}
+
+/* ── Noise texture overlay ── */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ── Footer link hover ── */
+footer a {
+  position: relative;
+}
+
+footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--primary);
+  transition: width 0.25s;
+}
+
+footer a:hover::after {
+  width: 100%;
 }
