@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -22,21 +22,33 @@
     <!-- ═══════════════════════════════════════════ -->
     <!-- 1. NAV (sticky)                            -->
     <!-- ═══════════════════════════════════════════ -->
-    <nav class="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
-      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <nav
+      class="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
         <!-- Logo -->
         <div
           class="flex items-center gap-2 cursor-pointer"
-          onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
         >
           <span class="font-display italic text-2xl text-primary">V</span>
           <span class="text-lg font-semibold tracking-tight">Vetori</span>
         </div>
 
         <!-- Links -->
-        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
-          <a href="#how-it-works" class="hover:text-foreground transition-colors">How It Works</a>
-          <a href="#examples" class="hover:text-foreground transition-colors">Examples</a>
+        <div
+          class="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground"
+        >
+          <a
+            href="#how-it-works"
+            class="hover:text-foreground transition-colors"
+            >How It Works</a
+          >
+          <a href="#examples" class="hover:text-foreground transition-colors"
+            >Examples</a
+          >
         </div>
 
         <!-- CTA -->
@@ -56,7 +68,13 @@
       <!-- Ambient glow -->
       <div
         class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] -z-10 rounded-full opacity-30"
-        style="background: radial-gradient(ellipse at center, oklch(0.646 0.222 160 / 30%), transparent 70%)"
+        style="
+          background: radial-gradient(
+            ellipse at center,
+            oklch(0.646 0.222 160 / 30%),
+            transparent 70%
+          );
+        "
       ></div>
 
       <div class="max-w-5xl mx-auto px-6 text-center">
@@ -90,18 +108,28 @@
         </div>
 
         <!-- Browser mockup -->
-        <div class="relative mt-20 max-w-5xl mx-auto" data-animate data-delay="600">
+        <div
+          class="relative mt-20 max-w-5xl mx-auto"
+          data-animate
+          data-delay="600"
+        >
           <div class="glow-pulse rounded-xl">
-            <div class="rounded-xl border border-border bg-surface overflow-hidden">
+            <div
+              class="rounded-xl border border-border bg-surface overflow-hidden"
+            >
               <!-- Chrome bar -->
-              <div class="h-10 border-b border-border flex items-center px-4 bg-surface-raised gap-2">
+              <div
+                class="h-10 border-b border-border flex items-center px-4 bg-surface-raised gap-2"
+              >
                 <div class="flex gap-1.5">
                   <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
                   <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
                   <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
                 </div>
                 <div class="flex-1 flex justify-center">
-                  <div class="font-mono text-[11px] text-muted-foreground bg-background/50 rounded px-3 py-1 flex items-center gap-2">
+                  <div
+                    class="font-mono text-[11px] text-muted-foreground bg-background/50 rounded px-3 py-1 flex items-center gap-2"
+                  >
                     <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
                     published.vetori.ai
                   </div>
@@ -110,12 +138,10 @@
               <!-- Embed -->
               <div class="relative bg-background" style="height: 560px">
                 <iframe
-                  src="https://ad8ad580-2c27-49ac-b322-844e9d1301e8.published.vetori.ai/publications/8f4c158f-c3df-452b-965c-ee6ffbe39f18/embed"
+                  src="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.published.vetori.ai/publications/292a0fc4-add8-41be-93e2-bd9b0baa9879/sites/71461241-ed63-43f9-b5be-f565ce7a706e/embed"
                   width="100%"
-                  height="560"
+                  height="600"
                   frameborder="0"
-                  allowfullscreen
-                  loading="lazy"
                 ></iframe>
               </div>
             </div>
@@ -150,42 +176,60 @@
 
         <div class="grid md:grid-cols-5 gap-12 md:gap-16 items-start">
           <!-- Left: editorial prose (60%) -->
-          <div class="md:col-span-3 space-y-6 text-muted-foreground leading-relaxed" data-animate data-delay="100">
+          <div
+            class="md:col-span-3 space-y-6 text-muted-foreground leading-relaxed"
+            data-animate
+            data-delay="100"
+          >
             <p>
-              You built the model. You ran the query. The chart is perfect
-              on your screen. Now what?
+              You built the model. You ran the query. The chart is perfect on
+              your screen. Now what?
             </p>
             <p>
-              You screenshot it. Paste it into a deck. Resize. Lose the
-              labels. Email a 14&nbsp;MB PDF. Your stakeholder opens it on
-              their phone, squints, and asks you to "just hop on a call."
+              You screenshot it. Paste it into a deck. Resize. Lose the labels.
+              Email a 14&nbsp;MB PDF. Your stakeholder opens it on their phone,
+              squints, and asks you to "just hop on a call."
             </p>
             <p>
               The data was ready. The tooling wasn't. That last mile
-              &mdash;&nbsp;from analysis to published insight&nbsp;&mdash;
-              is where good work goes to die.
+              &mdash;&nbsp;from analysis to published insight&nbsp;&mdash; is
+              where good work goes to die.
             </p>
           </div>
 
           <!-- Right: broken workflow chain (40%) -->
-          <div class="md:col-span-2 flex flex-col items-center gap-3 pt-2" data-animate data-delay="250">
-            <div class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium">
+          <div
+            class="md:col-span-2 flex flex-col items-center gap-3 pt-2"
+            data-animate
+            data-delay="250"
+          >
+            <div
+              class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium"
+            >
               Data
             </div>
             <span class="text-muted-foreground text-xs">&darr;</span>
-            <div class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium">
+            <div
+              class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium"
+            >
               Screenshot
             </div>
             <span class="text-muted-foreground text-xs">&darr;</span>
-            <div class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium">
+            <div
+              class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium"
+            >
               Slides
             </div>
             <span class="text-muted-foreground text-xs">&darr;</span>
-            <div class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium">
+            <div
+              class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium"
+            >
               PDF
             </div>
             <span class="text-muted-foreground text-xs">&darr;</span>
-            <div class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium">
+            <div
+              class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium"
+            >
               Email
             </div>
           </div>
@@ -208,33 +252,45 @@
         <div class="grid md:grid-cols-3 gap-12">
           <!-- Step 1 -->
           <div class="relative" data-animate data-delay="100">
-            <span class="font-display text-[7rem] leading-none text-primary/10 absolute -top-6 -left-2 select-none pointer-events-none">01</span>
+            <span
+              class="font-display text-[7rem] leading-none text-primary/10 absolute -top-6 -left-2 select-none pointer-events-none"
+              >01</span
+            >
             <div class="relative pt-16">
               <h3 class="text-xl font-semibold mb-3">Drop in your data</h3>
               <p class="text-muted-foreground leading-relaxed">
-                CSV, JSON, or just paste it in. We handle the rest&nbsp;&mdash;&nbsp;geocoding, parsing, formatting.
+                CSV, JSON, or just paste it in. We handle the
+                rest&nbsp;&mdash;&nbsp;geocoding, parsing, formatting.
               </p>
             </div>
           </div>
 
           <!-- Step 2 -->
           <div class="relative" data-animate data-delay="250">
-            <span class="font-display text-[7rem] leading-none text-primary/10 absolute -top-6 -left-2 select-none pointer-events-none">02</span>
+            <span
+              class="font-display text-[7rem] leading-none text-primary/10 absolute -top-6 -left-2 select-none pointer-events-none"
+              >02</span
+            >
             <div class="relative pt-16">
               <h3 class="text-xl font-semibold mb-3">Choose how to show it</h3>
               <p class="text-muted-foreground leading-relaxed">
-                Bar, line, scatter, map, and more. Pick a chart type, tweak the style, and see it render instantly.
+                Bar, line, scatter, map, and more. Pick a chart type, tweak the
+                style, and see it render instantly.
               </p>
             </div>
           </div>
 
           <!-- Step 3 -->
           <div class="relative" data-animate data-delay="400">
-            <span class="font-display text-[7rem] leading-none text-primary/10 absolute -top-6 -left-2 select-none pointer-events-none">03</span>
+            <span
+              class="font-display text-[7rem] leading-none text-primary/10 absolute -top-6 -left-2 select-none pointer-events-none"
+              >03</span
+            >
             <div class="relative pt-16">
               <h3 class="text-xl font-semibold mb-3">Share the link</h3>
               <p class="text-muted-foreground leading-relaxed">
-                One URL. Embed in Notion, drop in Slack, paste in an email. It just works&nbsp;&mdash;&nbsp;everywhere.
+                One URL. Embed in Notion, drop in Slack, paste in an email. It
+                just works&nbsp;&mdash;&nbsp;everywhere.
               </p>
             </div>
           </div>
@@ -245,11 +301,20 @@
     <!-- ═══════════════════════════════════════════ -->
     <!-- 6. LIVE EXAMPLE (full-width showcase)      -->
     <!-- ═══════════════════════════════════════════ -->
-    <section id="examples" class="py-28 border-t border-border relative overflow-hidden">
+    <section
+      id="examples"
+      class="py-28 border-t border-border relative overflow-hidden"
+    >
       <!-- Background glow -->
       <div
         class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] -z-10 rounded-full opacity-20"
-        style="background: radial-gradient(ellipse at center, oklch(0.706 0.196 262 / 25%), transparent 70%)"
+        style="
+          background: radial-gradient(
+            ellipse at center,
+            oklch(0.706 0.196 262 / 25%),
+            transparent 70%
+          );
+        "
       ></div>
 
       <div class="max-w-7xl mx-auto px-6">
@@ -260,15 +325,19 @@
           See it live.
         </h2>
 
-        <div class="glow-pulse rounded-xl max-w-6xl mx-auto" data-animate data-delay="200">
-          <div class="rounded-xl border border-border overflow-hidden bg-surface">
+        <div
+          class="glow-pulse rounded-xl max-w-6xl mx-auto"
+          data-animate
+          data-delay="200"
+        >
+          <div
+            class="rounded-xl border border-border overflow-hidden bg-surface"
+          >
             <iframe
-              src="https://ad8ad580-2c27-49ac-b322-844e9d1301e8.published.vetori.ai/publications/8f4c158f-c3df-452b-965c-ee6ffbe39f18/embed"
+              src="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.published.vetori.ai/publications/292a0fc4-add8-41be-93e2-bd9b0baa9879/sites/71461241-ed63-43f9-b5be-f565ce7a706e/embed"
               width="100%"
               height="600"
               frameborder="0"
-              allowfullscreen
-              loading="lazy"
             ></iframe>
           </div>
         </div>
@@ -299,27 +368,39 @@
           <!-- Row 1 -->
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
             <div>
-              <h3 class="text-2xl font-semibold mb-4">Every chart your data needs</h3>
+              <h3 class="text-2xl font-semibold mb-4">
+                Every chart your data needs
+              </h3>
               <p class="text-muted-foreground leading-relaxed">
                 Bars, lines, scatter plots, maps, and more. Whatever shape your
                 data takes, there's a visualization ready for it.
               </p>
             </div>
-            <div class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px]">
-              <span class="font-display text-6xl text-primary/15 select-none">Any viz</span>
+            <div
+              class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px]"
+            >
+              <span class="font-display text-6xl text-primary/15 select-none"
+                >Any viz</span
+              >
             </div>
           </div>
 
           <!-- Row 2 (reversed) -->
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
-            <div class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px] md:order-first">
-              <span class="font-mono text-sm text-accent/60 select-none">vetori.ai/your-chart &rarr;</span>
+            <div
+              class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px] md:order-first"
+            >
+              <span class="font-mono text-sm text-accent/60 select-none"
+                >vetori.ai/your-chart &rarr;</span
+              >
             </div>
             <div>
-              <h3 class="text-2xl font-semibold mb-4">One link. Zero friction.</h3>
+              <h3 class="text-2xl font-semibold mb-4">
+                One link. Zero friction.
+              </h3>
               <p class="text-muted-foreground leading-relaxed">
-                No logins for viewers. No file downloads. Just a URL that
-                opens instantly in any browser on any device.
+                No logins for viewers. No file downloads. Just a URL that opens
+                instantly in any browser on any device.
               </p>
             </div>
           </div>
@@ -327,28 +408,41 @@
           <!-- Row 3 -->
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
             <div>
-              <h3 class="text-2xl font-semibold mb-4">Beautiful without trying</h3>
+              <h3 class="text-2xl font-semibold mb-4">
+                Beautiful without trying
+              </h3>
               <p class="text-muted-foreground leading-relaxed">
                 Publication-quality defaults. Thoughtful typography, balanced
                 spacing, and a color palette that works. You focus on the data.
               </p>
             </div>
-            <div class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px]">
-              <span class="font-display italic text-5xl text-foreground/10 select-none">Elegant</span>
+            <div
+              class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px]"
+            >
+              <span
+                class="font-display italic text-5xl text-foreground/10 select-none"
+                >Elegant</span
+              >
             </div>
           </div>
 
           <!-- Row 4 (reversed) -->
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
-            <div class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px] md:order-first">
-              <span class="font-mono text-xs text-muted-foreground select-none">&lt;iframe src="vetori.ai/…" /&gt;</span>
+            <div
+              class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px] md:order-first"
+            >
+              <span class="font-mono text-xs text-muted-foreground select-none"
+                >&lt;iframe src="vetori.ai/…" /&gt;</span
+              >
             </div>
             <div>
-              <h3 class="text-2xl font-semibold mb-4">Embed anywhere, load instantly</h3>
+              <h3 class="text-2xl font-semibold mb-4">
+                Embed anywhere, load instantly
+              </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Lightweight standalone pages that embed in Notion, Medium,
-                your company wiki&nbsp;&mdash;&nbsp;anywhere that accepts a URL
-                or iframe.
+                Lightweight standalone pages that embed in Notion, Medium, your
+                company wiki&nbsp;&mdash;&nbsp;anywhere that accepts a URL or
+                iframe.
               </p>
             </div>
           </div>
@@ -363,14 +457,17 @@
       <!-- Ambient glow -->
       <div
         class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] -z-10 rounded-full opacity-20"
-        style="background: radial-gradient(ellipse at center, oklch(0.646 0.222 160 / 30%), transparent 70%)"
+        style="
+          background: radial-gradient(
+            ellipse at center,
+            oklch(0.646 0.222 160 / 30%),
+            transparent 70%
+          );
+        "
       ></div>
 
       <div class="max-w-3xl mx-auto px-6 text-center">
-        <h2
-          class="font-display text-4xl md:text-6xl mb-8"
-          data-animate
-        >
+        <h2 class="font-display text-4xl md:text-6xl mb-8" data-animate>
           Your data has a story. <span class="italic">Publish&nbsp;it.</span>
         </h2>
 
@@ -387,14 +484,24 @@
 
     <!-- Footer -->
     <footer class="border-t border-border py-10">
-      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
         <div class="flex items-center gap-2">
           <span class="font-display italic text-xl text-primary">V</span>
           <span class="text-base font-semibold tracking-tight">Vetori</span>
         </div>
         <div class="flex gap-8 text-sm text-muted-foreground">
-          <a href="mailto:support@vetori.app" class="hover:text-foreground transition-colors">Support</a>
-          <a href="mailto:sales@vetori.app" class="hover:text-foreground transition-colors">Sales</a>
+          <a
+            href="mailto:support@vetori.app"
+            class="hover:text-foreground transition-colors"
+            >Support</a
+          >
+          <a
+            href="mailto:sales@vetori.app"
+            class="hover:text-foreground transition-colors"
+            >Sales</a
+          >
         </div>
         <div class="text-sm text-muted-foreground">&copy; 2025 Vetori Inc.</div>
       </div>
