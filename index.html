@@ -3,1091 +3,402 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vetori - Turn Location Data Into Stories</title>
+    <title>Vetori — Your data, published beautifully.</title>
     <meta
       name="description"
-      content="Create interactive, animated map presentations in your browser. Transform complex geospatial data into compelling stories in 60 seconds."
+      content="Create charts and maps in seconds. Share them as lightweight, embeddable pages — like a Loom for data."
     />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div
-      class="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20"
-    >
-      <!-- Navigation -->
-      <nav
-        class="sticky top-0 z-50 border-b border-border/40 bg-background/80 backdrop-blur-md"
-      >
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 1. NAV (sticky)                            -->
+    <!-- ═══════════════════════════════════════════ -->
+    <nav class="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <!-- Logo -->
         <div
-          class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
+          class="flex items-center gap-2 cursor-pointer"
+          onclick="window.scrollTo({top:0,behavior:'smooth'})"
         >
-          <div
-            class="flex items-center gap-2 font-bold text-xl tracking-tight cursor-pointer"
-            onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-          >
-            <div
-              class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20"
-            >
-              <span class="text-primary-foreground font-bold">V</span>
-            </div>
-            Vetori
-          </div>
-          <div
-            class="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground"
-          >
-            <a href="#problem" class="hover:text-foreground transition-colors"
-              >The Problem</a
-            >
-            <a
-              href="#how-it-works"
-              class="hover:text-foreground transition-colors"
-              >How it Works</a
-            >
-            <a href="#features" class="hover:text-foreground transition-colors"
-              >Features</a
-            >
-          </div>
-          <div class="flex items-center gap-4">
-            <button
-              class="hidden sm:flex inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2"
-              onclick="handleSignIn()"
-            >
-              Sign In
-            </button>
-            <button
-              class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 shadow-lg shadow-primary/20"
-              onclick="handleSignUp()"
-            >
-              Get Started Free
-            </button>
-          </div>
+          <span class="font-display italic text-2xl text-primary">V</span>
+          <span class="text-lg font-semibold tracking-tight">Vetori</span>
         </div>
-      </nav>
 
-      <!-- Hero Section -->
-      <section class="relative pt-20 pb-32 overflow-hidden">
-        <div
-          class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background"
-        ></div>
+        <!-- Links -->
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground">
+          <a href="#how-it-works" class="hover:text-foreground transition-colors">How It Works</a>
+          <a href="#examples" class="hover:text-foreground transition-colors">Examples</a>
+        </div>
 
-        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <div class="text-center mb-12" data-animate>
-            <div
-              class="inline-flex items-center rounded-full border border-primary/30 bg-primary/5 text-primary px-4 py-1.5 text-sm mb-6"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="mr-2"
-              >
-                <path
-                  d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
-                ></path>
-                <circle cx="12" cy="13" r="3"></circle>
-              </svg>
-              Interactive map presentations for location data
-            </div>
+        <!-- CTA -->
+        <button
+          class="inline-flex items-center justify-center rounded-md text-sm font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-9 px-5"
+          onclick="handleSignUp()"
+        >
+          Get Started
+        </button>
+      </div>
+    </nav>
 
-            <h1
-              class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8 text-balance"
-            >
-              Don't just show data.<br />
-              <span
-                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600"
-                >Tell the story.</span
-              >
-            </h1>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 2. HERO                                    -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="relative pt-24 pb-32 overflow-hidden">
+      <!-- Ambient glow -->
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] -z-10 rounded-full opacity-30"
+        style="background: radial-gradient(ellipse at center, oklch(0.646 0.222 160 / 30%), transparent 70%)"
+      ></div>
 
-            <p
-              class="text-xl text-muted-foreground max-w-3xl mx-auto mb-4 text-balance leading-relaxed"
-            >
-              You have 50 locations to map, connections to visualize, and a
-              story to tell. With PowerPoint, you're looking at an all-nighter.
-            </p>
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <!-- Headline -->
+        <h1
+          class="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] mb-8"
+          data-animate
+        >
+          Your data,<br />
+          <span class="text-gradient">published beautifully.</span>
+        </h1>
 
-            <p
-              class="text-2xl font-semibold text-foreground max-w-2xl mx-auto mb-10"
-            >
-              With Vetori? You'll be done in 60 seconds.
-            </p>
+        <!-- Subhead -->
+        <p
+          class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-balance"
+          data-animate
+          data-delay="200"
+        >
+          Create charts and maps in seconds. Share them as lightweight,
+          embeddable pages&nbsp;&mdash;&nbsp;like a Loom for data.
+        </p>
 
-            <div
-              class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-            >
-              <button
-                class="inline-flex items-center justify-center rounded-md text-base font-medium transition-colors bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 shadow-xl shadow-primary/20 group"
-                onclick="handleSignUp()"
-              >
-                Start for Free
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="ml-2 group-hover:translate-x-1 transition-transform"
-                >
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </button>
-              <div class="text-sm text-muted-foreground">
-                No credit card required • Works in your browser
-              </div>
-            </div>
-          </div>
+        <!-- CTA -->
+        <div data-animate data-delay="400">
+          <button
+            class="inline-flex items-center justify-center rounded-md text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg"
+            onclick="handleSignUp()"
+          >
+            Start creating&nbsp;&mdash;&nbsp;free
+          </button>
+        </div>
 
-          <!-- Hero Visual -->
-          <!-- Hero Visual -->
-          <div class="relative z-10" data>
-            <div
-              class="relative w-full max-w-5xl mx-auto rounded-xl border border-border bg-background/50 backdrop-blur shadow-2xl overflow-hidden flex flex-col"
-            >
-              <!-- Browser Chrome -->
-              <div
-                class="h-10 border-b border-border flex items-center px-4 bg-muted/30 gap-2"
-              >
+        <!-- Browser mockup -->
+        <div class="relative mt-20 max-w-5xl mx-auto" data-animate data-delay="600">
+          <div class="glow-pulse rounded-xl">
+            <div class="rounded-xl border border-border bg-surface overflow-hidden">
+              <!-- Chrome bar -->
+              <div class="h-10 border-b border-border flex items-center px-4 bg-surface-raised gap-2">
                 <div class="flex gap-1.5">
-                  <div class="w-3 h-3 rounded-full bg-red-500/20"></div>
-                  <div class="w-3 h-3 rounded-full bg-amber-500/20"></div>
-                  <div class="w-3 h-3 rounded-full bg-green-500/20"></div>
+                  <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
+                  <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
+                  <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
                 </div>
                 <div class="flex-1 flex justify-center">
-                  <div
-                    class="bg-background/50 rounded-md px-3 py-1 text-[10px] text-muted-foreground w-64 text-center flex items-center justify-center gap-2"
-                  >
-                    <div
-                      class="w-2 h-2 bg-green-500 rounded-full animate-pulse"
-                    ></div>
+                  <div class="font-mono text-[11px] text-muted-foreground bg-background/50 rounded px-3 py-1 flex items-center gap-2">
+                    <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
                     published.vetori.ai
                   </div>
                 </div>
               </div>
-
-              <!-- Actual Vetori Demo -->
-              <div
-                class="relative bg-slate-950 overflow-hidden"
-                style="height: 600px"
-              >
+              <!-- Embed -->
+              <div class="relative bg-background" style="height: 560px">
                 <iframe
                   src="https://ad8ad580-2c27-49ac-b322-844e9d1301e8.published.vetori.ai/publications/8f4c158f-c3df-452b-965c-ee6ffbe39f18/embed"
                   width="100%"
-                  height="600"
+                  height="560"
                   frameborder="0"
                   allowfullscreen
+                  loading="lazy"
                 ></iframe>
               </div>
             </div>
-            <div
-              class="absolute -inset-4 bg-gradient-to-r from-primary/30 to-purple-600/30 blur-3xl -z-10 opacity-40"
-            ></div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Value Prop Section -->
-      <section class="py-24 bg-muted/30 border-y border-border">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-          <h2 class="text-4xl font-bold mb-6">
-            Stop taking screenshots of maps.
-          </h2>
-          <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Turn complex network and geospatial datasets into cinematic,
-            interactive experiences. Move beyond static dashboards to narrative
-            intelligence.
-          </p>
-        </div>
-      </section>
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 3. SOCIAL PROOF STRIP                      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="border-y border-border py-8">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <p class="text-sm text-muted-foreground tracking-wide" data-animate>
+          Designed for data teams who need to share insights fast.
+        </p>
+        <!-- Future: logo row goes here -->
+      </div>
+    </section>
 
-      <!-- The Real Problem Section -->
-      <section id="problem" class="py-24">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">The Weekly Report Nightmare</h2>
-            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-              You're not building presentations. You're fighting software.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-6 mb-12">
-            <!-- Pain Point Cards -->
-            <div
-              class="relative p-6 rounded-2xl bg-card border border-red-500/20 hover:border-red-500/40 transition-all group"
-              data-animate
-            >
-              <div
-                class="absolute -top-3 -left-3 w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center border border-red-500/20"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-red-500"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-              </div>
-              <div class="mt-3">
-                <h4 class="font-semibold text-lg mb-2 text-foreground">
-                  Hours spent on manual screenshot work
-                </h4>
-                <p class="text-sm text-muted-foreground">
-                  You export data, screenshot your mapping tool, paste into
-                  PowerPoint, add arrows and labels. By the time you're done,
-                  the data has changed.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="relative p-6 rounded-2xl bg-card border border-red-500/20 hover:border-red-500/40 transition-all group"
-              data-animate
-              data-delay="100"
-            >
-              <div
-                class="absolute -top-3 -left-3 w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center border border-red-500/20"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-red-500"
-                >
-                  <path
-                    d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"
-                  ></path>
-                  <path d="M3 3v5h5"></path>
-                  <path
-                    d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"
-                  ></path>
-                  <path d="M16 16h5v5"></path>
-                </svg>
-              </div>
-              <div class="mt-3">
-                <h4 class="font-semibold text-lg mb-2 text-foreground">
-                  Start over every single time
-                </h4>
-                <p class="text-sm text-muted-foreground">
-                  New quarter? New data? Hope you saved that template. Now
-                  multiply that copy-paste nightmare by 50 locations.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="relative p-6 rounded-2xl bg-card border border-red-500/20 hover:border-red-500/40 transition-all group"
-              data-animate
-              data-delay="200"
-            >
-              <div
-                class="absolute -top-3 -left-3 w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center border border-red-500/20"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-red-500"
-                >
-                  <path
-                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                  ></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>
-              </div>
-              <div class="mt-3">
-                <h4 class="font-semibold text-lg mb-2 text-foreground">
-                  Juggling multiple tools
-                </h4>
-                <p class="text-sm text-muted-foreground">
-                  CSV in Excel, screenshots from mapping software, layout in
-                  PowerPoint, export to PDF. You're a data analyst, not a
-                  graphic designer.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="relative p-6 rounded-2xl bg-card border border-red-500/20 hover:border-red-500/40 transition-all group"
-              data-animate
-              data-delay="300"
-            >
-              <div
-                class="absolute -top-3 -left-3 w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center border border-red-500/20"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-red-500"
-                >
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-              </div>
-              <div class="mt-3">
-                <h4 class="font-semibold text-lg mb-2 text-foreground">
-                  Stakeholders can't explore your insights
-                </h4>
-                <p class="text-sm text-muted-foreground">
-                  They get a static PDF. They can't zoom, can't click, can't
-                  understand the connections. So they ask for three more
-                  versions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- How It Works -->
-      <section
-        id="how-it-works"
-        class="py-24 bg-slate-50 dark:bg-slate-900/50 border-t border-border"
-      >
-        <div class="max-w-7xl mx-auto px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">
-              From Data to Story in Your Browser
-            </h2>
-            <p class="text-muted-foreground text-lg">
-              No installations. No complex setup. Just your data and your story.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-12 relative">
-            <div
-              class="hidden md:block absolute top-16 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-border via-primary/50 to-border -z-10"
-            ></div>
-
-            <div
-              class="flex flex-col items-center text-center group"
-              data-animate
-            >
-              <div
-                class="relative w-32 h-32 rounded-2xl bg-gradient-to-br from-blue-500/20 to-blue-600/20 border-2 border-blue-500/50 flex items-center justify-center mb-6 shadow-lg transition-all group-hover:scale-105"
-              >
-                <div
-                  class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-blue-500 text-white font-bold flex items-center justify-center text-sm"
-                >
-                  1
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-blue-500"
-                >
-                  <path
-                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                  ></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold mb-3">Import Your Data</h3>
-              <p class="text-muted-foreground text-sm max-w-xs leading-relaxed">
-                Upload CSV files with your locations and connections. Works with
-                addresses, coordinates, or place names.
-              </p>
-            </div>
-
-            <div
-              class="flex flex-col items-center text-center group"
-              data-animate
-              data-delay="100"
-            >
-              <div
-                class="relative w-32 h-32 rounded-2xl bg-gradient-to-br from-purple-500/20 to-purple-600/20 border-2 border-purple-500/50 flex items-center justify-center mb-6 shadow-lg transition-all group-hover:scale-105"
-              >
-                <div
-                  class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-purple-500 text-white font-bold flex items-center justify-center text-sm"
-                >
-                  2
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-purple-500"
-                >
-                  <path
-                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
-                  ></path>
-                  <circle cx="12" cy="13" r="3"></circle>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold mb-3">Design Camera Views</h3>
-              <p class="text-muted-foreground text-sm max-w-xs leading-relaxed">
-                Set up camera positions for each part of your story. Pan, zoom,
-                and focus on what matters. Add narration for each view.
-              </p>
-            </div>
-
-            <div
-              class="flex flex-col items-center text-center group"
-              data-animate
-              data-delay="200"
-            >
-              <div
-                class="relative w-32 h-32 rounded-2xl bg-gradient-to-br from-green-500/20 to-green-600/20 border-2 border-green-500/50 flex items-center justify-center mb-6 shadow-lg transition-all group-hover:scale-105"
-              >
-                <div
-                  class="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-green-500 text-white font-bold flex items-center justify-center text-sm"
-                >
-                  3
-                </div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-green-500"
-                >
-                  <circle cx="18" cy="5" r="3"></circle>
-                  <circle cx="6" cy="12" r="3"></circle>
-                  <circle cx="18" cy="19" r="3"></circle>
-                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold mb-3">Share & Present</h3>
-              <p class="text-muted-foreground text-sm max-w-xs leading-relaxed">
-                Send a link. Your audience gets an interactive experience they
-                can explore, not a static PDF they can't.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Features Grid -->
-      <section id="features" class="py-24">
-        <div class="max-w-7xl mx-auto px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">
-              Built for Complex Data Stories
-            </h2>
-            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to create compelling map-based presentations.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-8">
-            <div
-              class="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors group"
-              data-animate
-            >
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-primary"
-                >
-                  <path
-                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
-                  ></path>
-                  <circle cx="12" cy="13" r="3"></circle>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">
-                Cinematic Camera Control
-              </h3>
-              <p class="text-muted-foreground leading-relaxed">
-                Set camera positions for each part of your story. Smooth
-                animations guide your viewer's attention exactly where you want
-                it.
-              </p>
-            </div>
-
-            <div
-              class="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors group"
-              data-animate
-              data-delay="100"
-            >
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-primary"
-                >
-                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
-                  <path
-                    d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">Multi-Moment Slides</h3>
-              <p class="text-muted-foreground leading-relaxed">
-                One slide can have multiple camera views. Show the big picture,
-                then zoom into specific regions—all in one smooth sequence.
-              </p>
-            </div>
-
-            <div
-              class="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors group"
-              data-animate
-              data-delay="200"
-            >
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-primary"
-                >
-                  <polyline points="5 9 2 12 5 15"></polyline>
-                  <polyline points="9 5 12 2 15 5"></polyline>
-                  <polyline points="15 19 12 22 9 19"></polyline>
-                  <polyline points="19 9 22 12 19 15"></polyline>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                  <line x1="12" y1="2" x2="12" y2="22"></line>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">Animated Transitions</h3>
-              <p class="text-muted-foreground leading-relaxed">
-                Camera movements between views are smooth and professional. No
-                jarring cuts—just cinematic storytelling.
-              </p>
-            </div>
-
-            <div
-              class="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors group"
-              data-animate
-              data-delay="300"
-            >
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-primary"
-                >
-                  <polygon
-                    points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"
-                  ></polygon>
-                  <line x1="9" y1="3" x2="9" y2="18"></line>
-                  <line x1="15" y1="6" x2="15" y2="21"></line>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">Network Visualization</h3>
-              <p class="text-muted-foreground leading-relaxed">
-                Show nodes, edges, and connections on an interactive map.
-                Perfect for supply chains, territories, and infrastructure.
-              </p>
-            </div>
-
-            <div
-              class="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors group"
-              data-animate
-              data-delay="400"
-            >
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-primary"
-                >
-                  <path d="M12 20h9"></path>
-                  <path
-                    d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">Smart Slide Templates</h3>
-              <p class="text-muted-foreground leading-relaxed">
-                Create one template slide and expand it across multiple
-                locations automatically. Build 50 slides from one design.
-              </p>
-            </div>
-
-            <div
-              class="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors group"
-              data-animate
-              data-delay="500"
-            >
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-primary"
-                >
-                  <circle cx="18" cy="5" r="3"></circle>
-                  <circle cx="6" cy="12" r="3"></circle>
-                  <circle cx="18" cy="19" r="3"></circle>
-                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
-                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold mb-2">Web-Based Sharing</h3>
-              <p class="text-muted-foreground leading-relaxed">
-                Share a link. Stakeholders view in their browser—no PowerPoint
-                required. Works on desktop and mobile.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Use Cases -->
-      <section class="py-24 bg-muted/30 border-y border-border">
-        <div class="max-w-7xl mx-auto px-6">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold mb-4">Perfect For</h2>
-            <p class="text-lg text-muted-foreground">
-              Teams working with location and network data
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-8">
-            <div
-              class="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors group"
-              data-animate
-            >
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-primary"
-                >
-                  <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line>
-                  <path
-                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"
-                  ></path>
-                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                  <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold mb-2">
-                Supply Chain Operations
-              </h3>
-              <p class="text-sm text-muted-foreground leading-relaxed">
-                Visualize distribution networks, shipping routes, warehouse
-                locations, and delivery performance across regions.
-              </p>
-            </div>
-
-            <div
-              class="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors group"
-              data-animate
-              data-delay="100"
-            >
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-primary"
-                >
-                  <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-                  <path d="M9 22v-4h6v4"></path>
-                  <path d="M8 6h.01"></path>
-                  <path d="M16 6h.01"></path>
-                  <path d="M12 6h.01"></path>
-                  <path d="M12 10h.01"></path>
-                  <path d="M12 14h.01"></path>
-                  <path d="M16 10h.01"></path>
-                  <path d="M16 14h.01"></path>
-                  <path d="M8 10h.01"></path>
-                  <path d="M8 14h.01"></path>
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold mb-2">Territory Planning</h3>
-              <p class="text-sm text-muted-foreground leading-relaxed">
-                Show sales territories, customer locations, market penetration,
-                and expansion opportunities with geographic context.
-              </p>
-            </div>
-
-            <div
-              class="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors group"
-              data-animate
-              data-delay="200"
-            >
-              <div
-                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="text-primary"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                  <path
-                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                  ></path>
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold mb-2">
-                Infrastructure Networks
-              </h3>
-              <p class="text-sm text-muted-foreground leading-relaxed">
-                Map distributed systems, service areas, connectivity status, and
-                network topology for infrastructure reviews.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Comparison -->
-      <section class="py-24">
-        <div class="max-w-6xl mx-auto px-6">
-          <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4">
-              A Better Way to Work with Maps
-            </h2>
-            <p class="text-lg text-muted-foreground">
-              Stop fighting with screenshots and PowerPoint
-            </p>
-          </div>
-
-          <div class="overflow-hidden rounded-2xl border border-border bg-card">
-            <table class="w-full">
-              <thead class="bg-muted/50 border-b border-border">
-                <tr>
-                  <th class="text-left p-4 text-sm font-semibold">Task</th>
-                  <th
-                    class="text-center p-4 text-sm font-semibold text-red-500"
-                  >
-                    Traditional Workflow
-                  </th>
-                  <th
-                    class="text-center p-4 text-sm font-semibold text-green-500 bg-primary/5"
-                  >
-                    With Vetori
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-border">
-                <tr class="hover:bg-muted/30 transition-colors">
-                  <td class="p-4 text-sm">Create map-based presentation</td>
-                  <td class="p-4 text-center text-sm text-muted-foreground">
-                    Screenshot → Paste → Annotate
-                  </td>
-                  <td
-                    class="p-4 text-center text-sm font-semibold bg-primary/5"
-                  >
-                    Direct editing in browser
-                  </td>
-                </tr>
-                <tr class="hover:bg-muted/30 transition-colors">
-                  <td class="p-4 text-sm">Update with new data</td>
-                  <td class="p-4 text-center text-sm text-muted-foreground">
-                    Redo all screenshots
-                  </td>
-                  <td
-                    class="p-4 text-center text-sm font-semibold bg-primary/5"
-                  >
-                    Upload new CSV
-                  </td>
-                </tr>
-                <tr class="hover:bg-muted/30 transition-colors">
-                  <td class="p-4 text-sm">Share with stakeholders</td>
-                  <td class="p-4 text-center text-sm text-muted-foreground">
-                    Static PDF/PPT file
-                  </td>
-                  <td
-                    class="p-4 text-center text-sm font-semibold bg-primary/5"
-                  >
-                    Interactive web link
-                  </td>
-                </tr>
-                <tr class="hover:bg-muted/30 transition-colors">
-                  <td class="p-4 text-sm">Show progression over time</td>
-                  <td class="p-4 text-center text-sm text-muted-foreground">
-                    Multiple static slides
-                  </td>
-                  <td
-                    class="p-4 text-center text-sm font-semibold bg-primary/5"
-                  >
-                    Smooth camera animations
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      <!-- Final CTA -->
-      <section class="py-24 relative overflow-hidden border-t border-border">
-        <div
-          class="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-purple-500/10"
-        ></div>
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6">
-            Your Data Deserves a Better Story
-          </h2>
-          <p class="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
-            Stop wrestling with screenshots and static slides. Create
-            interactive, animated presentations that bring your location data to
-            life.
-          </p>
-
-          <div
-            class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8"
-          >
-            <button
-              class="inline-flex items-center justify-center rounded-md text-lg font-medium transition-colors bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-10 shadow-xl group"
-              onclick="handleSignUp()"
-            >
-              Get Started Free
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="ml-2 group-hover:translate-x-1 transition-transform"
-              >
-                <path d="m9 18 6-6-6-6"></path>
-              </svg>
-            </button>
-            <button
-              class="inline-flex items-center justify-center rounded-md text-lg font-medium transition-colors border border-border bg-background hover:bg-accent hover:text-accent-foreground h-14 px-10"
-              onclick="window.location.href='mailto:sales@vetori.app'"
-            >
-              Contact Sales
-            </button>
-          </div>
-
-          <div
-            class="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-muted-foreground"
-          >
-            <div class="flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="text-green-500"
-              >
-                <path
-                  d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-                ></path>
-                <path d="m9 12 2 2 4-4"></path>
-              </svg>
-              <span>No credit card required</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="text-green-500"
-              >
-                <path
-                  d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-                ></path>
-                <path d="m9 12 2 2 4-4"></path>
-              </svg>
-              <span>Works in your browser</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="text-green-500"
-              >
-                <path
-                  d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"
-                ></path>
-                <path d="m9 12 2 2 4-4"></path>
-              </svg>
-              <span>Start creating immediately</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="bg-card py-12 border-t border-border">
-        <div
-          class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6"
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 4. THE PROBLEM (editorial 2-col)           -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="problem" class="py-28">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="font-display text-4xl md:text-5xl mb-16 max-w-xl"
+          data-animate
         >
-          <div class="flex items-center gap-2 font-bold text-xl">
-            <div
-              class="w-6 h-6 bg-primary rounded flex items-center justify-center"
-            >
-              <span class="text-primary-foreground text-xs">V</span>
+          The insight dies in the last mile.
+        </h2>
+
+        <div class="grid md:grid-cols-5 gap-12 md:gap-16 items-start">
+          <!-- Left: editorial prose (60%) -->
+          <div class="md:col-span-3 space-y-6 text-muted-foreground leading-relaxed" data-animate data-delay="100">
+            <p>
+              You built the model. You ran the query. The chart is perfect
+              on your screen. Now what?
+            </p>
+            <p>
+              You screenshot it. Paste it into a deck. Resize. Lose the
+              labels. Email a 14&nbsp;MB PDF. Your stakeholder opens it on
+              their phone, squints, and asks you to "just hop on a call."
+            </p>
+            <p>
+              The data was ready. The tooling wasn't. That last mile
+              &mdash;&nbsp;from analysis to published insight&nbsp;&mdash;
+              is where good work goes to die.
+            </p>
+          </div>
+
+          <!-- Right: broken workflow chain (40%) -->
+          <div class="md:col-span-2 flex flex-col items-center gap-3 pt-2" data-animate data-delay="250">
+            <div class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium">
+              Data
             </div>
-            Vetori
+            <span class="text-muted-foreground text-xs">&darr;</span>
+            <div class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium">
+              Screenshot
+            </div>
+            <span class="text-muted-foreground text-xs">&darr;</span>
+            <div class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium">
+              Slides
+            </div>
+            <span class="text-muted-foreground text-xs">&darr;</span>
+            <div class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium">
+              PDF
+            </div>
+            <span class="text-muted-foreground text-xs">&darr;</span>
+            <div class="workflow-step w-full rounded-lg border border-border bg-surface-raised px-5 py-3 text-center text-sm font-medium">
+              Email
+            </div>
           </div>
-          <div class="flex gap-8 text-sm text-muted-foreground">
-            <a
-              href="mailto:support@vetori.app"
-              class="hover:text-foreground transition-colors"
-              >Support</a
-            >
-            <a
-              href="mailto:sales@vetori.app"
-              class="hover:text-foreground transition-colors"
-              >Sales</a
-            >
-          </div>
-          <div class="text-sm text-muted-foreground">© 2024 Vetori Inc.</div>
         </div>
-      </footer>
-    </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 5. HOW IT WORKS (3 steps)                  -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="how-it-works" class="py-28 border-t border-border">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="font-display text-4xl md:text-5xl mb-20 text-center text-balance"
+          data-animate
+        >
+          From data to published in under a minute.
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-12">
+          <!-- Step 1 -->
+          <div class="relative" data-animate data-delay="100">
+            <span class="font-display text-[7rem] leading-none text-primary/10 absolute -top-6 -left-2 select-none pointer-events-none">01</span>
+            <div class="relative pt-16">
+              <h3 class="text-xl font-semibold mb-3">Drop in your data</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                CSV, JSON, or just paste it in. We handle the rest&nbsp;&mdash;&nbsp;geocoding, parsing, formatting.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative" data-animate data-delay="250">
+            <span class="font-display text-[7rem] leading-none text-primary/10 absolute -top-6 -left-2 select-none pointer-events-none">02</span>
+            <div class="relative pt-16">
+              <h3 class="text-xl font-semibold mb-3">Choose how to show it</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Bar, line, scatter, map, and more. Pick a chart type, tweak the style, and see it render instantly.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative" data-animate data-delay="400">
+            <span class="font-display text-[7rem] leading-none text-primary/10 absolute -top-6 -left-2 select-none pointer-events-none">03</span>
+            <div class="relative pt-16">
+              <h3 class="text-xl font-semibold mb-3">Share the link</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                One URL. Embed in Notion, drop in Slack, paste in an email. It just works&nbsp;&mdash;&nbsp;everywhere.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 6. LIVE EXAMPLE (full-width showcase)      -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="examples" class="py-28 border-t border-border relative overflow-hidden">
+      <!-- Background glow -->
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] -z-10 rounded-full opacity-20"
+        style="background: radial-gradient(ellipse at center, oklch(0.706 0.196 262 / 25%), transparent 70%)"
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6">
+        <h2
+          class="font-display text-4xl md:text-5xl mb-16 text-center"
+          data-animate
+        >
+          See it live.
+        </h2>
+
+        <div class="glow-pulse rounded-xl max-w-6xl mx-auto" data-animate data-delay="200">
+          <div class="rounded-xl border border-border overflow-hidden bg-surface">
+            <iframe
+              src="https://ad8ad580-2c27-49ac-b322-844e9d1301e8.published.vetori.ai/publications/8f4c158f-c3df-452b-965c-ee6ffbe39f18/embed"
+              width="100%"
+              height="600"
+              frameborder="0"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+
+        <p
+          class="font-mono text-sm text-primary text-center mt-8 tracking-wide"
+          data-animate
+          data-delay="400"
+        >
+          Built in 45 seconds. Shared as a link. Embedded anywhere.
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 7. CAPABILITIES (alternating rows)         -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="py-28 border-t border-border">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="font-display text-4xl md:text-5xl mb-20 text-center text-balance"
+          data-animate
+        >
+          Built for data that deserves to be seen.
+        </h2>
+
+        <div class="space-y-24">
+          <!-- Row 1 -->
+          <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
+            <div>
+              <h3 class="text-2xl font-semibold mb-4">Every chart your data needs</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Bars, lines, scatter plots, maps, and more. Whatever shape your
+                data takes, there's a visualization ready for it.
+              </p>
+            </div>
+            <div class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px]">
+              <span class="font-display text-6xl text-primary/15 select-none">Any viz</span>
+            </div>
+          </div>
+
+          <!-- Row 2 (reversed) -->
+          <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
+            <div class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px] md:order-first">
+              <span class="font-mono text-sm text-accent/60 select-none">vetori.ai/your-chart &rarr;</span>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-4">One link. Zero friction.</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                No logins for viewers. No file downloads. Just a URL that
+                opens instantly in any browser on any device.
+              </p>
+            </div>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
+            <div>
+              <h3 class="text-2xl font-semibold mb-4">Beautiful without trying</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Publication-quality defaults. Thoughtful typography, balanced
+                spacing, and a color palette that works. You focus on the data.
+              </p>
+            </div>
+            <div class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px]">
+              <span class="font-display italic text-5xl text-foreground/10 select-none">Elegant</span>
+            </div>
+          </div>
+
+          <!-- Row 4 (reversed) -->
+          <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
+            <div class="rounded-xl border border-border bg-surface-raised p-10 flex items-center justify-center min-h-[200px] md:order-first">
+              <span class="font-mono text-xs text-muted-foreground select-none">&lt;iframe src="vetori.ai/…" /&gt;</span>
+            </div>
+            <div>
+              <h3 class="text-2xl font-semibold mb-4">Embed anywhere, load instantly</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Lightweight standalone pages that embed in Notion, Medium,
+                your company wiki&nbsp;&mdash;&nbsp;anywhere that accepts a URL
+                or iframe.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 8. CTA + FOOTER                            -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="py-28 border-t border-border relative overflow-hidden">
+      <!-- Ambient glow -->
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] -z-10 rounded-full opacity-20"
+        style="background: radial-gradient(ellipse at center, oklch(0.646 0.222 160 / 30%), transparent 70%)"
+      ></div>
+
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2
+          class="font-display text-4xl md:text-6xl mb-8"
+          data-animate
+        >
+          Your data has a story. <span class="italic">Publish&nbsp;it.</span>
+        </h2>
+
+        <div data-animate data-delay="200">
+          <button
+            class="inline-flex items-center justify-center rounded-md text-lg font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg mb-6"
+            onclick="handleSignUp()"
+          >
+            Start creating&nbsp;&mdash;&nbsp;free
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-border py-10">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-2">
+          <span class="font-display italic text-xl text-primary">V</span>
+          <span class="text-base font-semibold tracking-tight">Vetori</span>
+        </div>
+        <div class="flex gap-8 text-sm text-muted-foreground">
+          <a href="mailto:support@vetori.app" class="hover:text-foreground transition-colors">Support</a>
+          <a href="mailto:sales@vetori.app" class="hover:text-foreground transition-colors">Sales</a>
+        </div>
+        <div class="text-sm text-muted-foreground">&copy; 2025 Vetori Inc.</div>
+      </div>
+    </footer>
 
     <script type="module" src="/src/main.js"></script>
   </body>

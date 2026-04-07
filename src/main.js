@@ -29,7 +29,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 // Intersection Observer for scroll animations
 const observerOptions = {
   threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px',
+  rootMargin: '0px 0px -80px 0px',
 }
 
 const observer = new IntersectionObserver((entries) => {
@@ -49,27 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('[data-animate]').forEach((el) => {
     observer.observe(el)
   })
-})
-
-// Parallax effect for hero section
-let ticking = false
-const parallaxElement = document.querySelector('[data-parallax]')
-
-function updateParallax() {
-  if (parallaxElement) {
-    const scroll = window.scrollY
-    const opacity = Math.max(0, 1 - scroll / 500)
-    const scale = Math.max(0.95, 1 - scroll / 5000)
-
-    parallaxElement.style.opacity = opacity
-    parallaxElement.style.transform = `scale(${scale})`
-  }
-  ticking = false
-}
-
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    window.requestAnimationFrame(updateParallax)
-    ticking = true
-  }
 })

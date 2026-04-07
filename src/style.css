@@ -1,173 +1,132 @@
 @import 'tailwindcss';
 
-/* shadcn Zinc theme + Blue primary for Vetori */
+/* ── Dark palette (no light theme) ── */
 @layer base {
   :root {
+    --background: oklch(0.129 0.042 264.695);
+    --surface: oklch(0.208 0.042 265.755);
+    --surface-raised: oklch(0.279 0.041 260.031);
+    --foreground: oklch(0.984 0.003 247.858);
+    --muted-foreground: oklch(0.704 0.04 256.788);
+    --primary: oklch(0.646 0.222 160);
+    --primary-foreground: oklch(0.984 0.003 247.858);
+    --accent: oklch(0.706 0.196 262);
+    --border: oklch(1 0 0 / 8%);
+    --border-hover: oklch(1 0 0 / 15%);
     --radius: 0.5rem;
-
-    /* Zinc base colors */
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.141 0.005 285.823);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.141 0.005 285.823);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.141 0.005 285.823);
-
-    /* Blue primary */
-    --primary: oklch(0.533 0.198 258.066); /* Modern blue */
-    --primary-foreground: oklch(0.985 0 0);
-
-    --secondary: oklch(0.967 0.001 286.375);
-    --secondary-foreground: oklch(0.21 0.006 285.885);
-    --muted: oklch(0.967 0.001 286.375);
-    --muted-foreground: oklch(0.552 0.016 285.938);
-    --accent: oklch(0.967 0.001 286.375);
-    --accent-foreground: oklch(0.21 0.006 285.885);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.92 0.004 286.32);
-    --input: oklch(0.92 0.004 286.32);
-    --ring: oklch(0.533 0.198 258.066);
-  }
-
-  .dark {
-    --background: oklch(0.141 0.005 285.823);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.21 0.006 285.885);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.21 0.006 285.885);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.656 0.235 265.745);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.274 0.006 286.033);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.274 0.006 286.033);
-    --muted-foreground: oklch(0.705 0.015 286.067);
-    --accent: oklch(0.274 0.006 286.033);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.656 0.235 265.745);
   }
 
   * {
-    border-color: hsl(var(--border));
+    border-color: var(--border);
   }
 
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'rlig' 1, 'calt' 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* Define Tailwind colors from CSS variables */
+/* ── Tailwind theme tokens ── */
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
   --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
+  --color-muted-foreground: var(--muted-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
   --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+  --color-border-hover: var(--border-hover);
 }
 
-/* Custom animations */
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ── Font families ── */
+.font-display {
+  font-family: 'Instrument Serif', Georgia, serif;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
-@keyframes slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ── Hero text gradient ── */
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-@keyframes draw-path {
-  from {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-  }
-  to {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 0;
-  }
-}
-
-.animate-fade-in-up {
-  animation: fade-in-up 0.6s ease-out forwards;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.8s ease-out forwards;
-}
-
-.animate-slide-up {
-  animation: slide-up 0.8s ease-out 1s forwards;
-  opacity: 0;
-}
-
-.animate-draw-path {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  animation: draw-path 2s ease-in-out 0.5s forwards;
-}
-
-/* Scroll animation classes */
+/* ── Scroll animations ── */
 [data-animate] {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(12px) scale(0.98);
+  transition:
+    opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-animate].animate-in {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
-/* Smooth scrolling */
+/* ── Glow-pulse for embeds ── */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 40px 8px oklch(0.646 0.222 160 / 12%),
+      0 0 80px 20px oklch(0.706 0.196 262 / 6%);
+  }
+  50% {
+    box-shadow:
+      0 0 60px 16px oklch(0.646 0.222 160 / 20%),
+      0 0 120px 40px oklch(0.706 0.196 262 / 10%);
+  }
+}
+
+.glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* ── Workflow chain fade ── */
+.workflow-step {
+  transition: opacity 0.3s;
+}
+
+.workflow-step:nth-child(1) { opacity: 1; }
+.workflow-step:nth-child(2) { opacity: 0.75; }
+.workflow-step:nth-child(3) { opacity: 0.55; }
+.workflow-step:nth-child(4) { opacity: 0.35; }
+.workflow-step:nth-child(5) { opacity: 0.18; }
+
+/* ── Hairline borders with hover ── */
+.hairline {
+  border: 1px solid var(--border);
+  transition: border-color 0.3s;
+}
+
+.hairline:hover {
+  border-color: var(--border-hover);
+}
+
+/* ── Smooth scroll ── */
 html {
   scroll-behavior: smooth;
 }
 
-/* Focus styles */
+/* ── Focus ring ── */
 button:focus-visible,
 a:focus-visible {
-  outline: 2px solid hsl(var(--ring));
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
+}
+
+/* ── Selection ── */
+::selection {
+  background: oklch(0.646 0.222 160 / 20%);
 }
