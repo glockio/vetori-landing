@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vetori — Interactive Impact Maps and Charts for Client Websites</title>
+    <title>Vetori — Turn CSVs Into Shareable Interactive Reports</title>
     <meta
       name="description"
-      content="Turn spreadsheet data into branded impact maps and charts for annual reports, campaign microsites, and public impact pages. Built for agencies and studios shipping client work fast."
+      content="Turn spreadsheet data into interactive charts and maps you can share as a link, embed on the web, or download as a self-contained artifact. Built for agencies and teams shipping recurring reports."
     />
     <link rel="canonical" href="https://vetori.ai/" />
     <meta name="theme-color" content="#0a1628" />
@@ -20,11 +20,11 @@
     <meta property="og:url" content="https://vetori.ai/" />
     <meta
       property="og:title"
-      content="Vetori — Interactive Impact Maps and Charts for Client Websites"
+      content="Vetori — Turn CSVs Into Shareable Interactive Reports"
     />
     <meta
       property="og:description"
-      content="Ship branded impact maps and charts for client websites without a custom build."
+      content="Create shareable interactive reports from CSV data. Better than a PDF, portable by default."
     />
     <meta property="og:image" content="https://vetori.ai/og-image.png" />
 
@@ -32,11 +32,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Vetori — Interactive Impact Maps and Charts for Client Websites"
+      content="Vetori — Turn CSVs Into Shareable Interactive Reports"
     />
     <meta
       name="twitter:description"
-      content="Ship branded impact maps and charts for client websites without a custom build."
+      content="Create shareable interactive reports from CSV data. Better than a PDF, portable by default."
     />
     <meta name="twitter:image" content="https://vetori.ai/og-image.png" />
 
@@ -55,14 +55,14 @@
         "@type": "WebApplication",
         "name": "Vetori",
         "url": "https://vetori.ai",
-        "description": "Create interactive impact maps and charts from CSV data. Embed them on annual reports, campaign microsites, and public impact pages.",
+        "description": "Create shareable interactive data reports from CSV data. Share them as a link, embed them on the web, or export a self-contained artifact.",
         "applicationCategory": "DataVisualization",
         "operatingSystem": "Web",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD",
-          "description": "Early access for agencies and teams publishing public-facing impact data"
+          "description": "Early access for agencies and teams shipping recurring reports"
         },
         "author": {
           "@type": "Organization",
@@ -93,15 +93,15 @@
           },
           {
             "@type": "Question",
-            "name": "Can we embed this on a client website or CMS?",
+            "name": "Can we share a link, embed it, or download it?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. You get an embed code for any website or CMS, plus a self-hosted HTML export for client handoff."
+              "text": "Yes. Vetori supports live links, embeds for websites and CMSes, and a self-hosted HTML export for portable handoff."
             }
           },
           {
             "@type": "Question",
-            "name": "Can clients and end viewers interact with the data?",
+            "name": "Can viewers interact with the report?",
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes. Viewers can filter, search, click data points, zoom, and pan. Everything runs in their browser."
@@ -109,18 +109,18 @@
           },
           {
             "@type": "Question",
-            "name": "Can we match each client's brand?",
+            "name": "Does the export work outside Vetori?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Customize colors and presentation to match each client or campaign. Paid plans remove Vetori branding."
+              "text": "Yes. Vetori exports a self-hosted HTML artifact designed for portability, so teams can host or hand off the report outside their Vetori account."
             }
           },
           {
             "@type": "Question",
-            "name": "Do we need a developer for every project?",
+            "name": "Do we need a developer for every report?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. Vetori is designed for teams that need polished public-facing visuals without commissioning a custom interactive build for every project."
+              "text": "No. Vetori is designed for teams that need polished recurring reports without commissioning a custom interactive build every time."
             }
           }
         ]
@@ -242,7 +242,7 @@
         <div data-animate>
           <span
             class="audience-badge inline-block text-xs font-medium tracking-wide text-muted-foreground border border-border rounded-full px-4 py-1.5 mb-8"
-            >For agencies, studios, and web teams publishing impact data</span
+            >For agencies and teams shipping recurring reports</span
           >
         </div>
 
@@ -252,8 +252,8 @@
           data-animate
           data-delay="100"
         >
-          Interactive impact maps &amp; charts<br />
-          <span class="text-gradient">for client websites.</span>
+          Turn a CSV into a<br />
+          <span class="text-gradient">shareable interactive report.</span>
         </h1>
 
         <!-- Second line -->
@@ -262,7 +262,7 @@
           data-animate
           data-delay="200"
         >
-          No custom build required.
+          Like a PDF for data.
         </p>
 
         <!-- Subhead -->
@@ -271,9 +271,9 @@
           data-animate
           data-delay="300"
         >
-          Turn spreadsheet data into polished visuals for annual reports,
-          campaign microsites, and public impact pages. Vetori helps agencies
-          ship branded embeds faster and hand them off cleanly.
+          Create a chart or map you can send as a link, embed on the web, or
+          download as a self-contained artifact. Built for recurring reports,
+          client reviews, and public impact updates.
         </p>
 
         <!-- CTA -->
@@ -289,11 +289,11 @@
               href="#examples"
               class="inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors border border-border bg-surface-raised text-foreground hover:bg-surface h-14 px-10"
             >
-              See the Sample Impact Report
+              See the Sample Report
             </a>
           </div>
           <p class="text-sm text-muted-foreground mt-3">
-            Prefer self-serve?
+            Want to test the CSV-to-link flow?
             <a
               href="javascript:void(0)"
               onclick="handleSignUp()"
@@ -372,19 +372,19 @@
           <span class="credibility-text font-medium">Annual Reports</span>
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
           <span class="credibility-text font-medium" style="animation-delay: -1s"
-            >Campaign Microsites</span
+            >Impact Updates</span
           >
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
           <span class="credibility-text font-medium" style="animation-delay: -2s"
-            >Impact Reports</span
+            >Client Review Links</span
           >
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
           <span class="credibility-text font-medium" style="animation-delay: -3s"
-            >Foundation Pages</span
+            >Campaign Pages</span
           >
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
           <span class="credibility-text font-medium" style="animation-delay: -4s"
-            >Client Handoffs</span
+            >Stakeholder Briefings</span
           >
         </p>
       </div>
@@ -399,15 +399,16 @@
           class="font-display text-4xl md:text-5xl font-bold mb-6 text-center text-balance tracking-tight"
           data-animate
         >
-          Stop turning client data into static screenshots.
+          Stop shipping dead data.
         </h2>
         <p
           class="text-muted-foreground text-center mb-16 max-w-2xl mx-auto"
           data-animate
           data-delay="100"
         >
-          Vetori is for the moment when the PDF, screenshot, or generic embed
-          is no longer good enough for the client site you need to ship.
+          Vetori is for the moment when a spreadsheet, screenshot, or static
+          PDF is no longer good enough for the report people actually need to
+          open.
         </p>
 
         <div class="grid md:grid-cols-3 gap-6">
@@ -417,15 +418,14 @@
             data-delay="150"
           >
             <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">
-              Static Reports
+              Static Files
             </p>
             <h3 class="text-xl font-semibold mb-3">
-              Decks and screenshots kill the impact
+              PDFs flatten the report
             </h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Screenshots can summarize the numbers, but they cannot let a
-              client show where work happens or give visitors anything to
-              explore.
+              A PDF can freeze the numbers, but it cannot let reviewers search,
+              filter, zoom, or inspect the underlying geography.
             </p>
           </div>
 
@@ -438,12 +438,11 @@
               Custom Builds
             </p>
             <h3 class="text-xl font-semibold mb-3">
-              Custom builds eat project margin
+              Recurring report builds do not scale
             </h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              One-off map and chart work can burn design and engineering time
-              fast, especially when the deliverable is only one public-facing
-              page.
+              If every update becomes a custom web project, the reporting
+              workflow burns margin and slows down delivery.
             </p>
           </div>
 
@@ -453,14 +452,15 @@
             data-delay="350"
           >
             <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">
-              Public Trust
+              Delivery
             </p>
             <h3 class="text-xl font-semibold mb-3">
-              Client handoff gets messy fast
+              Links and files should survive handoff
             </h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Agencies need visuals that match the client's brand and can be
-              embedded or exported without a fragile custom setup.
+              Teams need something they can host, share for review, embed on
+              the web, or hand off as a standalone artifact without rebuilding
+              it later.
             </p>
           </div>
         </div>
@@ -476,15 +476,15 @@
           class="font-display text-4xl md:text-5xl font-bold mb-6 text-center text-balance tracking-tight"
           data-animate
         >
-          Built for the deliverables agencies already ship.
+          Built for reports people actually send.
         </h2>
         <p
           class="text-muted-foreground text-center mb-16 max-w-lg mx-auto"
           data-animate
           data-delay="100"
         >
-          Start with one embeddable visual for the next client page on your
-          production calendar.
+          Start with one chart or map for the next stakeholder update, annual
+          report, or client review cycle.
         </p>
 
         <div class="grid sm:grid-cols-2 gap-6">
@@ -514,12 +514,11 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold">Nonprofit Annual Report Sites</h3>
+              <h3 class="text-lg font-semibold">Annual Reports &amp; Impact Updates</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Deliver a polished impact map that shows where funding, programs,
-              or partnerships reach communities on the client's annual report
-              page.
+              Turn spreadsheet data into an interactive visual for annual
+              reports, foundation updates, and public impact pages.
             </p>
           </div>
 
@@ -582,12 +581,11 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold">Foundation &amp; Grantmaking Pages</h3>
+              <h3 class="text-lg font-semibold">Client Review Links</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Turn spreadsheet data into charts that explain grants disbursed,
-              partners funded, and communities served across a foundation site
-              or campaign page.
+              Share a live report link during review cycles so stakeholders can
+              click, filter, and comment on the same artifact that will ship.
             </p>
           </div>
 
@@ -618,12 +616,11 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold">Campaign Microsites</h3>
+              <h3 class="text-lg font-semibold">Campaign &amp; Foundation Pages</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Ship a branded interactive visual for a fundraising or advocacy
-              campaign without turning the project into a custom engineering
-              build.
+              Publish branded maps and charts for grantmaking pages, campaign
+              sites, and public-facing updates without a bespoke build.
             </p>
           </div>
 
@@ -660,12 +657,11 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold">Association &amp; Civic Reports</h3>
+              <h3 class="text-lg font-semibold">Stakeholder Briefings &amp; Handoffs</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Publish map- or chart-based public reporting for associations,
-              coalitions, and civic organizations that need a clear web-ready
-              deliverable.
+              Export a standalone artifact for board packets, client handoff,
+              or controlled distribution when a plain PDF is not enough.
             </p>
           </div>
         </div>
@@ -681,7 +677,7 @@
           class="font-display text-4xl md:text-5xl font-bold mb-20 text-center text-balance tracking-tight"
           data-animate
         >
-          From client spreadsheet to shipped deliverable.
+          From CSV to shareable report artifact.
         </h2>
 
         <div class="grid md:grid-cols-3 gap-12">
@@ -692,11 +688,11 @@
                 class="font-display text-sm font-bold text-primary bg-primary/10 rounded-lg w-8 h-8 flex items-center justify-center"
                 >01</span
               >
-              <h3 class="text-xl font-semibold">Upload the client data</h3>
+              <h3 class="text-xl font-semibold">Upload the report data</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Bring program reach, grants, locations, or campaign data in a
-              CSV. Vetori auto-detects fields, types, and coordinates.
+              Bring impact, funding, location, or operational data in a CSV.
+              Vetori auto-detects fields, types, and coordinates.
             </p>
             <div class="rounded-lg border border-border bg-background/40 p-4">
               <div
@@ -722,8 +718,8 @@
               <h3 class="text-xl font-semibold">Choose a map or chart</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Create the visual, map the fields, and tune the client branding.
-              Preview the result before it ever hits the site.
+              Create the visual, map the fields, and tune the branding so the
+              report looks ready before you share it.
             </p>
             <!-- Viz type cards — larger and more readable -->
             <div class="grid grid-cols-3 gap-2">
@@ -833,33 +829,29 @@
                 class="font-display text-sm font-bold text-primary bg-primary/10 rounded-lg w-8 h-8 flex items-center justify-center"
                 >03</span
               >
-              <h3 class="text-xl font-semibold">Publish or hand it off</h3>
+              <h3 class="text-xl font-semibold">Share, embed, or download</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Embed it in the client site, share a live link for review, or
-              export a self-hosted HTML file for a clean handoff to the client
-              or web partner.
+              Send a live link for review, embed it on the site, or export a
+              standalone HTML artifact for clean handoff and long-term
+              portability.
             </p>
             <div class="rounded-lg border border-border bg-background/40 p-4">
               <div
                 class="font-mono text-xs text-muted-foreground/60 leading-relaxed"
               >
-                <span class="text-accent/70">&lt;iframe</span>
-                <span class="text-primary/60">src</span>=<span
+                <span class="text-primary/60">link</span>=<span
                   class="text-foreground/40"
-                  >"vetori.ai/&hellip;"</span
+                  >"report.vetori.site/community-reach"</span
                 ><br />
-                &nbsp;&nbsp;<span class="text-primary/60">width</span>=<span
+                <span class="text-primary/60">embed</span>=<span
                   class="text-foreground/40"
-                  >"100%"</span
+                  >"&lt;iframe src='...'&gt;"</span
+                ><br />
+                <span class="text-primary/60">artifact</span>=<span
+                  class="text-foreground/40"
+                  >"community-reach.html"</span
                 >
-                <span class="text-primary/60">height</span>=<span
-                  class="text-foreground/40"
-                  >"400"</span
-                ><br />
-                &nbsp;&nbsp;<span class="text-primary/60">frameborder</span
-                >=<span class="text-foreground/40">"0"</span
-                ><span class="text-accent/70">&gt;&lt;/iframe&gt;</span>
               </div>
             </div>
           </div>
@@ -891,7 +883,7 @@
           class="font-display text-4xl md:text-5xl font-bold mb-4 text-center tracking-tight"
           data-animate
         >
-          A sample nonprofit annual report visual.
+          A sample impact report artifact.
         </h2>
 
         <p
@@ -899,9 +891,9 @@
           data-animate
           data-delay="100"
         >
-          This is the kind of public-facing impact map an agency can deliver
-          for a nonprofit client. Filter the data, click a point, and zoom in
-          directly on the page.
+          The same visual can live on a website, circulate as a review link,
+          or ship as a standalone file. Filter the data, click a point, and
+          zoom in directly on the report.
         </p>
 
         <div
@@ -927,8 +919,8 @@
           data-animate
           data-delay="400"
         >
-          Built from spreadsheet data. Designed for annual reports, campaign
-          pages, and public impact sites.
+          Built from spreadsheet data. Share by link, embed on the web, or
+          export.
         </p>
       </div>
     </section>
@@ -942,7 +934,7 @@
           class="font-display text-4xl md:text-5xl font-bold mb-20 text-center text-balance tracking-tight"
           data-animate
         >
-          Why agencies use Vetori
+          Why teams use Vetori for recurring reports
         </h2>
 
         <div class="space-y-24">
@@ -950,12 +942,12 @@
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
             <div>
               <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Deliver something better than a screenshot
+                A better PDF for data
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Ship a real interactive deliverable clients can publish on the
-                web. Viewers can filter, search, and click into the data
-                without a custom backend to maintain.
+                Give people something they can actually explore. Viewers can
+                filter, search, and click into the report instead of reading a
+                frozen screenshot.
               </p>
             </div>
             <div
@@ -1026,11 +1018,12 @@
             </div>
             <div>
               <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Keep every client on brand
+                Keep each report on brand
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Use each client's colors and styling so the visual feels native
-                to the site. Paid plans remove Vetori branding completely.
+                Tune colors and presentation so the report feels native to the
+                client, campaign, or stakeholder context. Paid plans remove
+                Vetori branding completely.
               </p>
             </div>
           </div>
@@ -1039,12 +1032,11 @@
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
             <div>
               <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Clean handoff when the project ends
+                Portable by default
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Publish on the live site, send a review link, or export a
-                standalone HTML file the client or web partner can host
-                anywhere with no API keys or ongoing dependencies.
+                Share a live link, embed it on the web, or export a standalone
+                HTML artifact with no ongoing backend dependency.
               </p>
             </div>
             <div
@@ -1145,9 +1137,9 @@
                 Start with one visual. Expand into stories later.
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Start with the embeddable map or chart you need today. Guided
-                narrative publishing is coming soon for annual reports, campaign
-                walkthroughs, and richer client deliverables.
+                Launch the chart or map you need now. Guided story playback is
+                next for richer walkthroughs, recurring report narratives, and
+                more structured client deliverables.
               </p>
             </div>
           </div>
@@ -1174,7 +1166,7 @@
             <summary
               class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
             >
-              Is this built for agencies or in-house teams?
+              Who is Vetori for?
               <span
                 class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
                 >&#9662;</span
@@ -1183,9 +1175,8 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              Both, but the current landing page is optimized for agencies,
-              studios, and web teams shipping public-facing impact work for
-              clients.
+              Vetori is best for agencies, consultancies, and teams that
+              publish recurring data reports for clients or stakeholders.
             </div>
           </details>
 
@@ -1215,7 +1206,7 @@
             <summary
               class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
             >
-              Can we embed Vetori on a client website or CMS?
+              Can we share a link, embed it, or download it?
               <span
                 class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
                 >&#9662;</span
@@ -1224,9 +1215,8 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              Yes. You get an embed code for any website or CMS, plus a
-              self-hosted HTML export with zero dependencies if the client or
-              web team wants full control.
+              Yes. Vetori supports live links, embeds for websites and CMSes,
+              and a self-hosted HTML export for portable handoff.
             </div>
           </details>
 
@@ -1236,7 +1226,7 @@
             <summary
               class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
             >
-              Can clients and end viewers interact with the visual?
+              Can viewers interact with the report?
               <span
                 class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
                 >&#9662;</span
@@ -1256,7 +1246,7 @@
             <summary
               class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
             >
-              Can we match each client's brand?
+              Can we match the brand for each report?
               <span
                 class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
                 >&#9662;</span
@@ -1265,8 +1255,9 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              Yes. Customize colors and presentation to match the client site
-              or campaign. Paid plans remove Vetori branding completely.
+              Yes. Customize colors and presentation to match the client site,
+              destination site, campaign, or reporting context. Paid plans remove Vetori
+              branding completely.
             </div>
           </details>
 
@@ -1276,7 +1267,7 @@
             <summary
               class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
             >
-              Can we hand off the deliverable cleanly after launch?
+              Does the export work outside Vetori?
               <span
                 class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
                 >&#9662;</span
@@ -1285,9 +1276,9 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              Yes. In addition to embeds and live links, Vetori supports a
-              self-hosted HTML export so clients or partners can host the
-              deliverable outside your account setup.
+              Yes. Vetori exports a self-hosted HTML artifact designed for
+              portability, so teams can host or hand off the report outside
+              their Vetori account.
             </div>
           </details>
 
@@ -1297,7 +1288,7 @@
             <summary
               class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
             >
-              Do we need a developer for every project?
+              Do we need a developer for every report?
               <span
                 class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
                 >&#9662;</span
@@ -1306,9 +1297,9 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              No. Vetori is designed for teams that need polished public-facing
-              visuals without commissioning a custom interactive build for every
-              project.
+              No. Vetori is designed for teams that need polished recurring
+              reports without commissioning a custom interactive build every
+              time.
             </div>
           </details>
 
@@ -1318,7 +1309,7 @@
             <summary
               class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
             >
-              Can we start with one chart now and add guided stories later?
+              Are stories live yet?
               <span
                 class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
                 >&#9662;</span
@@ -1327,9 +1318,9 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              Yes. Vetori is built so you can launch a single embeddable map or
-              chart now. Guided narrative publishing is the next step on the
-              roadmap.
+              Today you can launch a single chart or map and share it as a
+              report artifact. Guided stories and narrative playback are the
+              next step on the roadmap.
             </div>
           </details>
         </div>
@@ -1359,7 +1350,7 @@
           class="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight"
           data-animate
         >
-          Ship your next impact visual faster.
+          Turn the next CSV into something people will actually open.
         </h2>
 
         <p
@@ -1367,8 +1358,8 @@
           data-animate
           data-delay="100"
         >
-          Start with one embeddable map or chart for the annual report,
-          campaign microsite, or impact page already on your production list.
+          Start with one chart or map you can share as a link, embed on the
+          web, or hand off as a self-contained artifact.
         </p>
 
         <div data-animate data-delay="200">
@@ -1383,11 +1374,11 @@
               href="#examples"
               class="inline-flex items-center justify-center rounded-lg text-lg font-semibold transition-colors border border-border bg-surface-raised text-foreground hover:bg-surface h-14 px-10"
             >
-              See the Sample Impact Report
+              See the Sample Report
             </a>
           </div>
           <p class="text-sm text-muted-foreground">
-            Prefer self-serve?
+            Want to test the CSV-to-link flow?
             <a
               href="javascript:void(0)"
               onclick="handleSignUp()"
@@ -1426,7 +1417,7 @@
               >
             </div>
             <p class="text-sm text-muted-foreground leading-relaxed">
-              Interactive impact maps and charts<br />for client websites.
+              Shareable interactive data reports<br />from CSV.
             </p>
           </div>
 
