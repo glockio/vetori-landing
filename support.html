@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support — Vetori</title>
+    <meta
+      name="description"
+      content="Get help with Vetori. Contact our support team for questions about interactive reports, data visualization, and more."
+    />
+    <link rel="canonical" href="https://vetori.ai/support" />
+    <meta name="theme-color" content="#0a1628" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Noise texture overlay for depth -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- NAV                                        -->
+    <!-- ═══════════════════════════════════════════ -->
+    <nav
+      class="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-2.5">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="shrink-0"
+          >
+            <path
+              d="M4 4L12 20L20 4"
+              stroke="url(#logoGradSupport)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <defs>
+              <linearGradient
+                id="logoGradSupport"
+                x1="4"
+                y1="4"
+                x2="20"
+                y2="20"
+              >
+                <stop stop-color="oklch(0.646 0.222 160)" />
+                <stop offset="1" stop-color="oklch(0.706 0.196 262)" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="font-display text-lg font-bold tracking-tight"
+            >Vetori</span
+          >
+        </a>
+
+        <!-- Back link -->
+        <a
+          href="/"
+          class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >&larr; Back to Home</a
+        >
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- SUPPORT CONTENT                            -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section class="relative pt-24 pb-32 overflow-hidden">
+      <!-- Ambient glow -->
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[500px] -z-10 rounded-full opacity-20"
+        style="
+          background: radial-gradient(
+            ellipse at center,
+            oklch(0.646 0.222 160 / 30%),
+            transparent 70%
+          );
+        "
+      ></div>
+
+      <div class="max-w-2xl mx-auto px-6">
+        <!-- Heading -->
+        <div class="text-center mb-12" data-animate>
+          <h1
+            class="font-display text-4xl md:text-5xl font-bold mb-4 tracking-tight"
+          >
+            How can we help?
+          </h1>
+          <p class="text-muted-foreground text-lg">
+            Fill out the form below and we'll get back to you at
+            <a
+              href="mailto:info@vetori.ai"
+              class="text-primary hover:underline underline-offset-4"
+              >info@vetori.ai</a
+            >.
+          </p>
+        </div>
+
+        <!-- Support Form -->
+        <div
+          class="rounded-xl border border-border bg-surface-raised p-8 md:p-10"
+          data-animate
+          data-delay="200"
+        >
+          <form id="support-form" class="space-y-6">
+            <!-- Name -->
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-foreground mb-2"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your name"
+                class="w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-colors"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-foreground mb-2"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="you@company.com"
+                class="w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-colors"
+              />
+            </div>
+
+            <!-- Subject -->
+            <div>
+              <label
+                for="subject"
+                class="block text-sm font-medium text-foreground mb-2"
+                >Subject</label
+              >
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                required
+                placeholder="What do you need help with?"
+                class="w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-colors"
+              />
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label
+                for="message"
+                class="block text-sm font-medium text-foreground mb-2"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                placeholder="Describe your question or issue..."
+                class="w-full rounded-lg border border-border bg-background/60 px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50 transition-colors resize-y"
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button
+              type="submit"
+              class="cta-button inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-12 px-8 shadow-lg shadow-primary/20 w-full"
+            >
+              Send Message
+            </button>
+          </form>
+
+          <p class="text-xs text-muted-foreground text-center mt-4">
+            This will open your email client with the details pre-filled.
+          </p>
+        </div>
+
+        <!-- Direct email note -->
+        <div class="text-center mt-8" data-animate data-delay="400">
+          <p class="text-sm text-muted-foreground">
+            Prefer to email us directly?
+            <a
+              href="mailto:info@vetori.ai"
+              class="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              >info@vetori.ai</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-border py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <div
+          class="flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <div class="flex items-center gap-2.5">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M4 4L12 20L20 4"
+                stroke="url(#logoGrad2Support)"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <defs>
+                <linearGradient
+                  id="logoGrad2Support"
+                  x1="4"
+                  y1="4"
+                  x2="20"
+                  y2="20"
+                >
+                  <stop stop-color="oklch(0.646 0.222 160)" />
+                  <stop offset="1" stop-color="oklch(0.706 0.196 262)" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <span class="text-xs text-muted-foreground"
+              >&copy; 2026 Vetori Inc. All rights reserved.</span
+            >
+          </div>
+          <div class="flex items-center gap-6 text-sm">
+            <a
+              href="/terms"
+              class="text-muted-foreground hover:text-foreground transition-colors"
+              >Terms</a
+            >
+            <a
+              href="/privacy"
+              class="text-muted-foreground hover:text-foreground transition-colors"
+              >Privacy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/support.js"></script>
+  </body>
+</html>
