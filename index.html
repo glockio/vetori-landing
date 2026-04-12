@@ -292,12 +292,19 @@
               See the Sample Report
             </a>
           </div>
-          <p class="text-sm text-muted-foreground mt-3">
-            Want to test the CSV-to-link flow?
+          <p class="text-sm text-muted-foreground mt-3" data-waitlist-cta>
+            <span data-closed-text class="hidden">Vetori is in closed beta.</span>
+            <span data-open-text>Want to test the CSV-to-link flow?</span>
             <a
               href="javascript:void(0)"
+              data-closed-text class="hidden text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              onclick="handleWaitlist()"
+              >Join the waitlist</a
+            >
+            <a
+              href="javascript:void(0)"
+              data-open-text class="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
               onclick="handleSignUp()"
-              class="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
               >Create a free account</a
             >
           </p>
@@ -1377,12 +1384,19 @@
               See the Sample Report
             </a>
           </div>
-          <p class="text-sm text-muted-foreground">
-            Want to test the CSV-to-link flow?
+          <p class="text-sm text-muted-foreground" data-waitlist-cta>
+            <span data-closed-text class="hidden">Vetori is in closed beta.</span>
+            <span data-open-text>Want to test the CSV-to-link flow?</span>
             <a
               href="javascript:void(0)"
+              data-closed-text class="hidden text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              onclick="handleWaitlist()"
+              >Join the waitlist</a
+            >
+            <a
+              href="javascript:void(0)"
+              data-open-text class="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
               onclick="handleSignUp()"
-              class="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
               >Create a free account</a
             >
           </p>

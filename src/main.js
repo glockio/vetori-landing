@@ -1,7 +1,8 @@
 import './style.css'
 
-// Environment variable for app URL
+// Environment variables
 const APP_URL = import.meta.env.VITE_APP_URL || 'http://localhost:3000'
+const IS_CLOSED_REGISTRATION = import.meta.env.VITE_CLOSED_REGISTRATION === 'true'
 
 // Navigation handlers
 window.handleSignIn = () => {
@@ -11,6 +12,23 @@ window.handleSignIn = () => {
 window.handleSignUp = () => {
   window.location.href = `${APP_URL}/signup`
 }
+
+window.handleWaitlist = () => {
+  window.location.href = `${APP_URL}/waitlist`
+}
+
+// Update CTA text based on closed registration setting
+document.addEventListener('DOMContentLoaded', () => {
+  if (IS_CLOSED_REGISTRATION) {
+    // Show closed beta text, hide open beta text
+    document.querySelectorAll('[data-closed-text]').forEach((el) => {
+      el.classList.remove('hidden')
+    })
+    document.querySelectorAll('[data-open-text]').forEach((el) => {
+      el.classList.add('hidden')
+    })
+  }
+})
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
