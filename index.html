@@ -278,7 +278,9 @@
 
         <!-- CTA -->
         <div data-animate data-delay="400">
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-3"
+          >
             <a
               href="mailto:info@vetori.ai?subject=Vetori%20Demo%20Request"
               class="cta-button inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg shadow-primary/20"
@@ -293,17 +295,21 @@
             </a>
           </div>
           <p class="text-sm text-muted-foreground mt-3" data-waitlist-cta>
-            <span data-closed-text class="hidden">Vetori is in closed beta.</span>
+            <span data-closed-text class="hidden"
+              >Vetori is in closed beta.</span
+            >
             <span data-open-text>Want to test the CSV-to-link flow?</span>
             <a
               href="javascript:void(0)"
-              data-closed-text class="hidden text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              data-closed-text
+              class="hidden text-foreground underline underline-offset-4 hover:text-primary transition-colors"
               onclick="handleWaitlist()"
               >Join the waitlist</a
             >
             <a
               href="javascript:void(0)"
-              data-open-text class="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              data-open-text
+              class="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
               onclick="handleSignUp()"
               >Create a free account</a
             >
@@ -340,12 +346,284 @@
               </div>
               <!-- Embed -->
               <div class="relative bg-background" style="height: 560px">
-                <iframe
-                  src="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/1c31e9e8-32fd-484d-a552-681d10c0d792/sites/a31c2082-1634-49bb-bd56-a92141113926/embed"
-                  width="100%"
-                  height="600"
-                  frameborder="0"
-                ></iframe>
+                <div
+                  class="vetori-embed"
+                  data-state="idle"
+                  style="
+                    --vt-bg: #ffffff;
+                    --vt-fg: #0f172a;
+                    --vt-primary: #2563eb;
+                    --vt-muted: #9fa2aa;
+                  "
+                >
+                  <style>
+                    .vetori-embed {
+                      position: relative;
+                      width: 100%;
+                      padding-bottom: 56.25%;
+                      background: var(--vt-bg);
+                      border-radius: 8px;
+                      overflow: hidden;
+                      border: 1px solid
+                        color-mix(in srgb, var(--vt-fg) 10%, transparent);
+                      font-family:
+                        system-ui,
+                        -apple-system,
+                        sans-serif;
+                      box-sizing: border-box;
+                    }
+                    .vetori-embed *,
+                    .vetori-embed *::before,
+                    .vetori-embed *::after {
+                      box-sizing: border-box;
+                    }
+                    .vetori-embed iframe {
+                      position: absolute;
+                      inset: 0;
+                      width: 100%;
+                      height: 100%;
+                      border: 0;
+                      opacity: 0;
+                      transition: opacity 0.3s ease;
+                    }
+                    .vetori-embed[data-state='loaded'] iframe {
+                      opacity: 1;
+                    }
+                    .vetori-embed__ph {
+                      position: absolute;
+                      inset: 0;
+                      display: flex;
+                      flex-direction: column;
+                      align-items: center;
+                      justify-content: center;
+                      transition: opacity 0.3s ease;
+                      padding: 24px;
+                      gap: 12px;
+                    }
+                    .vetori-embed[data-state='loaded'] .vetori-embed__ph {
+                      opacity: 0;
+                      pointer-events: none;
+                    }
+                    .vetori-embed__ph::before {
+                      content: '';
+                      position: absolute;
+                      inset: 0;
+                      background: linear-gradient(
+                        90deg,
+                        transparent 0%,
+                        color-mix(in srgb, var(--vt-fg) 3%, transparent) 50%,
+                        transparent 100%
+                      );
+                      transform: translateX(-100%);
+                      animation: vetori-shimmer 2s ease-in-out infinite;
+                    }
+                    .vetori-embed[data-state='loading']
+                      .vetori-embed__ph::before,
+                    .vetori-embed[data-state='error'] .vetori-embed__ph::before,
+                    .vetori-embed[data-state='loaded']
+                      .vetori-embed__ph::before {
+                      animation: none;
+                      opacity: 0;
+                    }
+                    @keyframes vetori-shimmer {
+                      to {
+                        transform: translateX(100%);
+                      }
+                    }
+                    .vetori-embed__bars {
+                      display: flex;
+                      align-items: flex-end;
+                      gap: 3px;
+                      height: 28px;
+                    }
+                    .vetori-embed[data-state='error'] .vetori-embed__bars {
+                      display: none;
+                    }
+                    .vetori-embed__bar {
+                      width: 4px;
+                      background: var(--vt-primary);
+                      border-radius: 2px;
+                      transform-origin: bottom;
+                      animation: vetori-pulse 1s ease-in-out infinite alternate;
+                    }
+                    .vetori-embed__bar:nth-child(1) {
+                      height: 40%;
+                      animation-delay: 0s;
+                    }
+                    .vetori-embed__bar:nth-child(2) {
+                      height: 70%;
+                      animation-delay: 0.15s;
+                    }
+                    .vetori-embed__bar:nth-child(3) {
+                      height: 55%;
+                      animation-delay: 0.3s;
+                    }
+                    .vetori-embed__bar:nth-child(4) {
+                      height: 85%;
+                      animation-delay: 0.45s;
+                    }
+                    @keyframes vetori-pulse {
+                      0% {
+                        transform: scaleY(0.4);
+                        opacity: 0.4;
+                      }
+                      100% {
+                        transform: scaleY(1);
+                        opacity: 1;
+                      }
+                    }
+                    .vetori-embed__loading-text {
+                      display: none;
+                      color: var(--vt-muted);
+                      font-size: 12px;
+                      margin: 0;
+                    }
+                    .vetori-embed[data-state='loading']
+                      .vetori-embed__loading-text {
+                      display: block;
+                    }
+                    .vetori-embed__error {
+                      display: none;
+                      flex-direction: column;
+                      align-items: center;
+                      gap: 12px;
+                      text-align: center;
+                    }
+                    .vetori-embed[data-state='error'] .vetori-embed__error {
+                      display: flex;
+                    }
+                    .vetori-embed__error svg {
+                      color: var(--vt-muted);
+                      opacity: 0.5;
+                    }
+                    .vetori-embed__error h3 {
+                      color: var(--vt-fg);
+                      font-size: 16px;
+                      font-weight: 600;
+                      margin: 0;
+                    }
+                    .vetori-embed__error p {
+                      color: var(--vt-muted);
+                      font-size: 13px;
+                      margin: 0;
+                    }
+                    .vetori-embed__error a {
+                      display: inline-block;
+                      background: var(--vt-primary);
+                      color: var(--vt-bg);
+                      font-size: 14px;
+                      font-weight: 500;
+                      padding: 8px 20px;
+                      border-radius: 6px;
+                      text-decoration: none;
+                      transition: opacity 0.15s;
+                    }
+                    .vetori-embed__error a:hover {
+                      opacity: 0.9;
+                    }
+                    .vetori-embed__error small {
+                      color: var(--vt-muted);
+                      font-size: 11px;
+                      opacity: 0.7;
+                    }
+                  </style>
+                  <div class="vetori-embed__ph">
+                    <div class="vetori-embed__bars">
+                      <span class="vetori-embed__bar"></span
+                      ><span class="vetori-embed__bar"></span
+                      ><span class="vetori-embed__bar"></span
+                      ><span class="vetori-embed__bar"></span>
+                    </div>
+                    <p class="vetori-embed__loading-text">Loading…</p>
+                    <div class="vetori-embed__error">
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          x="3"
+                          y="18"
+                          width="5"
+                          height="11"
+                          rx="1.5"
+                          fill="currentColor"
+                        />
+                        <rect
+                          x="10.5"
+                          y="12"
+                          width="5"
+                          height="17"
+                          rx="1.5"
+                          fill="currentColor"
+                        />
+                        <rect
+                          x="18"
+                          y="6"
+                          width="5"
+                          height="23"
+                          rx="1.5"
+                          fill="currentColor"
+                        />
+                        <rect
+                          x="25.5"
+                          y="3"
+                          width="5"
+                          height="26"
+                          rx="1.5"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      <h3>Vetori Landing</h3>
+                      <p>This content is temporarily unavailable</p>
+                      <a
+                        href="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/591d3bc7-3069-429d-886c-aa1d08846720/sites/f2e733da-72b2-4e3e-918c-2eafceb47ab6/share"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Tap to explore</a
+                      ><small>Powered by Vetori</small>
+                    </div>
+                  </div>
+                  <iframe
+                    src="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/591d3bc7-3069-429d-886c-aa1d08846720/sites/f2e733da-72b2-4e3e-918c-2eafceb47ab6/embed"
+                    title="Vetori Landing"
+                    allow="fullscreen"
+                  ></iframe>
+                  <script>
+                    ;(function () {
+                      var e = document.currentScript.parentElement,
+                        f = e.querySelector('iframe'),
+                        s = 'idle',
+                        l,
+                        t
+                      function u(v) {
+                        s = v
+                        e.setAttribute('data-state', v)
+                      }
+                      l = setTimeout(function () {
+                        if (s === 'idle') u('loading')
+                      }, 2000)
+                      t = setTimeout(function () {
+                        if (s !== 'loaded') {
+                          u('error')
+                          clearTimeout(l)
+                        }
+                      }, 15000)
+                      f.onload = function () {
+                        clearTimeout(l)
+                        clearTimeout(t)
+                        u('loaded')
+                      }
+                      f.onerror = function () {
+                        clearTimeout(l)
+                        clearTimeout(t)
+                        u('error')
+                      }
+                    })()
+                  </script>
+                </div>
               </div>
             </div>
           </div>
@@ -378,19 +656,27 @@
           <span class="text-muted-foreground">Used for</span>
           <span class="credibility-text font-medium">Annual Reports</span>
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span class="credibility-text font-medium" style="animation-delay: -1s"
+          <span
+            class="credibility-text font-medium"
+            style="animation-delay: -1s"
             >Impact Updates</span
           >
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span class="credibility-text font-medium" style="animation-delay: -2s"
+          <span
+            class="credibility-text font-medium"
+            style="animation-delay: -2s"
             >Client Review Links</span
           >
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span class="credibility-text font-medium" style="animation-delay: -3s"
+          <span
+            class="credibility-text font-medium"
+            style="animation-delay: -3s"
             >Campaign Pages</span
           >
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span class="credibility-text font-medium" style="animation-delay: -4s"
+          <span
+            class="credibility-text font-medium"
+            style="animation-delay: -4s"
             >Stakeholder Briefings</span
           >
         </p>
@@ -413,9 +699,8 @@
           data-animate
           data-delay="100"
         >
-          Vetori is for the moment when a spreadsheet, screenshot, or static
-          PDF is no longer good enough for the report people actually need to
-          open.
+          Vetori is for the moment when a spreadsheet, screenshot, or static PDF
+          is no longer good enough for the report people actually need to open.
         </p>
 
         <div class="grid md:grid-cols-3 gap-6">
@@ -424,12 +709,12 @@
             data-animate
             data-delay="150"
           >
-            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">
+            <p
+              class="text-xs font-semibold uppercase tracking-wide text-primary mb-3"
+            >
               Static Files
             </p>
-            <h3 class="text-xl font-semibold mb-3">
-              PDFs flatten the report
-            </h3>
+            <h3 class="text-xl font-semibold mb-3">PDFs flatten the report</h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
               A PDF can freeze the numbers, but it cannot let reviewers search,
               filter, zoom, or inspect the underlying geography.
@@ -441,7 +726,9 @@
             data-animate
             data-delay="250"
           >
-            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">
+            <p
+              class="text-xs font-semibold uppercase tracking-wide text-primary mb-3"
+            >
               Custom Builds
             </p>
             <h3 class="text-xl font-semibold mb-3">
@@ -458,16 +745,18 @@
             data-animate
             data-delay="350"
           >
-            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">
+            <p
+              class="text-xs font-semibold uppercase tracking-wide text-primary mb-3"
+            >
               Delivery
             </p>
             <h3 class="text-xl font-semibold mb-3">
               Links and files should survive handoff
             </h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Teams need something they can host, share for review, embed on
-              the web, or hand off as a standalone artifact without rebuilding
-              it later.
+              Teams need something they can host, share for review, embed on the
+              web, or hand off as a standalone artifact without rebuilding it
+              later.
             </p>
           </div>
         </div>
@@ -521,7 +810,9 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold">Annual Reports &amp; Impact Updates</h3>
+              <h3 class="text-lg font-semibold">
+                Annual Reports &amp; Impact Updates
+              </h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
               Turn spreadsheet data into an interactive visual for annual
@@ -623,7 +914,9 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold">Campaign &amp; Foundation Pages</h3>
+              <h3 class="text-lg font-semibold">
+                Campaign &amp; Foundation Pages
+              </h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
               Publish branded maps and charts for grantmaking pages, campaign
@@ -664,11 +957,13 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold">Stakeholder Briefings &amp; Handoffs</h3>
+              <h3 class="text-lg font-semibold">
+                Stakeholder Briefings &amp; Handoffs
+              </h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Export a standalone artifact for board packets, client handoff,
-              or controlled distribution when a plain PDF is not enough.
+              Export a standalone artifact for board packets, client handoff, or
+              controlled distribution when a plain PDF is not enough.
             </p>
           </div>
         </div>
@@ -898,9 +1193,9 @@
           data-animate
           data-delay="100"
         >
-          The same visual can live on a website, circulate as a review link,
-          or ship as a standalone file. Filter the data, click a point, and
-          zoom in directly on the report.
+          The same visual can live on a website, circulate as a review link, or
+          ship as a standalone file. Filter the data, click a point, and zoom in
+          directly on the report.
         </p>
 
         <div
@@ -911,13 +1206,282 @@
           <div
             class="rounded-xl border border-border overflow-hidden bg-surface"
           >
-            <iframe
-              src="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/1c31e9e8-32fd-484d-a552-681d10c0d792/sites/a31c2082-1634-49bb-bd56-a92141113926/embed"
-              width="100%"
-              height="600"
-              frameborder="0"
-              loading="lazy"
-            ></iframe>
+            <div
+              class="vetori-embed"
+              data-state="idle"
+              style="
+                --vt-bg: #0c0a09;
+                --vt-fg: #e7e5e4;
+                --vt-primary: #34d399;
+                --vt-muted: #646261;
+              "
+            >
+              <style>
+                .vetori-embed {
+                  position: relative;
+                  width: 100%;
+                  padding-bottom: 56.25%;
+                  background: var(--vt-bg);
+                  border-radius: 8px;
+                  overflow: hidden;
+                  border: 1px solid
+                    color-mix(in srgb, var(--vt-fg) 10%, transparent);
+                  font-family:
+                    system-ui,
+                    -apple-system,
+                    sans-serif;
+                  box-sizing: border-box;
+                }
+                .vetori-embed *,
+                .vetori-embed *::before,
+                .vetori-embed *::after {
+                  box-sizing: border-box;
+                }
+                .vetori-embed iframe {
+                  position: absolute;
+                  inset: 0;
+                  width: 100%;
+                  height: 100%;
+                  border: 0;
+                  opacity: 0;
+                  transition: opacity 0.3s ease;
+                }
+                .vetori-embed[data-state='loaded'] iframe {
+                  opacity: 1;
+                }
+                .vetori-embed__ph {
+                  position: absolute;
+                  inset: 0;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  transition: opacity 0.3s ease;
+                  padding: 24px;
+                  gap: 12px;
+                }
+                .vetori-embed[data-state='loaded'] .vetori-embed__ph {
+                  opacity: 0;
+                  pointer-events: none;
+                }
+                .vetori-embed__ph::before {
+                  content: '';
+                  position: absolute;
+                  inset: 0;
+                  background: linear-gradient(
+                    90deg,
+                    transparent 0%,
+                    color-mix(in srgb, var(--vt-fg) 3%, transparent) 50%,
+                    transparent 100%
+                  );
+                  transform: translateX(-100%);
+                  animation: vetori-shimmer 2s ease-in-out infinite;
+                }
+                .vetori-embed[data-state='loading'] .vetori-embed__ph::before,
+                .vetori-embed[data-state='error'] .vetori-embed__ph::before,
+                .vetori-embed[data-state='loaded'] .vetori-embed__ph::before {
+                  animation: none;
+                  opacity: 0;
+                }
+                @keyframes vetori-shimmer {
+                  to {
+                    transform: translateX(100%);
+                  }
+                }
+                .vetori-embed__bars {
+                  display: flex;
+                  align-items: flex-end;
+                  gap: 3px;
+                  height: 28px;
+                }
+                .vetori-embed[data-state='error'] .vetori-embed__bars {
+                  display: none;
+                }
+                .vetori-embed__bar {
+                  width: 4px;
+                  background: var(--vt-primary);
+                  border-radius: 2px;
+                  transform-origin: bottom;
+                  animation: vetori-pulse 1s ease-in-out infinite alternate;
+                }
+                .vetori-embed__bar:nth-child(1) {
+                  height: 40%;
+                  animation-delay: 0s;
+                }
+                .vetori-embed__bar:nth-child(2) {
+                  height: 70%;
+                  animation-delay: 0.15s;
+                }
+                .vetori-embed__bar:nth-child(3) {
+                  height: 55%;
+                  animation-delay: 0.3s;
+                }
+                .vetori-embed__bar:nth-child(4) {
+                  height: 85%;
+                  animation-delay: 0.45s;
+                }
+                @keyframes vetori-pulse {
+                  0% {
+                    transform: scaleY(0.4);
+                    opacity: 0.4;
+                  }
+                  100% {
+                    transform: scaleY(1);
+                    opacity: 1;
+                  }
+                }
+                .vetori-embed__loading-text {
+                  display: none;
+                  color: var(--vt-muted);
+                  font-size: 12px;
+                  margin: 0;
+                }
+                .vetori-embed[data-state='loading']
+                  .vetori-embed__loading-text {
+                  display: block;
+                }
+                .vetori-embed__error {
+                  display: none;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 12px;
+                  text-align: center;
+                }
+                .vetori-embed[data-state='error'] .vetori-embed__error {
+                  display: flex;
+                }
+                .vetori-embed__error svg {
+                  color: var(--vt-muted);
+                  opacity: 0.5;
+                }
+                .vetori-embed__error h3 {
+                  color: var(--vt-fg);
+                  font-size: 16px;
+                  font-weight: 600;
+                  margin: 0;
+                }
+                .vetori-embed__error p {
+                  color: var(--vt-muted);
+                  font-size: 13px;
+                  margin: 0;
+                }
+                .vetori-embed__error a {
+                  display: inline-block;
+                  background: var(--vt-primary);
+                  color: var(--vt-bg);
+                  font-size: 14px;
+                  font-weight: 500;
+                  padding: 8px 20px;
+                  border-radius: 6px;
+                  text-decoration: none;
+                  transition: opacity 0.15s;
+                }
+                .vetori-embed__error a:hover {
+                  opacity: 0.9;
+                }
+                .vetori-embed__error small {
+                  color: var(--vt-muted);
+                  font-size: 11px;
+                  opacity: 0.7;
+                }
+              </style>
+              <div class="vetori-embed__ph">
+                <div class="vetori-embed__bars">
+                  <span class="vetori-embed__bar"></span
+                  ><span class="vetori-embed__bar"></span
+                  ><span class="vetori-embed__bar"></span
+                  ><span class="vetori-embed__bar"></span>
+                </div>
+                <p class="vetori-embed__loading-text">Loading…</p>
+                <div class="vetori-embed__error">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="3"
+                      y="18"
+                      width="5"
+                      height="11"
+                      rx="1.5"
+                      fill="currentColor"
+                    />
+                    <rect
+                      x="10.5"
+                      y="12"
+                      width="5"
+                      height="17"
+                      rx="1.5"
+                      fill="currentColor"
+                    />
+                    <rect
+                      x="18"
+                      y="6"
+                      width="5"
+                      height="23"
+                      rx="1.5"
+                      fill="currentColor"
+                    />
+                    <rect
+                      x="25.5"
+                      y="3"
+                      width="5"
+                      height="26"
+                      rx="1.5"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <h3>Vetori Subhero</h3>
+                  <p>This content is temporarily unavailable</p>
+                  <a
+                    href="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/1c31e9e8-32fd-484d-a552-681d10c0d792/sites/a31c2082-1634-49bb-bd56-a92141113926/share"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Tap to explore</a
+                  ><small>Powered by Vetori</small>
+                </div>
+              </div>
+              <iframe
+                src="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/1c31e9e8-32fd-484d-a552-681d10c0d792/sites/a31c2082-1634-49bb-bd56-a92141113926/embed"
+                title="Vetori Subhero"
+                allow="fullscreen"
+              ></iframe>
+              <script>
+                ;(function () {
+                  var e = document.currentScript.parentElement,
+                    f = e.querySelector('iframe'),
+                    s = 'idle',
+                    l,
+                    t
+                  function u(v) {
+                    s = v
+                    e.setAttribute('data-state', v)
+                  }
+                  l = setTimeout(function () {
+                    if (s === 'idle') u('loading')
+                  }, 2000)
+                  t = setTimeout(function () {
+                    if (s !== 'loaded') {
+                      u('error')
+                      clearTimeout(l)
+                    }
+                  }, 15000)
+                  f.onload = function () {
+                    clearTimeout(l)
+                    clearTimeout(t)
+                    u('loaded')
+                  }
+                  f.onerror = function () {
+                    clearTimeout(l)
+                    clearTimeout(t)
+                    u('error')
+                  }
+                })()
+              </script>
+            </div>
           </div>
         </div>
 
@@ -1182,8 +1746,8 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              Vetori is best for agencies, consultancies, and teams that
-              publish recurring data reports for clients or stakeholders.
+              Vetori is best for agencies, consultancies, and teams that publish
+              recurring data reports for clients or stakeholders.
             </div>
           </details>
 
@@ -1263,8 +1827,8 @@
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
               Yes. Customize colors and presentation to match the client site,
-              destination site, campaign, or reporting context. Paid plans remove Vetori
-              branding completely.
+              destination site, campaign, or reporting context. Paid plans
+              remove Vetori branding completely.
             </div>
           </details>
 
@@ -1365,12 +1929,14 @@
           data-animate
           data-delay="100"
         >
-          Start with one chart or map you can share as a link, embed on the
-          web, or hand off as a self-contained artifact.
+          Start with one chart or map you can share as a link, embed on the web,
+          or hand off as a self-contained artifact.
         </p>
 
         <div data-animate data-delay="200">
-          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4"
+          >
             <a
               href="mailto:info@vetori.ai?subject=Vetori%20Demo%20Request"
               class="cta-button inline-flex items-center justify-center rounded-lg text-lg font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg shadow-primary/20"
@@ -1385,17 +1951,21 @@
             </a>
           </div>
           <p class="text-sm text-muted-foreground" data-waitlist-cta>
-            <span data-closed-text class="hidden">Vetori is in closed beta.</span>
+            <span data-closed-text class="hidden"
+              >Vetori is in closed beta.</span
+            >
             <span data-open-text>Want to test the CSV-to-link flow?</span>
             <a
               href="javascript:void(0)"
-              data-closed-text class="hidden text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              data-closed-text
+              class="hidden text-foreground underline underline-offset-4 hover:text-primary transition-colors"
               onclick="handleWaitlist()"
               >Join the waitlist</a
             >
             <a
               href="javascript:void(0)"
-              data-open-text class="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
+              data-open-text
+              class="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
               onclick="handleSignUp()"
               >Create a free account</a
             >
