@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vetori — Secure Private Reports and Interactive Dashboards</title>
+    <title>Vetori — Secure Private Reporting for Internal and Client Dashboards</title>
     <meta
       name="description"
-      content="Turn spreadsheet data into interactive charts and dashboards you can deliver as secure private links, embeds, or portable HTML artifacts. Built for recurring internal and client reporting."
+      content="Deliver interactive reports securely to internal and external recipients. Vetori is built for private reporting first, with public embeds and portable exports as secondary distribution paths."
     />
     <link rel="canonical" href="https://vetori.ai/" />
     <meta name="theme-color" content="#0a1628" />
@@ -20,11 +20,11 @@
     <meta property="og:url" content="https://vetori.ai/" />
     <meta
       property="og:title"
-      content="Vetori — Secure Private Reports and Interactive Dashboards"
+      content="Vetori — Secure Private Reporting for Internal and Client Dashboards"
     />
     <meta
       property="og:description"
-      content="Deliver interactive reports from CSV data through secure private links, embeds, or portable exports."
+      content="Private reporting first. Public embeds and exports when needed."
     />
     <meta property="og:image" content="https://vetori.ai/og-image.png" />
 
@@ -32,11 +32,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Vetori — Secure Private Reports and Interactive Dashboards"
+      content="Vetori — Secure Private Reporting for Internal and Client Dashboards"
     />
     <meta
       name="twitter:description"
-      content="Deliver interactive reports from CSV data through secure private links, embeds, or portable exports."
+      content="Private reporting first. Public embeds and exports when needed."
     />
     <meta name="twitter:image" content="https://vetori.ai/og-image.png" />
 
@@ -48,37 +48,6 @@
       rel="stylesheet"
     />
 
-    <!-- Shared Vetori embed styles (deduplicated for hero + examples embeds) -->
-    <style id="vetori-embed-styles">
-      .vetori-embed{position:relative;width:100%;height:600px;background:var(--vt-bg);border-radius:8px;overflow:hidden;border:1px solid var(--vt-border,rgba(0,0,0,0.1));border:1px solid color-mix(in srgb,var(--vt-fg) 10%,transparent);font-family:system-ui,-apple-system,sans-serif;box-sizing:border-box;line-height:1.5;letter-spacing:normal;word-spacing:normal;text-transform:none;text-align:left;color:var(--vt-fg)}
-      .vetori-embed *,.vetori-embed *::before,.vetori-embed *::after{box-sizing:border-box;border-color:transparent}
-      .vetori-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .3s ease}
-      .vetori-embed[data-state="loaded"] iframe{opacity:1}
-      .vetori-embed__ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .3s ease;padding:24px;gap:12px}
-      .vetori-embed[data-state="loaded"] .vetori-embed__ph{opacity:0;pointer-events:none}
-      .vetori-embed__ph::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,var(--vt-shimmer,rgba(0,0,0,0.03)) 50%,transparent 100%);background:linear-gradient(90deg,transparent 0%,color-mix(in srgb,var(--vt-fg) 3%,transparent) 50%,transparent 100%);transform:translateX(-100%);animation:vetori-shimmer 2s ease-in-out infinite}
-      .vetori-embed[data-state="loading"] .vetori-embed__ph::before,.vetori-embed[data-state="error"] .vetori-embed__ph::before,.vetori-embed[data-state="loaded"] .vetori-embed__ph::before{animation:none;opacity:0}
-      @keyframes vetori-shimmer{to{transform:translateX(100%)}}
-      .vetori-embed__bars{display:flex;align-items:flex-end;gap:3px;height:28px}
-      .vetori-embed[data-state="error"] .vetori-embed__bars{display:none}
-      .vetori-embed__bar{width:4px;background:var(--vt-primary);border-radius:2px;transform-origin:bottom;animation:vetori-pulse 1s ease-in-out infinite alternate}
-      .vetori-embed__bar:nth-child(1){height:40%;animation-delay:0s}
-      .vetori-embed__bar:nth-child(2){height:70%;animation-delay:.15s}
-      .vetori-embed__bar:nth-child(3){height:55%;animation-delay:.3s}
-      .vetori-embed__bar:nth-child(4){height:85%;animation-delay:.45s}
-      @keyframes vetori-pulse{0%{transform:scaleY(.4);opacity:.4}100%{transform:scaleY(1);opacity:1}}
-      .vetori-embed__loading-text{display:none;color:var(--vt-muted);font-size:12px;margin:0;line-height:1.5}
-      .vetori-embed[data-state="loading"] .vetori-embed__loading-text{display:block}
-      .vetori-embed__error{display:none;flex-direction:column;align-items:center;gap:12px;text-align:center}
-      .vetori-embed[data-state="error"] .vetori-embed__error{display:flex}
-      .vetori-embed__error svg{color:var(--vt-muted);opacity:.5}
-      .vetori-embed__error h3{color:var(--vt-fg);font-size:16px;font-weight:600;margin:0;line-height:1.3}
-      .vetori-embed__error p{color:var(--vt-muted);font-size:13px;margin:0;line-height:1.5}
-      .vetori-embed__error a{display:inline-block;background:var(--vt-primary);color:var(--vt-bg);font-size:14px;font-weight:500;padding:8px 20px;border-radius:6px;text-decoration:none;transition:opacity .15s;line-height:1.4;border:0}
-      .vetori-embed__error a:hover{opacity:.9}
-      .vetori-embed__error small{color:var(--vt-muted);font-size:11px;opacity:.7;line-height:1.4}
-    </style>
-
     <!-- JSON-LD: WebApplication -->
     <script type="application/ld+json">
       {
@@ -86,7 +55,7 @@
         "@type": "WebApplication",
         "name": "Vetori",
         "url": "https://vetori.ai",
-        "description": "Create interactive charts and dashboards from CSV data, then deliver them through secure private links, embeds, or portable HTML artifacts.",
+        "description": "Create interactive charts and dashboards from CSV data, then deliver them through secure private report links. Public embeds and portable HTML artifacts are secondary distribution options.",
         "applicationCategory": "DataVisualization",
         "operatingSystem": "Web",
         "offers": {
@@ -127,7 +96,7 @@
             "name": "Can we share reports privately or publicly?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Vetori supports private recipient access, live links, embeds for websites and CMSes, and a self-hosted HTML export for controlled handoff."
+              "text": "Yes. Vetori is designed for secure recipient delivery first, with public embeds and self-hosted HTML exports available when broader distribution is useful."
             }
           },
           {
@@ -144,6 +113,14 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "No. Vetori is designed so recipients can access shared reports through a dedicated viewer flow instead of needing full authoring access."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Vetori mainly an embed tool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Vetori's core workflow is secure private reporting for internal and external recipients. Public embeds are a secondary distribution channel for websites, campaigns, and marketing pages."
             }
           },
           {
@@ -226,6 +203,11 @@
             >Examples</a
           >
           <a
+            href="/embed"
+            class="nav-link hover:text-foreground transition-colors"
+            >Embeds</a
+          >
+          <a
             href="javascript:void(0)"
             onclick="handleSignIn()"
             class="nav-link hover:text-foreground transition-colors"
@@ -305,10 +287,10 @@
           data-animate
           data-delay="300"
         >
-          Turn spreadsheet data into a polished report you can share privately
-          with recipients, embed where needed, or export as a portable
-          artifact. Built for internal reviews, client reporting, and
-          sensitive stakeholder updates.
+          Turn spreadsheet data into a polished report you can deliver
+          privately to recipients. Public embeds and portable exports are
+          available when you want wider distribution, but the core workflow is
+          internal, client, and sensitive stakeholder reporting.
         </p>
 
         <!-- CTA -->
@@ -333,7 +315,7 @@
             <span data-closed-text class="hidden"
               >Vetori is in closed beta.</span
             >
-            <span data-open-text>Want to test private report delivery?</span>
+            <span data-open-text>Want to test secure private reporting?</span>
             <a
               href="javascript:void(0)"
               data-closed-text
@@ -545,7 +527,7 @@
           <span
             class="credibility-text font-medium"
             style="animation-delay: -4s"
-            >Secure Embeds</span
+            >Public Highlights</span
           >
         </p>
       </div>
@@ -627,9 +609,9 @@
               Sharing breaks when delivery and auth are separate
             </h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Teams need one flow for private links, recipient access, embeds,
-              and controlled exports instead of stitching together portals,
-              attachments, and ad hoc permissions.
+              Teams need one workflow centered on secure private delivery, with
+              public publishing available only when it supports distribution,
+              marketing, or broader visibility.
             </p>
           </div>
         </div>
@@ -832,13 +814,13 @@
                 </svg>
               </div>
               <h3 class="text-lg font-semibold">
-                Public Publishing When Needed
+                Public Embeds as a Secondary Channel
               </h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
               The same publication pipeline can still power embeds, campaign
-              pages, and public-facing releases when the report should ship
-              outside the firewall.
+              pages, and public-facing releases, but those are a distribution
+              flywheel around the core secure-reporting workflow.
             </p>
           </div>
         </div>
@@ -854,7 +836,7 @@
           class="font-display text-4xl md:text-5xl font-bold mb-20 text-center text-balance tracking-tight"
           data-animate
         >
-          From source data to governed report delivery.
+          From source data to secure report delivery.
         </h2>
 
         <div class="grid md:grid-cols-3 gap-12">
@@ -1008,13 +990,14 @@
                 >03</span
               >
               <h3 class="text-xl font-semibold">
-                Deliver privately, embed publicly, or export
+                Deliver privately first, then publish more broadly if needed
               </h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Invite recipients by email, send a secure link, embed when
-              needed, or export a standalone HTML artifact for controlled
-              handoff and long-term portability.
+              Invite recipients by email, send a secure link, and keep the main
+              workflow private. Public embeds and standalone exports are there
+              when you want a website surface, a campaign page, or a controlled
+              handoff.
             </p>
             <div class="rounded-lg border border-border bg-background/40 p-4">
               <div
@@ -1063,7 +1046,7 @@
           class="font-display text-4xl md:text-5xl font-bold mb-4 text-center tracking-tight"
           data-animate
         >
-          One report, several delivery paths.
+          A public sample from a private-reporting product.
         </h2>
 
         <p
@@ -1071,9 +1054,9 @@
           data-animate
           data-delay="100"
         >
-          This public sample shows the same artifact format you can use for
-          internal review, recipient sharing, or a website embed. Filter the
-          data, click a point, and zoom in directly on the report.
+          This sample is public because it is the easiest way to demo the
+          player. Vetori's main use case is secure private reporting; embeds
+          and public pages are the secondary distribution layer around it.
         </p>
 
         <div
@@ -1203,8 +1186,8 @@
           data-animate
           data-delay="400"
         >
-          Built from spreadsheet data. Deliver privately, embed publicly, or
-          export offline.
+          Built from spreadsheet data. Secure reporting first. Public embeds
+          when they help distribution.
         </p>
       </div>
     </section>
@@ -1218,7 +1201,7 @@
           class="font-display text-4xl md:text-5xl font-bold mb-20 text-center text-balance tracking-tight"
           data-animate
         >
-          Why teams use Vetori for report delivery
+          Why teams use Vetori for secure report delivery
         </h2>
 
         <div class="space-y-24">
@@ -1316,12 +1299,13 @@
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
             <div>
               <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Portable when policy requires handoff
+                Public distribution without changing the core workflow
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Use secure links by default, then export a standalone HTML
-                artifact when a recipient needs offline delivery, controlled
-                archival, or a no-backend handoff.
+                When you do want broader reach, the same publication pipeline
+                can power a website embed, campaign page, or public highlight
+                without forcing the product positioning to revolve around
+                embeds.
               </p>
             </div>
             <div
@@ -1419,12 +1403,12 @@
             </div>
             <div>
               <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Start with static reports. Add narration next.
+                Portable when policy requires handoff
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Launch the chart or dashboard you need now. Guided narration is
-                next for executive walkthroughs, recurring report narratives,
-                and richer stakeholder briefings.
+                Use secure links by default, then export a standalone HTML
+                artifact when a recipient needs offline delivery, controlled
+                archival, or a no-backend handoff.
               </p>
             </div>
           </div>
@@ -1501,9 +1485,31 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              Yes. Vetori is built for secure recipient delivery first, while
-              still supporting web embeds and a self-hosted HTML export for
-              controlled handoff.
+              Yes. Vetori is built for secure recipient delivery first. Public
+              embeds and self-hosted HTML exports are available when you want a
+              website, campaign page, or controlled handoff.
+            </div>
+          </details>
+
+          <details
+            class="faq-item group rounded-xl border border-border bg-surface-raised"
+          >
+            <summary
+              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
+            >
+              Is Vetori mainly an embed tool?
+              <span
+                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
+                >&#9662;</span
+              >
+            </summary>
+            <div
+              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
+            >
+              No. Vetori's core workflow is secure private reporting for
+              internal and external recipients. Public embeds are a secondary
+              distribution channel and marketing flywheel, not the center of
+              the product.
             </div>
           </details>
 
@@ -1627,8 +1633,9 @@
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
               Today the focus is charts and dashboards you can deliver as
-              private or public report artifacts. Guided stories and narrative
-              playback are the next step on the roadmap.
+              private report artifacts first, with public publishing available
+              when needed. Guided stories and narrative playback are the next
+              step on the roadmap.
             </div>
           </details>
         </div>
@@ -1658,7 +1665,7 @@
           class="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight"
           data-animate
         >
-          Send the next report as a secure link, not an attachment.
+          Make private reporting the default, not an afterthought.
         </h2>
 
         <p
@@ -1666,9 +1673,9 @@
           data-animate
           data-delay="100"
         >
-          Start with one chart or dashboard and deliver it privately to
-          recipients, embed it where needed, or hand it off as a portable
-          artifact.
+          Start with one chart or dashboard, deliver it securely to recipients,
+          and use public embeds only when they help distribution, marketing, or
+          awareness.
         </p>
 
         <div data-animate data-delay="200">
@@ -1692,7 +1699,7 @@
             <span data-closed-text class="hidden"
               >Vetori is in closed beta.</span
             >
-            <span data-open-text>Want to test private report delivery?</span>
+            <span data-open-text>Want to test secure private reporting?</span>
             <a
               href="javascript:void(0)"
               data-closed-text
@@ -1739,7 +1746,7 @@
               >
             </div>
             <p class="text-sm text-muted-foreground leading-relaxed">
-              Private reports and interactive dashboards<br />from CSV.
+              Secure private reporting first.<br />Public embeds when useful.
             </p>
           </div>
 
@@ -1770,6 +1777,13 @@
                   href="#examples"
                   class="text-muted-foreground hover:text-foreground transition-colors"
                   >Examples</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/embed"
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                  >Public Embeds</a
                 >
               </li>
               <li>
@@ -1842,7 +1856,7 @@
           <div
             class="font-mono text-[10px] text-muted-foreground/40 tracking-wider"
           >
-            PRIVATE LINKS &middot; EMBEDS &middot; OFFLINE EXPORTS
+            PRIVATE REPORTS &middot; PUBLIC EMBEDS &middot; OFFLINE EXPORTS
           </div>
         </div>
       </div>

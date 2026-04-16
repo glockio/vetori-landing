@@ -1,0 +1,1143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vetori Embeds — Public Charts for Websites, Campaigns, and Updates</title>
+    <meta
+      name="description"
+      content="Create responsive public chart embeds from CSV data. Vetori Embeds is the self-serve publishing layer for websites, campaigns, and public updates, while secure private reporting stays at the core of the brand."
+    />
+    <link rel="canonical" href="https://vetori.ai/embed" />
+    <meta name="theme-color" content="#0a1628" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vetori.ai/embed" />
+    <meta
+      property="og:title"
+      content="Vetori Embeds — Public Charts for Websites, Campaigns, and Updates"
+    />
+    <meta
+      property="og:description"
+      content="Use Vetori's public publishing layer to launch embeds fast, then move up to secure private reporting when the audience or sensitivity changes."
+    />
+    <meta property="og:image" content="https://vetori.ai/og-image.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Vetori Embeds — Public Charts for Websites, Campaigns, and Updates"
+    />
+    <meta
+      name="twitter:description"
+      content="Self-serve public embeds for websites and launches. Secure private reporting lives on the main Vetori product."
+    />
+    <meta name="twitter:image" content="https://vetori.ai/og-image.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Sora:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Vetori Embeds",
+        "url": "https://vetori.ai/embed",
+        "description": "Self-serve public embeds for websites, campaign pages, and public updates built on Vetori's publishing pipeline."
+      }
+    </script>
+
+    <!-- Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="0554193d-08d6-43b3-a71d-5d80643f21d0"></script>
+  </head>
+  <body>
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <nav
+      class="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <a href="/" class="flex items-center gap-2.5">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            class="shrink-0"
+          >
+            <path
+              d="M4 4L12 20L20 4"
+              stroke="url(#logoGradEmbed)"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <defs>
+              <linearGradient
+                id="logoGradEmbed"
+                x1="4"
+                y1="4"
+                x2="20"
+                y2="20"
+              >
+                <stop stop-color="oklch(0.646 0.222 160)" />
+                <stop offset="1" stop-color="oklch(0.706 0.196 262)" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="font-display text-lg font-bold tracking-tight"
+            >Vetori</span
+          >
+        </a>
+
+        <div
+          class="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground"
+        >
+          <a
+            href="#use-cases"
+            class="nav-link hover:text-foreground transition-colors"
+            >Use Cases</a
+          >
+          <a
+            href="#compare"
+            class="nav-link hover:text-foreground transition-colors"
+            >Public vs Private</a
+          >
+          <a
+            href="#examples"
+            class="nav-link hover:text-foreground transition-colors"
+            >Live Sample</a
+          >
+          <a
+            href="/"
+            class="nav-link hover:text-foreground transition-colors"
+            >Secure Reports</a
+          >
+        </div>
+
+        <div class="flex items-center gap-3">
+          <a
+            href="javascript:void(0)"
+            onclick="handleSignIn()"
+            class="hidden sm:inline-flex text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            >Sign In</a
+          >
+          <div data-open-text>
+            <a
+              href="javascript:void(0)"
+              onclick="handleSignUp()"
+              class="inline-flex items-center justify-center rounded-lg text-sm font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-9 px-5"
+              >Start Free</a
+            >
+          </div>
+          <div data-closed-text class="hidden">
+            <a
+              href="javascript:void(0)"
+              onclick="handleWaitlist()"
+              class="inline-flex items-center justify-center rounded-lg text-sm font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-9 px-5"
+              >Join Waitlist</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section class="relative pt-24 pb-24 overflow-hidden topo-grid">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[920px] h-[640px] -z-10 rounded-full opacity-30"
+        style="
+          background: radial-gradient(
+            ellipse at center,
+            oklch(0.646 0.222 160 / 26%),
+            transparent 72%
+          );
+        "
+      ></div>
+      <div
+        class="absolute right-0 top-24 w-[420px] h-[420px] -z-10 rounded-full opacity-20"
+        style="
+          background: radial-gradient(
+            ellipse at center,
+            oklch(0.706 0.196 262 / 24%),
+            transparent 70%
+          );
+        "
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1.05fr_0.95fr] gap-14 items-center"
+      >
+        <div>
+          <div data-animate>
+            <span
+              class="audience-badge inline-block text-xs font-medium tracking-wide text-muted-foreground border border-border rounded-full px-4 py-1.5 mb-8"
+              >Public embeds for websites, campaigns, and public updates</span
+            >
+          </div>
+
+          <h1
+            class="font-display text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-6"
+            data-animate
+            data-delay="100"
+          >
+            Publish a chart<br />
+            <span class="text-gradient">anyone can view.</span>
+          </h1>
+
+          <p
+            class="font-display text-2xl md:text-3xl font-medium text-muted-foreground mb-6 tracking-tight"
+            data-animate
+            data-delay="180"
+          >
+            The self-serve public layer of Vetori.
+          </p>
+
+          <p
+            class="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed text-balance mb-10"
+            data-animate
+            data-delay="260"
+          >
+            Create responsive chart embeds and public share pages from CSV data,
+            then drop them into a website, launch page, newsroom post, or donor
+            update. When the audience becomes internal, client-only, or
+            sensitive, Vetori's core secure-reporting workflow takes over.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row items-start sm:items-center gap-3"
+            data-animate
+            data-delay="340"
+          >
+            <div data-open-text>
+              <a
+                href="javascript:void(0)"
+                onclick="handleSignUp()"
+                class="cta-button inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg shadow-primary/20"
+                >Start Free</a
+              >
+            </div>
+            <div data-closed-text class="hidden">
+              <a
+                href="javascript:void(0)"
+                onclick="handleWaitlist()"
+                class="cta-button inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg shadow-primary/20"
+                >Join the Waitlist</a
+              >
+            </div>
+            <a
+              href="/"
+              class="inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors border border-border bg-surface-raised text-foreground hover:bg-surface h-14 px-10"
+              >Explore Secure Reports</a
+            >
+          </div>
+
+          <div
+            class="grid sm:grid-cols-3 gap-3 mt-8"
+            data-animate
+            data-delay="420"
+          >
+            <div class="rounded-xl border border-border bg-surface/70 p-4">
+              <div class="font-mono text-[11px] text-primary mb-2">
+                WEBSITE
+              </div>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                Drop a responsive iframe into a product page, launch site, or
+                newsroom article.
+              </p>
+            </div>
+            <div class="rounded-xl border border-border bg-surface/70 p-4">
+              <div class="font-mono text-[11px] text-primary mb-2">
+                CAMPAIGN
+              </div>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                Turn spreadsheet-backed metrics into a polished public update
+                without shipping custom frontend work.
+              </p>
+            </div>
+            <div class="rounded-xl border border-border bg-surface/70 p-4">
+              <div class="font-mono text-[11px] text-primary mb-2">
+                HANDOFF
+              </div>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                Use the same publication pipeline for an embed, a share page, or
+                a portable HTML artifact.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative" data-animate data-delay="520">
+          <div
+            class="absolute -inset-6 rounded-[2rem] opacity-40 blur-3xl"
+            style="
+              background:
+                radial-gradient(circle at 30% 20%, oklch(0.646 0.222 160 / 28%), transparent 45%),
+                radial-gradient(circle at 70% 80%, oklch(0.706 0.196 262 / 22%), transparent 42%);
+            "
+          ></div>
+
+          <div class="relative rounded-[1.5rem] border border-border bg-surface p-4 shadow-2xl shadow-black/25">
+            <div
+              class="rounded-2xl border border-border bg-background/70 px-4 py-3 mb-4"
+            >
+              <div class="flex items-center justify-between gap-4 mb-3">
+                <div class="text-sm font-semibold text-foreground">
+                  Publish to the public web
+                </div>
+                <div
+                  class="font-mono text-[11px] text-primary rounded-full border border-primary/20 px-2.5 py-1 bg-primary/10"
+                >
+                  self-serve
+                </div>
+              </div>
+              <div class="space-y-2.5 font-mono text-[11px] text-muted-foreground">
+                <div
+                  class="rounded-lg border border-border bg-surface-raised px-3 py-2"
+                >
+                  mode = <span class="text-foreground">public</span>
+                </div>
+                <div
+                  class="rounded-lg border border-border bg-surface-raised px-3 py-2"
+                >
+                  output = <span class="text-foreground">iframe + share page</span>
+                </div>
+                <div
+                  class="rounded-lg border border-border bg-surface-raised px-3 py-2"
+                >
+                  fallback = <span class="text-foreground">portable html</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-2xl overflow-hidden border border-border">
+              <div
+                class="h-10 border-b border-border flex items-center px-4 bg-surface-raised gap-2"
+              >
+                <div class="flex gap-1.5">
+                  <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
+                  <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
+                  <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
+                </div>
+                <div class="flex-1 flex justify-center">
+                  <div
+                    class="font-mono text-[11px] text-muted-foreground bg-background/50 rounded px-3 py-1"
+                  >
+                    embed.vetori.ai
+                  </div>
+                </div>
+              </div>
+
+              <div class="grid border-b border-border bg-background/40">
+                <div class="px-4 py-3 border-b border-border">
+                  <div class="font-mono text-[10px] text-primary/70 mb-2">
+                    EMBED SNIPPET
+                  </div>
+                  <pre
+                    class="font-mono text-[11px] md:text-[12px] text-muted-foreground whitespace-pre-wrap break-words leading-relaxed"
+                  >&lt;iframe
+  src="https://vetori.ai/p/sample-annual-impact/embed"
+  title="Annual impact report"
+  width="100%"
+  height="600"
+  loading="lazy"
+/&gt;</pre>
+                </div>
+
+                <div
+                  id="vetori-embed-hero"
+                  class="vetori-embed"
+                  data-state="idle"
+                  style="
+                    --vt-height: 480px;
+                    --vt-bg: #0c0a09;
+                    --vt-fg: #e7e5e4;
+                    --vt-primary: #34d399;
+                    --vt-muted: #646261;
+                    --vt-border: rgba(231, 229, 228, 0.1);
+                    --vt-shimmer: rgba(231, 229, 228, 0.03);
+                  "
+                >
+                  <div class="vetori-embed__ph">
+                    <div class="vetori-embed__bars">
+                      <span class="vetori-embed__bar"></span
+                      ><span class="vetori-embed__bar"></span
+                      ><span class="vetori-embed__bar"></span
+                      ><span class="vetori-embed__bar"></span>
+                    </div>
+                    <p class="vetori-embed__loading-text">Loading…</p>
+                    <div class="vetori-embed__error">
+                      <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 32 32"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <rect
+                          x="3"
+                          y="18"
+                          width="5"
+                          height="11"
+                          rx="1.5"
+                          fill="currentColor"
+                        />
+                        <rect
+                          x="10.5"
+                          y="12"
+                          width="5"
+                          height="17"
+                          rx="1.5"
+                          fill="currentColor"
+                        />
+                        <rect
+                          x="18"
+                          y="6"
+                          width="5"
+                          height="23"
+                          rx="1.5"
+                          fill="currentColor"
+                        />
+                        <rect
+                          x="25.5"
+                          y="3"
+                          width="5"
+                          height="26"
+                          rx="1.5"
+                          fill="currentColor"
+                        />
+                      </svg>
+                      <h3>Vetori Sample Embed</h3>
+                      <p>This content is temporarily unavailable</p>
+                      <a
+                        href="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/1c31e9e8-32fd-484d-a552-681d10c0d792/sites/a31c2082-1634-49bb-bd56-a92141113926/share"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Open share page</a
+                      ><small>Powered by Vetori</small>
+                    </div>
+                  </div>
+                  <iframe
+                    src="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/1c31e9e8-32fd-484d-a552-681d10c0d792/sites/a31c2082-1634-49bb-bd56-a92141113926/embed"
+                    title="Vetori sample embed"
+                    allow="fullscreen"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="use-cases"
+      class="py-24 border-t border-border relative overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-2xl mb-14" data-animate>
+          <div class="font-mono text-xs text-primary tracking-[0.22em] mb-4">
+            WHERE EMBEDS FIT
+          </div>
+          <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            A better public publishing path than screenshots or custom one-offs.
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            The embed workflow makes the most sense when distribution matters
+            more than access control. These are the teams most likely to use it
+            first.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="use-case-card rounded-2xl border border-border bg-surface-raised p-7"
+            data-animate
+          >
+            <div class="font-mono text-xs text-primary mb-4">
+              MARKETING TEAMS
+            </div>
+            <h3 class="font-display text-2xl font-semibold mb-3 tracking-tight">
+              Launch pages that need a live chart, not a static image.
+            </h3>
+            <p class="text-muted-foreground leading-relaxed mb-6">
+              Publish product metrics, benchmark snapshots, impact counters, or
+              campaign results inside the page the audience is already reading.
+            </p>
+            <div class="text-sm text-muted-foreground">
+              Best fit when speed beats bespoke frontend work.
+            </div>
+          </div>
+
+          <div
+            class="use-case-card rounded-2xl border border-border bg-surface-raised p-7"
+            data-animate
+            data-delay="120"
+          >
+            <div class="font-mono text-xs text-primary mb-4">
+              AGENCIES AND STUDIOS
+            </div>
+            <h3 class="font-display text-2xl font-semibold mb-3 tracking-tight">
+              Ship client-facing visuals without building chart components from
+              scratch.
+            </h3>
+            <p class="text-muted-foreground leading-relaxed mb-6">
+              Use Vetori for recurring embeds across campaigns, content hubs,
+              proposals, and public microsites where handoff and iteration both
+              matter.
+            </p>
+            <div class="text-sm text-muted-foreground">
+              Strong fit for teams willing to pay to reduce production overhead.
+            </div>
+          </div>
+
+          <div
+            class="use-case-card rounded-2xl border border-border bg-surface-raised p-7"
+            data-animate
+            data-delay="240"
+          >
+            <div class="font-mono text-xs text-primary mb-4">
+              NONPROFITS AND PROGRAM TEAMS
+            </div>
+            <h3 class="font-display text-2xl font-semibold mb-3 tracking-tight">
+              Turn spreadsheet-backed updates into donor and public-facing
+              reporting.
+            </h3>
+            <p class="text-muted-foreground leading-relaxed mb-6">
+              Share progress publicly through campaign pages, annual updates, or
+              resource portals while keeping the authoring workflow lightweight.
+            </p>
+            <div class="text-sm text-muted-foreground">
+              Useful when the public web is the destination, not the byproduct.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="compare"
+      class="py-24 border-t border-border bg-surface/30 relative overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-14" data-animate>
+          <div class="font-mono text-xs text-primary tracking-[0.22em] mb-4">
+            PUBLIC VS PRIVATE
+          </div>
+          <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            Two distribution modes, one product family.
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            Vetori Embeds is the lightweight public motion. The main Vetori
+            product stays focused on secure private delivery for internal,
+            executive, and client reports.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6">
+          <div
+            class="rounded-2xl border border-primary/25 bg-surface-raised p-8"
+            data-animate
+          >
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <div>
+                <div class="font-mono text-xs text-primary mb-2">
+                  VETORI EMBEDS
+                </div>
+                <h3 class="font-display text-3xl font-semibold tracking-tight">
+                  Public by default
+                </h3>
+              </div>
+              <div
+                class="font-mono text-[11px] text-primary rounded-full border border-primary/20 px-3 py-1.5 bg-primary/10"
+              >
+                self-serve
+              </div>
+            </div>
+            <div class="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Best for websites, campaigns, news posts, public updates, and
+                content marketing.
+              </p>
+              <p>
+                Use when viewers do not need authentication and the main goal is
+                reach, clarity, and faster publishing.
+              </p>
+              <p>
+                Outputs include an embed snippet, a public share page, and a
+                portable artifact for lightweight handoff.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="rounded-2xl border border-border bg-background/70 p-8"
+            data-animate
+            data-delay="120"
+          >
+            <div class="flex items-center justify-between gap-4 mb-6">
+              <div>
+                <div class="font-mono text-xs text-primary mb-2">
+                  SECURE REPORTS
+                </div>
+                <h3 class="font-display text-3xl font-semibold tracking-tight">
+                  Private by design
+                </h3>
+              </div>
+              <div
+                class="font-mono text-[11px] text-muted-foreground rounded-full border border-border px-3 py-1.5 bg-surface-raised"
+              >
+                core product
+              </div>
+            </div>
+            <div class="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Best for internal reporting, executive updates, client
+                dashboards, board materials, and sensitive external delivery.
+              </p>
+              <p>
+                Use when access control, recipient experience, and recurring
+                stakeholder distribution matter more than open-web reach.
+              </p>
+              <p>
+                This is the primary Vetori brand and the natural upgrade path
+                once a report should not live on the public internet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 border-t border-border relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-14 items-start">
+          <div data-animate>
+            <div class="font-mono text-xs text-primary tracking-[0.22em] mb-4">
+              WHAT YOU GET
+            </div>
+            <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">
+              Lightweight distribution, not a throwaway export.
+            </h2>
+            <p class="text-lg text-muted-foreground leading-relaxed">
+              The public workflow still benefits from the same publication
+              system: theming, layout polish, portable output, and a predictable
+              path from data to final asset.
+            </p>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div
+              class="feature-visual rounded-2xl border border-border bg-surface-raised p-6"
+              data-animate
+            >
+              <div class="font-mono text-xs text-primary mb-3">
+                RESPONSIVE EMBEDS
+              </div>
+              <h3 class="font-display text-2xl font-semibold tracking-tight mb-3">
+                Iframe output that is easy to ship.
+              </h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Keep implementation light for the team responsible for the
+                website or content system.
+              </p>
+            </div>
+
+            <div
+              class="feature-visual rounded-2xl border border-border bg-surface-raised p-6"
+              data-animate
+              data-delay="100"
+            >
+              <div class="font-mono text-xs text-primary mb-3">
+                SHARE PAGE FALLBACK
+              </div>
+              <h3 class="font-display text-2xl font-semibold tracking-tight mb-3">
+                A link still works when embed placement is not ready.
+              </h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Publish a public page first, then add the iframe later without
+                rebuilding the asset.
+              </p>
+            </div>
+
+            <div
+              class="feature-visual rounded-2xl border border-border bg-surface-raised p-6"
+              data-animate
+              data-delay="180"
+            >
+              <div class="font-mono text-xs text-primary mb-3">
+                PORTABLE HTML
+              </div>
+              <h3 class="font-display text-2xl font-semibold tracking-tight mb-3">
+                Hand off a standalone artifact when hosting needs vary.
+              </h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Useful for agencies, campaign teams, and organizations with
+                fragmented publishing stacks.
+              </p>
+            </div>
+
+            <div
+              class="feature-visual rounded-2xl border border-border bg-surface-raised p-6"
+              data-animate
+              data-delay="260"
+            >
+              <div class="font-mono text-xs text-primary mb-3">
+                SAME AUTHORING FLOW
+              </div>
+              <h3 class="font-display text-2xl font-semibold tracking-tight mb-3">
+                Start from a CSV and ship something polished quickly.
+              </h3>
+              <p class="text-muted-foreground leading-relaxed">
+                The friction stays low for teams that want the result without
+                buying into a heavyweight BI workflow.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="how-it-works"
+      class="py-24 border-t border-border bg-surface/20 relative overflow-hidden"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-14" data-animate>
+          <div class="font-mono text-xs text-primary tracking-[0.22em] mb-4">
+            HOW IT WORKS
+          </div>
+          <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4">
+            From spreadsheet to public embed in three steps.
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            The workflow is intentionally narrow: get structured data in, shape
+            a chart worth publishing, and export the right public-facing output.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="step-connector" data-animate>
+            <div
+              class="w-12 h-12 rounded-xl bg-primary/12 border border-primary/20 flex items-center justify-center font-display text-xl font-bold text-primary mb-5"
+            >
+              1
+            </div>
+            <h3 class="font-display text-2xl font-semibold tracking-tight mb-3">
+              Upload CSV data
+            </h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Start with the same source teams already use for public updates,
+              campaign reporting, benchmarks, or impact snapshots.
+            </p>
+          </div>
+
+          <div class="step-connector" data-animate data-delay="120">
+            <div
+              class="w-12 h-12 rounded-xl bg-primary/12 border border-primary/20 flex items-center justify-center font-display text-xl font-bold text-primary mb-5"
+            >
+              2
+            </div>
+            <h3 class="font-display text-2xl font-semibold tracking-tight mb-3">
+              Shape the chart and theme
+            </h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Turn raw data into a presentation-ready visual without having to
+              build or maintain the visualization layer yourself.
+            </p>
+          </div>
+
+          <div class="step-connector" data-animate data-delay="240">
+            <div
+              class="w-12 h-12 rounded-xl bg-primary/12 border border-primary/20 flex items-center justify-center font-display text-xl font-bold text-primary mb-5"
+            >
+              3
+            </div>
+            <h3 class="font-display text-2xl font-semibold tracking-tight mb-3">
+              Publish and distribute
+            </h3>
+            <p class="text-muted-foreground leading-relaxed">
+              Copy the embed code, share the public page, or hand off an HTML
+              artifact depending on how the destination site works.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="examples"
+      class="py-28 border-t border-border relative overflow-hidden"
+    >
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] -z-10 rounded-full opacity-20"
+        style="
+          background: radial-gradient(
+            ellipse at center,
+            oklch(0.706 0.196 262 / 25%),
+            transparent 70%
+          );
+        "
+      ></div>
+
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div
+            class="font-mono text-xs text-primary tracking-[0.22em] mb-4"
+            data-animate
+          >
+            LIVE SAMPLE
+          </div>
+          <h2
+            class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4"
+            data-animate
+            data-delay="80"
+          >
+            The output is meant to sit inside someone else's page cleanly.
+          </h2>
+          <p
+            class="text-lg text-muted-foreground leading-relaxed"
+            data-animate
+            data-delay="160"
+          >
+            This is the public distribution mode. If the same report should be
+            access-controlled instead, that is when the secure-reporting product
+            becomes the right surface.
+          </p>
+        </div>
+
+        <div
+          class="glow-pulse rounded-xl max-w-6xl mx-auto"
+          data-animate
+          data-delay="240"
+        >
+          <div
+            class="rounded-xl border border-border overflow-hidden bg-surface"
+          >
+            <div
+              id="vetori-embed-example"
+              class="vetori-embed"
+              data-state="idle"
+              style="
+                --vt-bg: #0c0a09;
+                --vt-fg: #e7e5e4;
+                --vt-primary: #34d399;
+                --vt-muted: #646261;
+                --vt-border: rgba(231, 229, 228, 0.1);
+                --vt-shimmer: rgba(231, 229, 228, 0.03);
+              "
+            >
+              <div class="vetori-embed__ph">
+                <div class="vetori-embed__bars">
+                  <span class="vetori-embed__bar"></span
+                  ><span class="vetori-embed__bar"></span
+                  ><span class="vetori-embed__bar"></span
+                  ><span class="vetori-embed__bar"></span>
+                </div>
+                <p class="vetori-embed__loading-text">Loading…</p>
+                <div class="vetori-embed__error">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="3"
+                      y="18"
+                      width="5"
+                      height="11"
+                      rx="1.5"
+                      fill="currentColor"
+                    />
+                    <rect
+                      x="10.5"
+                      y="12"
+                      width="5"
+                      height="17"
+                      rx="1.5"
+                      fill="currentColor"
+                    />
+                    <rect
+                      x="18"
+                      y="6"
+                      width="5"
+                      height="23"
+                      rx="1.5"
+                      fill="currentColor"
+                    />
+                    <rect
+                      x="25.5"
+                      y="3"
+                      width="5"
+                      height="26"
+                      rx="1.5"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <h3>Vetori Sample Embed</h3>
+                  <p>This content is temporarily unavailable</p>
+                  <a
+                    href="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/1c31e9e8-32fd-484d-a552-681d10c0d792/sites/a31c2082-1634-49bb-bd56-a92141113926/share"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Open share page</a
+                  ><small>Powered by Vetori</small>
+                </div>
+              </div>
+              <iframe
+                src="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/1c31e9e8-32fd-484d-a552-681d10c0d792/sites/a31c2082-1634-49bb-bd56-a92141113926/embed"
+                title="Vetori sample embed example"
+                allow="fullscreen"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 border-t border-border bg-surface/20">
+      <div class="max-w-5xl mx-auto px-6 text-center">
+        <div
+          class="rounded-[2rem] border border-border bg-surface-raised px-8 py-12 md:px-12 md:py-16"
+          data-animate
+        >
+          <div class="font-mono text-xs text-primary tracking-[0.22em] mb-4">
+            START PUBLIC, UPGRADE PRIVATE
+          </div>
+          <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight mb-5">
+            Use embeds for reach. Use secure reports when the audience narrows.
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-8">
+            The public page is there to make self-serve distribution obvious.
+            The main Vetori story remains secure private reporting for the teams
+            who need controlled access and a better recipient experience.
+          </p>
+
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center gap-3"
+          >
+            <div data-open-text>
+              <a
+                href="javascript:void(0)"
+                onclick="handleSignUp()"
+                class="cta-button inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg shadow-primary/20"
+                >Start Free</a
+              >
+            </div>
+            <div data-closed-text class="hidden">
+              <a
+                href="javascript:void(0)"
+                onclick="handleWaitlist()"
+                class="cta-button inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg shadow-primary/20"
+                >Join the Waitlist</a
+              >
+            </div>
+            <a
+              href="mailto:info@vetori.ai?subject=Vetori%20Secure%20Reports%20Demo"
+              class="inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors border border-border bg-background text-foreground hover:bg-surface h-14 px-10"
+              >Request Secure Reports Demo</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-border py-12">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-10">
+          <div class="col-span-2 md:col-span-1">
+            <div class="flex items-center gap-2.5 mb-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M4 4L12 20L20 4"
+                  stroke="url(#logoGradEmbedFooter)"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <defs>
+                  <linearGradient
+                    id="logoGradEmbedFooter"
+                    x1="4"
+                    y1="4"
+                    x2="20"
+                    y2="20"
+                  >
+                    <stop stop-color="oklch(0.646 0.222 160)" />
+                    <stop offset="1" stop-color="oklch(0.706 0.196 262)" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <span class="font-display text-base font-bold tracking-tight"
+                >Vetori</span
+              >
+            </div>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+              Public embeds for reach.<br />Secure reports for sensitive
+              delivery.
+            </p>
+          </div>
+
+          <div>
+            <h4
+              class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4"
+            >
+              Product
+            </h4>
+            <ul class="space-y-2.5 text-sm">
+              <li>
+                <a
+                  href="#use-cases"
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                  >Use Cases</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#compare"
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                  >Public vs Private</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#examples"
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                  >Live Sample</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4"
+            >
+              Routes
+            </h4>
+            <ul class="space-y-2.5 text-sm">
+              <li>
+                <a
+                  href="/"
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                  >Secure Reports</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/support"
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                  >Support</a
+                >
+              </li>
+              <li>
+                <a
+                  href="mailto:info@vetori.ai"
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                  >Sales</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4
+              class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4"
+            >
+              Company
+            </h4>
+            <ul class="space-y-2.5 text-sm">
+              <li>
+                <a
+                  href="/terms"
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                  >Terms</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/privacy"
+                  class="text-muted-foreground hover:text-foreground transition-colors"
+                  >Privacy</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <div class="text-xs text-muted-foreground">
+            &copy; 2026 Vetori Inc. All rights reserved.
+          </div>
+          <div
+            class="font-mono text-[10px] text-muted-foreground/40 tracking-wider"
+          >
+            PUBLIC EMBEDS &middot; SHARE PAGES &middot; SECURE REPORTS
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      ;(function () {
+        var embedIds = ['vetori-embed-hero', 'vetori-embed-example']
+
+        embedIds.forEach(function (embedId) {
+          var el = document.getElementById(embedId)
+          if (!el) return
+
+          var frame = el.querySelector('iframe')
+          var state = 'idle'
+          var loadingTimer
+          var errorTimer
+
+          function update(nextState) {
+            state = nextState
+            el.setAttribute('data-state', nextState)
+          }
+
+          loadingTimer = setTimeout(function () {
+            if (state === 'idle') update('loading')
+          }, 2000)
+
+          errorTimer = setTimeout(function () {
+            if (state !== 'loaded') {
+              update('error')
+              clearTimeout(loadingTimer)
+            }
+          }, 15000)
+
+          frame.onload = function () {
+            clearTimeout(loadingTimer)
+            clearTimeout(errorTimer)
+            update('loaded')
+          }
+
+          frame.onerror = function () {
+            clearTimeout(loadingTimer)
+            clearTimeout(errorTimer)
+            update('error')
+          }
+        })
+      })()
+    </script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
