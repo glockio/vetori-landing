@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vetori — Turn CSVs Into Shareable Interactive Reports</title>
+    <title>Vetori — Secure Private Reports and Interactive Dashboards</title>
     <meta
       name="description"
-      content="Turn spreadsheet data into interactive charts and maps you can share as a link, embed on the web, or download as a self-contained artifact. Built for agencies and teams shipping recurring reports."
+      content="Turn spreadsheet data into interactive charts and dashboards you can deliver as secure private links, embeds, or portable HTML artifacts. Built for recurring internal and client reporting."
     />
     <link rel="canonical" href="https://vetori.ai/" />
     <meta name="theme-color" content="#0a1628" />
@@ -20,11 +20,11 @@
     <meta property="og:url" content="https://vetori.ai/" />
     <meta
       property="og:title"
-      content="Vetori — Turn CSVs Into Shareable Interactive Reports"
+      content="Vetori — Secure Private Reports and Interactive Dashboards"
     />
     <meta
       property="og:description"
-      content="Create shareable interactive reports from CSV data. Better than a PDF, portable by default."
+      content="Deliver interactive reports from CSV data through secure private links, embeds, or portable exports."
     />
     <meta property="og:image" content="https://vetori.ai/og-image.png" />
 
@@ -32,11 +32,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Vetori — Turn CSVs Into Shareable Interactive Reports"
+      content="Vetori — Secure Private Reports and Interactive Dashboards"
     />
     <meta
       name="twitter:description"
-      content="Create shareable interactive reports from CSV data. Better than a PDF, portable by default."
+      content="Deliver interactive reports from CSV data through secure private links, embeds, or portable exports."
     />
     <meta name="twitter:image" content="https://vetori.ai/og-image.png" />
 
@@ -48,6 +48,37 @@
       rel="stylesheet"
     />
 
+    <!-- Shared Vetori embed styles (deduplicated for hero + examples embeds) -->
+    <style id="vetori-embed-styles">
+      .vetori-embed{position:relative;width:100%;height:600px;background:var(--vt-bg);border-radius:8px;overflow:hidden;border:1px solid var(--vt-border,rgba(0,0,0,0.1));border:1px solid color-mix(in srgb,var(--vt-fg) 10%,transparent);font-family:system-ui,-apple-system,sans-serif;box-sizing:border-box;line-height:1.5;letter-spacing:normal;word-spacing:normal;text-transform:none;text-align:left;color:var(--vt-fg)}
+      .vetori-embed *,.vetori-embed *::before,.vetori-embed *::after{box-sizing:border-box;border-color:transparent}
+      .vetori-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;opacity:0;transition:opacity .3s ease}
+      .vetori-embed[data-state="loaded"] iframe{opacity:1}
+      .vetori-embed__ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .3s ease;padding:24px;gap:12px}
+      .vetori-embed[data-state="loaded"] .vetori-embed__ph{opacity:0;pointer-events:none}
+      .vetori-embed__ph::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,var(--vt-shimmer,rgba(0,0,0,0.03)) 50%,transparent 100%);background:linear-gradient(90deg,transparent 0%,color-mix(in srgb,var(--vt-fg) 3%,transparent) 50%,transparent 100%);transform:translateX(-100%);animation:vetori-shimmer 2s ease-in-out infinite}
+      .vetori-embed[data-state="loading"] .vetori-embed__ph::before,.vetori-embed[data-state="error"] .vetori-embed__ph::before,.vetori-embed[data-state="loaded"] .vetori-embed__ph::before{animation:none;opacity:0}
+      @keyframes vetori-shimmer{to{transform:translateX(100%)}}
+      .vetori-embed__bars{display:flex;align-items:flex-end;gap:3px;height:28px}
+      .vetori-embed[data-state="error"] .vetori-embed__bars{display:none}
+      .vetori-embed__bar{width:4px;background:var(--vt-primary);border-radius:2px;transform-origin:bottom;animation:vetori-pulse 1s ease-in-out infinite alternate}
+      .vetori-embed__bar:nth-child(1){height:40%;animation-delay:0s}
+      .vetori-embed__bar:nth-child(2){height:70%;animation-delay:.15s}
+      .vetori-embed__bar:nth-child(3){height:55%;animation-delay:.3s}
+      .vetori-embed__bar:nth-child(4){height:85%;animation-delay:.45s}
+      @keyframes vetori-pulse{0%{transform:scaleY(.4);opacity:.4}100%{transform:scaleY(1);opacity:1}}
+      .vetori-embed__loading-text{display:none;color:var(--vt-muted);font-size:12px;margin:0;line-height:1.5}
+      .vetori-embed[data-state="loading"] .vetori-embed__loading-text{display:block}
+      .vetori-embed__error{display:none;flex-direction:column;align-items:center;gap:12px;text-align:center}
+      .vetori-embed[data-state="error"] .vetori-embed__error{display:flex}
+      .vetori-embed__error svg{color:var(--vt-muted);opacity:.5}
+      .vetori-embed__error h3{color:var(--vt-fg);font-size:16px;font-weight:600;margin:0;line-height:1.3}
+      .vetori-embed__error p{color:var(--vt-muted);font-size:13px;margin:0;line-height:1.5}
+      .vetori-embed__error a{display:inline-block;background:var(--vt-primary);color:var(--vt-bg);font-size:14px;font-weight:500;padding:8px 20px;border-radius:6px;text-decoration:none;transition:opacity .15s;line-height:1.4;border:0}
+      .vetori-embed__error a:hover{opacity:.9}
+      .vetori-embed__error small{color:var(--vt-muted);font-size:11px;opacity:.7;line-height:1.4}
+    </style>
+
     <!-- JSON-LD: WebApplication -->
     <script type="application/ld+json">
       {
@@ -55,14 +86,14 @@
         "@type": "WebApplication",
         "name": "Vetori",
         "url": "https://vetori.ai",
-        "description": "Create shareable interactive data reports from CSV data. Share them as a link, embed them on the web, or export a self-contained artifact.",
+        "description": "Create interactive charts and dashboards from CSV data, then deliver them through secure private links, embeds, or portable HTML artifacts.",
         "applicationCategory": "DataVisualization",
         "operatingSystem": "Web",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD",
-          "description": "Early access for agencies and teams shipping recurring reports"
+          "description": "Closed beta for teams shipping recurring internal, executive, and client reports"
         },
         "author": {
           "@type": "Organization",
@@ -93,18 +124,26 @@
           },
           {
             "@type": "Question",
-            "name": "Can we share a link, embed it, or download it?",
+            "name": "Can we share reports privately or publicly?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Vetori supports live links, embeds for websites and CMSes, and a self-hosted HTML export for portable handoff."
+              "text": "Yes. Vetori supports private recipient access, live links, embeds for websites and CMSes, and a self-hosted HTML export for controlled handoff."
             }
           },
           {
             "@type": "Question",
-            "name": "Can viewers interact with the report?",
+            "name": "Who is Vetori for?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Viewers can filter, search, click data points, zoom, and pan. Everything runs in their browser."
+              "text": "Vetori is best for teams that send recurring internal, executive, board, client, or partner reports and want a better delivery flow than PDFs, screenshots, or BI viewer-seat sprawl."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do viewers need a full authoring account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Vetori is designed so recipients can access shared reports through a dedicated viewer flow instead of needing full authoring access."
             }
           },
           {
@@ -113,14 +152,6 @@
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "Yes. Vetori exports a self-hosted HTML artifact designed for portability, so teams can host or hand off the report outside their Vetori account."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do we need a developer for every report?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "No. Vetori is designed for teams that need polished recurring reports without commissioning a custom interactive build every time."
             }
           }
         ]
@@ -245,7 +276,7 @@
         <div data-animate>
           <span
             class="audience-badge inline-block text-xs font-medium tracking-wide text-muted-foreground border border-border rounded-full px-4 py-1.5 mb-8"
-            >For agencies and teams shipping recurring reports</span
+            >For teams delivering recurring internal and client reports</span
           >
         </div>
 
@@ -255,8 +286,8 @@
           data-animate
           data-delay="100"
         >
-          Turn a CSV into a<br />
-          <span class="text-gradient">shareable interactive report.</span>
+          Deliver a private report<br />
+          <span class="text-gradient">people will actually open.</span>
         </h1>
 
         <!-- Second line -->
@@ -265,7 +296,7 @@
           data-animate
           data-delay="200"
         >
-          Like a PDF for data.
+          Secure report delivery for charts and dashboards.
         </p>
 
         <!-- Subhead -->
@@ -274,9 +305,10 @@
           data-animate
           data-delay="300"
         >
-          Create a chart or map you can send as a link, embed on the web, or
-          download as a self-contained artifact. Built for recurring reports,
-          client reviews, and public impact updates.
+          Turn spreadsheet data into a polished report you can share privately
+          with recipients, embed where needed, or export as a portable
+          artifact. Built for internal reviews, client reporting, and
+          sensitive stakeholder updates.
         </p>
 
         <!-- CTA -->
@@ -301,7 +333,7 @@
             <span data-closed-text class="hidden"
               >Vetori is in closed beta.</span
             >
-            <span data-open-text>Want to test the CSV-to-link flow?</span>
+            <span data-open-text>Want to test private report delivery?</span>
             <a
               href="javascript:void(0)"
               data-closed-text
@@ -343,13 +375,14 @@
                     class="font-mono text-[11px] text-muted-foreground bg-background/50 rounded px-3 py-1 flex items-center gap-2"
                   >
                     <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    vetori.site
+                    secure.vetori.ai
                   </div>
                 </div>
               </div>
               <!-- Embed -->
-              <div class="relative bg-background" style="height: 560px">
+              <div class="relative bg-background">
                 <div
+                  id="vetori-hero"
                   class="vetori-embed"
                   data-state="idle"
                   style="
@@ -357,179 +390,10 @@
                     --vt-fg: #0f172a;
                     --vt-primary: #2563eb;
                     --vt-muted: #9fa2aa;
+                    --vt-border: rgba(15, 23, 42, 0.1);
+                    --vt-shimmer: rgba(15, 23, 42, 0.03);
                   "
                 >
-                  <style>
-                    .vetori-embed {
-                      position: relative;
-                      width: 100%;
-                      padding-bottom: 56.25%;
-                      background: var(--vt-bg);
-                      border-radius: 8px;
-                      overflow: hidden;
-                      border: 1px solid
-                        color-mix(in srgb, var(--vt-fg) 10%, transparent);
-                      font-family:
-                        system-ui,
-                        -apple-system,
-                        sans-serif;
-                      box-sizing: border-box;
-                    }
-                    .vetori-embed *,
-                    .vetori-embed *::before,
-                    .vetori-embed *::after {
-                      box-sizing: border-box;
-                    }
-                    .vetori-embed iframe {
-                      position: absolute;
-                      inset: 0;
-                      width: 100%;
-                      height: 100%;
-                      border: 0;
-                      opacity: 0;
-                      transition: opacity 0.3s ease;
-                    }
-                    .vetori-embed[data-state='loaded'] iframe {
-                      opacity: 1;
-                    }
-                    .vetori-embed__ph {
-                      position: absolute;
-                      inset: 0;
-                      display: flex;
-                      flex-direction: column;
-                      align-items: center;
-                      justify-content: center;
-                      transition: opacity 0.3s ease;
-                      padding: 24px;
-                      gap: 12px;
-                    }
-                    .vetori-embed[data-state='loaded'] .vetori-embed__ph {
-                      opacity: 0;
-                      pointer-events: none;
-                    }
-                    .vetori-embed__ph::before {
-                      content: '';
-                      position: absolute;
-                      inset: 0;
-                      background: linear-gradient(
-                        90deg,
-                        transparent 0%,
-                        color-mix(in srgb, var(--vt-fg) 3%, transparent) 50%,
-                        transparent 100%
-                      );
-                      transform: translateX(-100%);
-                      animation: vetori-shimmer 2s ease-in-out infinite;
-                    }
-                    .vetori-embed[data-state='loading']
-                      .vetori-embed__ph::before,
-                    .vetori-embed[data-state='error'] .vetori-embed__ph::before,
-                    .vetori-embed[data-state='loaded']
-                      .vetori-embed__ph::before {
-                      animation: none;
-                      opacity: 0;
-                    }
-                    @keyframes vetori-shimmer {
-                      to {
-                        transform: translateX(100%);
-                      }
-                    }
-                    .vetori-embed__bars {
-                      display: flex;
-                      align-items: flex-end;
-                      gap: 3px;
-                      height: 28px;
-                    }
-                    .vetori-embed[data-state='error'] .vetori-embed__bars {
-                      display: none;
-                    }
-                    .vetori-embed__bar {
-                      width: 4px;
-                      background: var(--vt-primary);
-                      border-radius: 2px;
-                      transform-origin: bottom;
-                      animation: vetori-pulse 1s ease-in-out infinite alternate;
-                    }
-                    .vetori-embed__bar:nth-child(1) {
-                      height: 40%;
-                      animation-delay: 0s;
-                    }
-                    .vetori-embed__bar:nth-child(2) {
-                      height: 70%;
-                      animation-delay: 0.15s;
-                    }
-                    .vetori-embed__bar:nth-child(3) {
-                      height: 55%;
-                      animation-delay: 0.3s;
-                    }
-                    .vetori-embed__bar:nth-child(4) {
-                      height: 85%;
-                      animation-delay: 0.45s;
-                    }
-                    @keyframes vetori-pulse {
-                      0% {
-                        transform: scaleY(0.4);
-                        opacity: 0.4;
-                      }
-                      100% {
-                        transform: scaleY(1);
-                        opacity: 1;
-                      }
-                    }
-                    .vetori-embed__loading-text {
-                      display: none;
-                      color: var(--vt-muted);
-                      font-size: 12px;
-                      margin: 0;
-                    }
-                    .vetori-embed[data-state='loading']
-                      .vetori-embed__loading-text {
-                      display: block;
-                    }
-                    .vetori-embed__error {
-                      display: none;
-                      flex-direction: column;
-                      align-items: center;
-                      gap: 12px;
-                      text-align: center;
-                    }
-                    .vetori-embed[data-state='error'] .vetori-embed__error {
-                      display: flex;
-                    }
-                    .vetori-embed__error svg {
-                      color: var(--vt-muted);
-                      opacity: 0.5;
-                    }
-                    .vetori-embed__error h3 {
-                      color: var(--vt-fg);
-                      font-size: 16px;
-                      font-weight: 600;
-                      margin: 0;
-                    }
-                    .vetori-embed__error p {
-                      color: var(--vt-muted);
-                      font-size: 13px;
-                      margin: 0;
-                    }
-                    .vetori-embed__error a {
-                      display: inline-block;
-                      background: var(--vt-primary);
-                      color: var(--vt-bg);
-                      font-size: 14px;
-                      font-weight: 500;
-                      padding: 8px 20px;
-                      border-radius: 6px;
-                      text-decoration: none;
-                      transition: opacity 0.15s;
-                    }
-                    .vetori-embed__error a:hover {
-                      opacity: 0.9;
-                    }
-                    .vetori-embed__error small {
-                      color: var(--vt-muted);
-                      font-size: 11px;
-                      opacity: 0.7;
-                    }
-                  </style>
                   <div class="vetori-embed__ph">
                     <div class="vetori-embed__bars">
                       <span class="vetori-embed__bar"></span
@@ -579,7 +443,7 @@
                           fill="currentColor"
                         />
                       </svg>
-                      <h3>Vetori Landing</h3>
+                      <h3>Private report demo</h3>
                       <p>This content is temporarily unavailable</p>
                       <a
                         href="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/591d3bc7-3069-429d-886c-aa1d08846720/sites/f2e733da-72b2-4e3e-918c-2eafceb47ab6/share"
@@ -596,20 +460,21 @@
                   ></iframe>
                   <script>
                     ;(function () {
-                      var e = document.currentScript.parentElement,
-                        f = e.querySelector('iframe'),
-                        s = 'idle',
+                      var e = document.getElementById('vetori-hero')
+                      if (!e) return
+                      var f = e.querySelector('iframe'),
+                        st = 'idle',
                         l,
                         t
                       function u(v) {
-                        s = v
+                        st = v
                         e.setAttribute('data-state', v)
                       }
                       l = setTimeout(function () {
-                        if (s === 'idle') u('loading')
+                        if (st === 'idle') u('loading')
                       }, 2000)
                       t = setTimeout(function () {
-                        if (s !== 'loaded') {
+                        if (st !== 'loaded') {
                           u('error')
                           clearTimeout(l)
                         }
@@ -662,25 +527,25 @@
           <span
             class="credibility-text font-medium"
             style="animation-delay: -1s"
-            >Impact Updates</span
+            >Internal Reviews</span
           >
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
           <span
             class="credibility-text font-medium"
             style="animation-delay: -2s"
-            >Client Review Links</span
+            >Client Reporting</span
           >
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
           <span
             class="credibility-text font-medium"
             style="animation-delay: -3s"
-            >Campaign Pages</span
+            >Board Updates</span
           >
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
           <span
             class="credibility-text font-medium"
             style="animation-delay: -4s"
-            >Stakeholder Briefings</span
+            >Secure Embeds</span
           >
         </p>
       </div>
@@ -695,15 +560,16 @@
           class="font-display text-4xl md:text-5xl font-bold mb-6 text-center text-balance tracking-tight"
           data-animate
         >
-          Stop shipping dead data.
+          Private reporting is still broken.
         </h2>
         <p
           class="text-muted-foreground text-center mb-16 max-w-2xl mx-auto"
           data-animate
           data-delay="100"
         >
-          Vetori is for the moment when a spreadsheet, screenshot, or static PDF
-          is no longer good enough for the report people actually need to open.
+          Most teams either overshare dashboards, email dead PDFs, or buy
+          expensive viewer seats just to get the right report in front of the
+          right people.
         </p>
 
         <div class="grid md:grid-cols-3 gap-6">
@@ -715,12 +581,15 @@
             <p
               class="text-xs font-semibold uppercase tracking-wide text-primary mb-3"
             >
-              Static Files
+              Sensitive Reports
             </p>
-            <h3 class="text-xl font-semibold mb-3">PDFs flatten the report</h3>
+            <h3 class="text-xl font-semibold mb-3">
+              PDFs and screenshots kill the useful parts
+            </h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              A PDF can freeze the numbers, but it cannot let reviewers search,
-              filter, zoom, or inspect the underlying geography.
+              Once a report is private and high-stakes, people still need to
+              search, filter, zoom, and inspect the data. Static files remove
+              the point of sending it.
             </p>
           </div>
 
@@ -732,14 +601,15 @@
             <p
               class="text-xs font-semibold uppercase tracking-wide text-primary mb-3"
             >
-              Custom Builds
+              BI Access
             </p>
             <h3 class="text-xl font-semibold mb-3">
-              Recurring report builds do not scale
+              Viewer-seat sprawl is expensive and clunky
             </h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              If every update becomes a custom web project, the reporting
-              workflow burns margin and slows down delivery.
+              Giving every stakeholder a full BI login is expensive, slow to
+              manage, and usually overkill for people who only need to view a
+              report.
             </p>
           </div>
 
@@ -754,12 +624,12 @@
               Delivery
             </p>
             <h3 class="text-xl font-semibold mb-3">
-              Links and files should survive handoff
+              Sharing breaks when delivery and auth are separate
             </h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Teams need something they can host, share for review, embed on the
-              web, or hand off as a standalone artifact without rebuilding it
-              later.
+              Teams need one flow for private links, recipient access, embeds,
+              and controlled exports instead of stitching together portals,
+              attachments, and ad hoc permissions.
             </p>
           </div>
         </div>
@@ -775,15 +645,15 @@
           class="font-display text-4xl md:text-5xl font-bold mb-6 text-center text-balance tracking-tight"
           data-animate
         >
-          Built for reports people actually send.
+          Built for teams that send reports, not dashboards.
         </h2>
         <p
           class="text-muted-foreground text-center mb-16 max-w-lg mx-auto"
           data-animate
           data-delay="100"
         >
-          Start with one chart or map for the next stakeholder update, annual
-          report, or client review cycle.
+          Best for recurring internal and external reporting where access
+          matters as much as the visual itself.
         </p>
 
         <div class="grid sm:grid-cols-2 gap-6">
@@ -814,12 +684,12 @@
                 </svg>
               </div>
               <h3 class="text-lg font-semibold">
-                Annual Reports &amp; Impact Updates
+                Internal Ops &amp; Leadership Reviews
               </h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Turn spreadsheet data into an interactive visual for annual
-              reports, foundation updates, and public impact pages.
+              Deliver recurring KPI, operating, or geography reports to
+              internal stakeholders without buying everyone a full BI seat.
             </p>
           </div>
 
@@ -882,11 +752,12 @@
                   />
                 </svg>
               </div>
-              <h3 class="text-lg font-semibold">Client Review Links</h3>
+              <h3 class="text-lg font-semibold">Client &amp; Partner Reporting</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Share a live report link during review cycles so stakeholders can
-              click, filter, and comment on the same artifact that will ship.
+              Send polished interactive reports to clients, franchisees, or
+              partners through a dedicated viewer flow instead of shipping
+              attachments around.
             </p>
           </div>
 
@@ -918,12 +789,12 @@
                 </svg>
               </div>
               <h3 class="text-lg font-semibold">
-                Campaign &amp; Foundation Pages
+                Board, Executive &amp; Investor Updates
               </h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Publish branded maps and charts for grantmaking pages, campaign
-              sites, and public-facing updates without a bespoke build.
+              Give high-trust recipients a clean report they can open securely,
+              explore quickly, and revisit between review meetings.
             </p>
           </div>
 
@@ -961,12 +832,13 @@
                 </svg>
               </div>
               <h3 class="text-lg font-semibold">
-                Stakeholder Briefings &amp; Handoffs
+                Public Publishing When Needed
               </h3>
             </div>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Export a standalone artifact for board packets, client handoff, or
-              controlled distribution when a plain PDF is not enough.
+              The same publication pipeline can still power embeds, campaign
+              pages, and public-facing releases when the report should ship
+              outside the firewall.
             </p>
           </div>
         </div>
@@ -982,7 +854,7 @@
           class="font-display text-4xl md:text-5xl font-bold mb-20 text-center text-balance tracking-tight"
           data-animate
         >
-          From CSV to shareable report artifact.
+          From source data to governed report delivery.
         </h2>
 
         <div class="grid md:grid-cols-3 gap-12">
@@ -996,7 +868,7 @@
               <h3 class="text-xl font-semibold">Upload the report data</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Bring impact, funding, location, or operational data in a CSV.
+              Bring operational, financial, program, or location data in a CSV.
               Vetori auto-detects fields, types, and coordinates.
             </p>
             <div class="rounded-lg border border-border bg-background/40 p-4">
@@ -1020,11 +892,12 @@
                 class="font-display text-sm font-bold text-primary bg-primary/10 rounded-lg w-8 h-8 flex items-center justify-center"
                 >02</span
               >
-              <h3 class="text-xl font-semibold">Choose a map or chart</h3>
+              <h3 class="text-xl font-semibold">Build the chart or dashboard</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Create the visual, map the fields, and tune the branding so the
-              report looks ready before you share it.
+              Create the visual, map the fields, and tune the presentation so
+              the report looks ready for internal, executive, or client
+              delivery.
             </p>
             <!-- Viz type cards — larger and more readable -->
             <div class="grid grid-cols-3 gap-2">
@@ -1134,20 +1007,22 @@
                 class="font-display text-sm font-bold text-primary bg-primary/10 rounded-lg w-8 h-8 flex items-center justify-center"
                 >03</span
               >
-              <h3 class="text-xl font-semibold">Share, embed, or download</h3>
+              <h3 class="text-xl font-semibold">
+                Deliver privately, embed publicly, or export
+              </h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Send a live link for review, embed it on the site, or export a
-              standalone HTML artifact for clean handoff and long-term
-              portability.
+              Invite recipients by email, send a secure link, embed when
+              needed, or export a standalone HTML artifact for controlled
+              handoff and long-term portability.
             </p>
             <div class="rounded-lg border border-border bg-background/40 p-4">
               <div
                 class="font-mono text-xs text-muted-foreground/60 leading-relaxed"
               >
-                <span class="text-primary/60">link</span>=<span
+                <span class="text-primary/60">private_link</span>=<span
                   class="text-foreground/40"
-                  >"report.vetori.site/community-reach"</span
+                  >"secure.vetori.ai/q2-ops"</span
                 ><br />
                 <span class="text-primary/60">embed</span>=<span
                   class="text-foreground/40"
@@ -1155,7 +1030,7 @@
                 ><br />
                 <span class="text-primary/60">artifact</span>=<span
                   class="text-foreground/40"
-                  >"community-reach.html"</span
+                  >"q2-ops.html"</span
                 >
               </div>
             </div>
@@ -1188,7 +1063,7 @@
           class="font-display text-4xl md:text-5xl font-bold mb-4 text-center tracking-tight"
           data-animate
         >
-          A sample impact report artifact.
+          One report, several delivery paths.
         </h2>
 
         <p
@@ -1196,9 +1071,9 @@
           data-animate
           data-delay="100"
         >
-          The same visual can live on a website, circulate as a review link, or
-          ship as a standalone file. Filter the data, click a point, and zoom in
-          directly on the report.
+          This public sample shows the same artifact format you can use for
+          internal review, recipient sharing, or a website embed. Filter the
+          data, click a point, and zoom in directly on the report.
         </p>
 
         <div
@@ -1210,6 +1085,7 @@
             class="rounded-xl border border-border overflow-hidden bg-surface"
           >
             <div
+              id="vetori-examples"
               class="vetori-embed"
               data-state="idle"
               style="
@@ -1217,177 +1093,10 @@
                 --vt-fg: #e7e5e4;
                 --vt-primary: #34d399;
                 --vt-muted: #646261;
+                --vt-border: rgba(231, 229, 228, 0.1);
+                --vt-shimmer: rgba(231, 229, 228, 0.03);
               "
             >
-              <style>
-                .vetori-embed {
-                  position: relative;
-                  width: 100%;
-                  padding-bottom: 56.25%;
-                  background: var(--vt-bg);
-                  border-radius: 8px;
-                  overflow: hidden;
-                  border: 1px solid
-                    color-mix(in srgb, var(--vt-fg) 10%, transparent);
-                  font-family:
-                    system-ui,
-                    -apple-system,
-                    sans-serif;
-                  box-sizing: border-box;
-                }
-                .vetori-embed *,
-                .vetori-embed *::before,
-                .vetori-embed *::after {
-                  box-sizing: border-box;
-                }
-                .vetori-embed iframe {
-                  position: absolute;
-                  inset: 0;
-                  width: 100%;
-                  height: 100%;
-                  border: 0;
-                  opacity: 0;
-                  transition: opacity 0.3s ease;
-                }
-                .vetori-embed[data-state='loaded'] iframe {
-                  opacity: 1;
-                }
-                .vetori-embed__ph {
-                  position: absolute;
-                  inset: 0;
-                  display: flex;
-                  flex-direction: column;
-                  align-items: center;
-                  justify-content: center;
-                  transition: opacity 0.3s ease;
-                  padding: 24px;
-                  gap: 12px;
-                }
-                .vetori-embed[data-state='loaded'] .vetori-embed__ph {
-                  opacity: 0;
-                  pointer-events: none;
-                }
-                .vetori-embed__ph::before {
-                  content: '';
-                  position: absolute;
-                  inset: 0;
-                  background: linear-gradient(
-                    90deg,
-                    transparent 0%,
-                    color-mix(in srgb, var(--vt-fg) 3%, transparent) 50%,
-                    transparent 100%
-                  );
-                  transform: translateX(-100%);
-                  animation: vetori-shimmer 2s ease-in-out infinite;
-                }
-                .vetori-embed[data-state='loading'] .vetori-embed__ph::before,
-                .vetori-embed[data-state='error'] .vetori-embed__ph::before,
-                .vetori-embed[data-state='loaded'] .vetori-embed__ph::before {
-                  animation: none;
-                  opacity: 0;
-                }
-                @keyframes vetori-shimmer {
-                  to {
-                    transform: translateX(100%);
-                  }
-                }
-                .vetori-embed__bars {
-                  display: flex;
-                  align-items: flex-end;
-                  gap: 3px;
-                  height: 28px;
-                }
-                .vetori-embed[data-state='error'] .vetori-embed__bars {
-                  display: none;
-                }
-                .vetori-embed__bar {
-                  width: 4px;
-                  background: var(--vt-primary);
-                  border-radius: 2px;
-                  transform-origin: bottom;
-                  animation: vetori-pulse 1s ease-in-out infinite alternate;
-                }
-                .vetori-embed__bar:nth-child(1) {
-                  height: 40%;
-                  animation-delay: 0s;
-                }
-                .vetori-embed__bar:nth-child(2) {
-                  height: 70%;
-                  animation-delay: 0.15s;
-                }
-                .vetori-embed__bar:nth-child(3) {
-                  height: 55%;
-                  animation-delay: 0.3s;
-                }
-                .vetori-embed__bar:nth-child(4) {
-                  height: 85%;
-                  animation-delay: 0.45s;
-                }
-                @keyframes vetori-pulse {
-                  0% {
-                    transform: scaleY(0.4);
-                    opacity: 0.4;
-                  }
-                  100% {
-                    transform: scaleY(1);
-                    opacity: 1;
-                  }
-                }
-                .vetori-embed__loading-text {
-                  display: none;
-                  color: var(--vt-muted);
-                  font-size: 12px;
-                  margin: 0;
-                }
-                .vetori-embed[data-state='loading']
-                  .vetori-embed__loading-text {
-                  display: block;
-                }
-                .vetori-embed__error {
-                  display: none;
-                  flex-direction: column;
-                  align-items: center;
-                  gap: 12px;
-                  text-align: center;
-                }
-                .vetori-embed[data-state='error'] .vetori-embed__error {
-                  display: flex;
-                }
-                .vetori-embed__error svg {
-                  color: var(--vt-muted);
-                  opacity: 0.5;
-                }
-                .vetori-embed__error h3 {
-                  color: var(--vt-fg);
-                  font-size: 16px;
-                  font-weight: 600;
-                  margin: 0;
-                }
-                .vetori-embed__error p {
-                  color: var(--vt-muted);
-                  font-size: 13px;
-                  margin: 0;
-                }
-                .vetori-embed__error a {
-                  display: inline-block;
-                  background: var(--vt-primary);
-                  color: var(--vt-bg);
-                  font-size: 14px;
-                  font-weight: 500;
-                  padding: 8px 20px;
-                  border-radius: 6px;
-                  text-decoration: none;
-                  transition: opacity 0.15s;
-                }
-                .vetori-embed__error a:hover {
-                  opacity: 0.9;
-                }
-                .vetori-embed__error small {
-                  color: var(--vt-muted);
-                  font-size: 11px;
-                  opacity: 0.7;
-                }
-              </style>
               <div class="vetori-embed__ph">
                 <div class="vetori-embed__bars">
                   <span class="vetori-embed__bar"></span
@@ -1454,20 +1163,21 @@
               ></iframe>
               <script>
                 ;(function () {
-                  var e = document.currentScript.parentElement,
-                    f = e.querySelector('iframe'),
-                    s = 'idle',
+                  var e = document.getElementById('vetori-examples')
+                  if (!e) return
+                  var f = e.querySelector('iframe'),
+                    st = 'idle',
                     l,
                     t
                   function u(v) {
-                    s = v
+                    st = v
                     e.setAttribute('data-state', v)
                   }
                   l = setTimeout(function () {
-                    if (s === 'idle') u('loading')
+                    if (st === 'idle') u('loading')
                   }, 2000)
                   t = setTimeout(function () {
-                    if (s !== 'loaded') {
+                    if (st !== 'loaded') {
                       u('error')
                       clearTimeout(l)
                     }
@@ -1493,8 +1203,8 @@
           data-animate
           data-delay="400"
         >
-          Built from spreadsheet data. Share by link, embed on the web, or
-          export.
+          Built from spreadsheet data. Deliver privately, embed publicly, or
+          export offline.
         </p>
       </div>
     </section>
@@ -1508,7 +1218,7 @@
           class="font-display text-4xl md:text-5xl font-bold mb-20 text-center text-balance tracking-tight"
           data-animate
         >
-          Why teams use Vetori for recurring reports
+          Why teams use Vetori for report delivery
         </h2>
 
         <div class="space-y-24">
@@ -1516,12 +1226,12 @@
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
             <div>
               <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                A better PDF for data
+                Built for recipients, not power users
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Give people something they can actually explore. Viewers can
-                filter, search, and click into the report instead of reading a
-                frozen screenshot.
+                Give recipients something they can actually explore. They can
+                filter, search, and inspect the report without learning a full
+                BI interface or getting dropped into an authoring app.
               </p>
             </div>
             <div
@@ -1592,12 +1302,12 @@
             </div>
             <div>
               <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Keep each report on brand
+                Give recipients a clean, branded viewer
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Tune colors and presentation so the report feels native to the
-                client, campaign, or stakeholder context. Paid plans remove
-                Vetori branding completely.
+                Tune colors and presentation so internal and external
+                stakeholders open something that feels owned and intentional.
+                Paid plans remove Vetori branding completely.
               </p>
             </div>
           </div>
@@ -1606,11 +1316,12 @@
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
             <div>
               <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Portable by default
+                Portable when policy requires handoff
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Share a live link, embed it on the web, or export a standalone
-                HTML artifact with no ongoing backend dependency.
+                Use secure links by default, then export a standalone HTML
+                artifact when a recipient needs offline delivery, controlled
+                archival, or a no-backend handoff.
               </p>
             </div>
             <div
@@ -1708,12 +1419,12 @@
             </div>
             <div>
               <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Start with one visual. Expand into stories later.
+                Start with static reports. Add narration next.
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Launch the chart or map you need now. Guided story playback is
-                next for richer walkthroughs, recurring report narratives, and
-                more structured client deliverables.
+                Launch the chart or dashboard you need now. Guided narration is
+                next for executive walkthroughs, recurring report narratives,
+                and richer stakeholder briefings.
               </p>
             </div>
           </div>
@@ -1749,8 +1460,9 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              Vetori is best for agencies, consultancies, and teams that publish
-              recurring data reports for clients or stakeholders.
+              Vetori is best for operations, finance, agency, consulting, and
+              program teams that send recurring internal, executive, client, or
+              partner reports.
             </div>
           </details>
 
@@ -1780,7 +1492,7 @@
             <summary
               class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
             >
-              Can we share a link, embed it, or download it?
+              Can we share reports privately or publicly?
               <span
                 class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
                 >&#9662;</span
@@ -1789,8 +1501,30 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              Yes. Vetori supports live links, embeds for websites and CMSes,
-              and a self-hosted HTML export for portable handoff.
+              Yes. Vetori is built for secure recipient delivery first, while
+              still supporting web embeds and a self-hosted HTML export for
+              controlled handoff.
+            </div>
+          </details>
+
+          <details
+            class="faq-item group rounded-xl border border-border bg-surface-raised"
+          >
+            <summary
+              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
+            >
+              Do viewers need a full Vetori account?
+              <span
+                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
+                >&#9662;</span
+              >
+            </summary>
+            <div
+              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
+            >
+              No. Vetori is designed so recipients can access shared reports
+              through a dedicated viewer flow instead of needing authoring
+              access.
             </div>
           </details>
 
@@ -1809,8 +1543,8 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              Yes. Viewers can filter, search, click data points, zoom, and pan.
-              Everything runs in their browser.
+              Yes. Viewers can filter, search, click data points, zoom, and
+              pan. Everything runs in their browser.
             </div>
           </details>
 
@@ -1892,9 +1626,9 @@
             <div
               class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
             >
-              Today you can launch a single chart or map and share it as a
-              report artifact. Guided stories and narrative playback are the
-              next step on the roadmap.
+              Today the focus is charts and dashboards you can deliver as
+              private or public report artifacts. Guided stories and narrative
+              playback are the next step on the roadmap.
             </div>
           </details>
         </div>
@@ -1924,7 +1658,7 @@
           class="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight"
           data-animate
         >
-          Turn the next CSV into something people will actually open.
+          Send the next report as a secure link, not an attachment.
         </h2>
 
         <p
@@ -1932,8 +1666,9 @@
           data-animate
           data-delay="100"
         >
-          Start with one chart or map you can share as a link, embed on the web,
-          or hand off as a self-contained artifact.
+          Start with one chart or dashboard and deliver it privately to
+          recipients, embed it where needed, or hand it off as a portable
+          artifact.
         </p>
 
         <div data-animate data-delay="200">
@@ -1957,7 +1692,7 @@
             <span data-closed-text class="hidden"
               >Vetori is in closed beta.</span
             >
-            <span data-open-text>Want to test the CSV-to-link flow?</span>
+            <span data-open-text>Want to test private report delivery?</span>
             <a
               href="javascript:void(0)"
               data-closed-text
@@ -2004,7 +1739,7 @@
               >
             </div>
             <p class="text-sm text-muted-foreground leading-relaxed">
-              Shareable interactive data reports<br />from CSV.
+              Private reports and interactive dashboards<br />from CSV.
             </p>
           </div>
 
@@ -2107,7 +1842,7 @@
           <div
             class="font-mono text-[10px] text-muted-foreground/40 tracking-wider"
           >
-            IMPACT MAPS &middot; CHARTS &middot; EMBEDS
+            PRIVATE LINKS &middot; EMBEDS &middot; OFFLINE EXPORTS
           </div>
         </div>
       </div>
