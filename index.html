@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vetori — Secure Private Reporting for Internal and Client Dashboards</title>
+    <title>Vetori — Board books in hours, not days</title>
     <meta
       name="description"
-      content="Deliver interactive reports securely to internal and external recipients. Vetori is built for private reporting first, with public embeds and portable exports as secondary distribution paths."
+      content="Stop rebuilding the same report from scratch every month. Vetori drafts the narrative from your data, branded as yours, delivered to the people who need it — and they can drill into a number without emailing you at 9pm."
     />
     <link rel="canonical" href="https://vetori.ai/" />
     <meta name="theme-color" content="#0a1628" />
@@ -20,11 +20,11 @@
     <meta property="og:url" content="https://vetori.ai/" />
     <meta
       property="og:title"
-      content="Vetori — Secure Private Reporting for Internal and Client Dashboards"
+      content="Vetori — Board books in hours, not days"
     />
     <meta
       property="og:description"
-      content="Private reporting first. Public embeds and exports when needed."
+      content="Stop rebuilding the same report from scratch. Drafted from your data, branded as yours, delivered to the people who need it."
     />
     <meta property="og:image" content="https://vetori.ai/og-image.png" />
 
@@ -32,11 +32,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Vetori — Secure Private Reporting for Internal and Client Dashboards"
+      content="Vetori — Board books in hours, not days"
     />
     <meta
       name="twitter:description"
-      content="Private reporting first. Public embeds and exports when needed."
+      content="Stop rebuilding the same report from scratch. Branded as yours, delivered with audit."
     />
     <meta name="twitter:image" content="https://vetori.ai/og-image.png" />
 
@@ -55,14 +55,14 @@
         "@type": "WebApplication",
         "name": "Vetori",
         "url": "https://vetori.ai",
-        "description": "Create interactive charts and dashboards from CSV data, then deliver them through secure private report links. Public embeds and portable HTML artifacts are secondary distribution options.",
+        "description": "AI-authored interactive reports for executive audiences. Generate the report from your data, brand it as yours, deliver privately to specific recipients.",
         "applicationCategory": "DataVisualization",
         "operatingSystem": "Web",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD",
-          "description": "Closed beta for teams shipping recurring internal, executive, and client reports"
+          "description": "Closed beta. We are onboarding 10 design partners in Q2 2026."
         },
         "author": {
           "@type": "Organization",
@@ -85,50 +85,42 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What data formats do you support?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Currently CSV. Upload impact, program, funding, or location data and Vetori auto-detects columns and field types."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can we share reports privately or publicly?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Vetori is designed for secure recipient delivery first, with public embeds and self-hosted HTML exports available when broader distribution is useful."
-            }
-          },
-          {
-            "@type": "Question",
             "name": "Who is Vetori for?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Vetori is best for teams that send recurring internal, executive, board, client, or partner reports and want a better delivery flow than PDFs, screenshots, or BI viewer-seat sprawl."
+              "text": "Finance leaders (CFO, VP Finance, FP&A), deal teams (M&A advisory, corp dev, IB), and consulting partners — anyone whose monthly or quarterly deliverable is a report that lands in front of an executive."
             }
           },
           {
             "@type": "Question",
-            "name": "Do viewers need a full authoring account?",
+            "name": "Can the audience interact with the report?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. Vetori is designed so recipients can access shared reports through a dedicated viewer flow instead of needing full authoring access."
+              "text": "Yes. Recipients can play the narrated story OR take over and explore — filter, search, drill into a row, change a dimension. Same artifact, two consumption modes."
             }
           },
           {
             "@type": "Question",
-            "name": "Is Vetori mainly an embed tool?",
+            "name": "How is this different from Tableau or Looker?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "No. Vetori's core workflow is secure private reporting for internal and external recipients. Public embeds are a secondary distribution channel for websites, campaigns, and marketing pages."
+              "text": "Tableau and Looker are BI tools for analysts. Vetori is a delivery layer for executives. We do not replace your data warehouse — we replace the slide deck your analyst makes from your data warehouse."
             }
           },
           {
             "@type": "Question",
-            "name": "Does the export work outside Vetori?",
+            "name": "How is this different from Flourish or Gamma?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Vetori exports a self-hosted HTML artifact designed for portability, so teams can host or hand off the report outside their Vetori account."
+              "text": "Flourish makes pretty charts. Gamma makes pretty slides. Neither connects to your live data, neither manages per-recipient access, and neither generates the report from your CSV. Vetori does all three."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are AI-authored stories live yet?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. AI-authored stories ship in the closed beta. Audio narration over the playback is the next item on the roadmap."
             }
           }
         ]
@@ -156,14 +148,8 @@
           class="flex items-center gap-2.5 cursor-pointer"
           onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
         >
-          <!-- Logomark: geometric V -->
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            class="shrink-0"
-          >
+          <!-- Logomark: gradient V (brand) -->
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="shrink-0">
             <path
               d="M4 4L12 20L20 4"
               stroke="url(#logoGrad)"
@@ -178,49 +164,29 @@
               </linearGradient>
             </defs>
           </svg>
-          <span class="font-display text-lg font-bold tracking-tight"
-            >Vetori</span
-          >
+          <span class="font-display text-lg font-bold tracking-tight">Vetori</span>
         </div>
 
         <!-- Links -->
         <div
           class="hidden md:flex items-center gap-8 text-sm font-medium text-muted-foreground"
         >
-          <a
-            href="#use-cases"
-            class="nav-link hover:text-foreground transition-colors"
-            >Use Cases</a
-          >
-          <a
-            href="#how-it-works"
-            class="nav-link hover:text-foreground transition-colors"
-            >How It Works</a
-          >
-          <a
-            href="#examples"
-            class="nav-link hover:text-foreground transition-colors"
-            >Examples</a
-          >
-          <a
-            href="/embed"
-            class="nav-link hover:text-foreground transition-colors"
-            >Embeds</a
-          >
-          <a
-            href="javascript:void(0)"
-            onclick="handleSignIn()"
-            class="nav-link hover:text-foreground transition-colors"
-            >Sign In</a
-          >
+          <a href="#how-it-works" class="nav-link hover:text-foreground transition-colors">How it works</a>
+          <a href="#dual-mode" class="nav-link hover:text-foreground transition-colors">Two modes</a>
+          <a href="#use-cases" class="nav-link hover:text-foreground transition-colors">Who it's for</a>
+          <a href="#examples" class="nav-link hover:text-foreground transition-colors">See it live</a>
+          <a href="#faq" class="nav-link hover:text-foreground transition-colors">FAQ</a>
+          <a href="/embed.html" class="nav-link hover:text-foreground transition-colors">Public embeds →</a>
+          <a href="javascript:void(0)" onclick="handleSignIn()" class="nav-link hover:text-foreground transition-colors">Sign in</a>
         </div>
 
         <!-- CTA -->
         <a
-          href="mailto:info@vetori.ai?subject=Vetori%20Demo%20Request"
+          href="javascript:void(0)"
+          onclick="handleWaitlist()"
           class="inline-flex items-center justify-center rounded-lg text-sm font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-9 px-5"
         >
-          Request Demo
+          Request access
         </a>
       </div>
     </nav>
@@ -229,28 +195,15 @@
     <!-- 2. HERO                                    -->
     <!-- ═══════════════════════════════════════════ -->
     <section class="relative pt-24 pb-32 overflow-hidden topo-grid">
-      <!-- Ambient glow -->
+      <!-- Ambient glow (primary) -->
       <div
         class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] -z-10 rounded-full opacity-30"
-        style="
-          background: radial-gradient(
-            ellipse at center,
-            oklch(0.646 0.222 160 / 30%),
-            transparent 70%
-          );
-        "
+        style="background: radial-gradient(ellipse at center, oklch(0.646 0.222 160 / 30%), transparent 70%);"
       ></div>
-
-      <!-- Secondary accent glow -->
+      <!-- Secondary accent glow (blue — part of the brand) -->
       <div
         class="absolute top-32 right-0 w-[400px] h-[400px] -z-10 rounded-full opacity-15"
-        style="
-          background: radial-gradient(
-            ellipse at center,
-            oklch(0.706 0.196 262 / 30%),
-            transparent 70%
-          );
-        "
+        style="background: radial-gradient(ellipse at center, oklch(0.706 0.196 262 / 30%), transparent 70%);"
       ></div>
 
       <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
@@ -258,28 +211,18 @@
         <div data-animate>
           <span
             class="audience-badge inline-block text-xs font-medium tracking-wide text-muted-foreground border border-border rounded-full px-4 py-1.5 mb-8"
-            >For teams delivering recurring internal and client reports</span
-          >
+          >For finance leaders, deal teams, and consulting partners</span>
         </div>
 
         <!-- Headline -->
         <h1
-          class="font-display text-5xl md:text-7xl lg:text-[5.5rem] font-bold leading-[1.08] mb-5 tracking-tight"
+          class="font-display text-5xl md:text-7xl lg:text-[5.75rem] font-bold leading-[1.05] mb-5 tracking-tight"
           data-animate
           data-delay="100"
         >
-          Deliver a private report<br />
-          <span class="text-gradient">people will actually open.</span>
+          The board update<br />
+          <span class="text-gradient">your CFO actually opens.</span>
         </h1>
-
-        <!-- Second line -->
-        <p
-          class="font-display text-2xl md:text-3xl font-medium text-muted-foreground mb-10 tracking-tight"
-          data-animate
-          data-delay="200"
-        >
-          Secure report delivery for charts and dashboards.
-        </p>
 
         <!-- Subhead -->
         <p
@@ -287,49 +230,28 @@
           data-animate
           data-delay="300"
         >
-          Turn spreadsheet data into a polished report you can deliver
-          privately to recipients. Public embeds and portable exports are
-          available when you want wider distribution, but the core workflow is
-          internal, client, and sensitive stakeholder reporting.
+          Stop rebuilding the same report from scratch every month. Vetori drafts it from your data, brands it as yours, and lets recipients drill into a number themselves — without the 9pm follow-up email.
         </p>
 
         <!-- CTA -->
         <div data-animate data-delay="400">
-          <div
-            class="flex flex-col sm:flex-row items-center justify-center gap-3"
-          >
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="mailto:info@vetori.ai?subject=Vetori%20Demo%20Request"
+              href="javascript:void(0)"
+              onclick="handleWaitlist()"
               class="cta-button inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg shadow-primary/20"
             >
-              Request a Demo
+              Request access
             </a>
             <a
               href="#examples"
               class="inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors border border-border bg-surface-raised text-foreground hover:bg-surface h-14 px-10"
             >
-              See the Sample Report
+              See a real one
             </a>
           </div>
-          <p class="text-sm text-muted-foreground mt-3" data-waitlist-cta>
-            <span data-closed-text class="hidden"
-              >Vetori is in closed beta.</span
-            >
-            <span data-open-text>Want to test secure private reporting?</span>
-            <a
-              href="javascript:void(0)"
-              data-closed-text
-              class="hidden text-foreground underline underline-offset-4 hover:text-primary transition-colors"
-              onclick="handleWaitlist()"
-              >Join the waitlist</a
-            >
-            <a
-              href="javascript:void(0)"
-              data-open-text
-              class="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
-              onclick="handleSignUp()"
-              >Create a free account</a
-            >
+          <p class="text-sm text-muted-foreground mt-4">
+            Closed beta. Onboarding 10 design partners in Q2 2026.
           </p>
         </div>
 
@@ -340,24 +262,20 @@
           data-delay="600"
         >
           <div class="glow-pulse rounded-xl">
-            <div
-              class="rounded-xl border border-border bg-surface overflow-hidden"
-            >
-              <!-- Chrome bar -->
-              <div
-                class="h-10 border-b border-border flex items-center px-4 bg-surface-raised gap-2"
-              >
+            <div class="rounded-xl border border-border bg-surface overflow-hidden">
+              <!-- Chrome bar (simplified — outline rings, not colored dots) -->
+              <div class="h-10 border-b border-border flex items-center px-4 bg-surface-raised gap-2">
                 <div class="flex gap-1.5">
-                  <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
-                  <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
-                  <div class="w-3 h-3 rounded-full bg-[oklch(1_0_0/10%)]"></div>
+                  <div class="w-2.5 h-2.5 rounded-full border border-border"></div>
+                  <div class="w-2.5 h-2.5 rounded-full border border-border"></div>
+                  <div class="w-2.5 h-2.5 rounded-full border border-border"></div>
                 </div>
                 <div class="flex-1 flex justify-center">
                   <div
                     class="font-mono text-[11px] text-muted-foreground bg-background/50 rounded px-3 py-1 flex items-center gap-2"
                   >
                     <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
-                    secure.vetori.ai
+                    secure.us.vetori.ai
                   </div>
                 </div>
               </div>
@@ -385,45 +303,11 @@
                     </div>
                     <p class="vetori-embed__loading-text">Loading…</p>
                     <div class="vetori-embed__error">
-                      <svg
-                        width="32"
-                        height="32"
-                        viewBox="0 0 32 32"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <rect
-                          x="3"
-                          y="18"
-                          width="5"
-                          height="11"
-                          rx="1.5"
-                          fill="currentColor"
-                        />
-                        <rect
-                          x="10.5"
-                          y="12"
-                          width="5"
-                          height="17"
-                          rx="1.5"
-                          fill="currentColor"
-                        />
-                        <rect
-                          x="18"
-                          y="6"
-                          width="5"
-                          height="23"
-                          rx="1.5"
-                          fill="currentColor"
-                        />
-                        <rect
-                          x="25.5"
-                          y="3"
-                          width="5"
-                          height="26"
-                          rx="1.5"
-                          fill="currentColor"
-                        />
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="3" y="18" width="5" height="11" rx="1.5" fill="currentColor" />
+                        <rect x="10.5" y="12" width="5" height="17" rx="1.5" fill="currentColor" />
+                        <rect x="18" y="6" width="5" height="23" rx="1.5" fill="currentColor" />
+                        <rect x="25.5" y="3" width="5" height="26" rx="1.5" fill="currentColor" />
                       </svg>
                       <h3>Private report demo</h3>
                       <p>This content is temporarily unavailable</p>
@@ -444,33 +328,12 @@
                     ;(function () {
                       var e = document.getElementById('vetori-hero')
                       if (!e) return
-                      var f = e.querySelector('iframe'),
-                        st = 'idle',
-                        l,
-                        t
-                      function u(v) {
-                        st = v
-                        e.setAttribute('data-state', v)
-                      }
-                      l = setTimeout(function () {
-                        if (st === 'idle') u('loading')
-                      }, 2000)
-                      t = setTimeout(function () {
-                        if (st !== 'loaded') {
-                          u('error')
-                          clearTimeout(l)
-                        }
-                      }, 15000)
-                      f.onload = function () {
-                        clearTimeout(l)
-                        clearTimeout(t)
-                        u('loaded')
-                      }
-                      f.onerror = function () {
-                        clearTimeout(l)
-                        clearTimeout(t)
-                        u('error')
-                      }
+                      var f = e.querySelector('iframe'), st = 'idle', l, t
+                      function u(v) { st = v; e.setAttribute('data-state', v) }
+                      l = setTimeout(function () { if (st === 'idle') u('loading') }, 2000)
+                      t = setTimeout(function () { if (st !== 'loaded') { u('error'); clearTimeout(l) } }, 15000)
+                      f.onload = function () { clearTimeout(l); clearTimeout(t); u('loaded') }
+                      f.onerror = function () { clearTimeout(l); clearTimeout(t); u('error') }
                     })()
                   </script>
                 </div>
@@ -482,345 +345,126 @@
     </section>
 
     <!-- ═══════════════════════════════════════════ -->
-    <!-- 3. CREDIBILITY STRIP                       -->
+    <!-- 3. SPECIMEN STRIP (was credibility carousel) -->
     <!-- ═══════════════════════════════════════════ -->
     <section class="border-y border-border py-8 relative overflow-hidden">
       <div
         class="absolute top-0 left-0 right-0 h-px"
-        style="
-          background: linear-gradient(
-            90deg,
-            transparent,
-            oklch(0.646 0.222 160 / 20%),
-            oklch(0.706 0.196 262 / 20%),
-            transparent
-          );
-        "
+        style="background: linear-gradient(90deg, transparent, oklch(0.646 0.222 160 / 20%), oklch(0.706 0.196 262 / 20%), transparent);"
       ></div>
 
       <div class="max-w-5xl mx-auto px-6 text-center">
-        <p
-          class="text-sm tracking-wide flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
-          data-animate
-        >
+        <p class="text-sm tracking-wide flex flex-wrap items-center justify-center gap-x-6 gap-y-2" data-animate>
           <span class="text-muted-foreground">Used for</span>
-          <span class="credibility-text font-medium">Annual Reports</span>
+          <span class="credibility-text font-medium">Q3 ops reviews</span>
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span
-            class="credibility-text font-medium"
-            style="animation-delay: -1s"
-            >Internal Reviews</span
-          >
+          <span class="credibility-text font-medium" style="animation-delay: -1s">M&amp;A integration plans</span>
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span
-            class="credibility-text font-medium"
-            style="animation-delay: -2s"
-            >Client Reporting</span
-          >
+          <span class="credibility-text font-medium" style="animation-delay: -2s">Board updates</span>
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span
-            class="credibility-text font-medium"
-            style="animation-delay: -3s"
-            >Board Updates</span
-          >
+          <span class="credibility-text font-medium" style="animation-delay: -3s">Portfolio KPI digests</span>
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span
-            class="credibility-text font-medium"
-            style="animation-delay: -4s"
-            >Public Highlights</span
-          >
+          <span class="credibility-text font-medium" style="animation-delay: -4s">Annual reports</span>
         </p>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════ -->
-    <!-- 4. PROBLEMS                                -->
+    <!-- 4. THE SHIFT — what changes for you        -->
     <!-- ═══════════════════════════════════════════ -->
-    <section class="py-24 border-b border-border">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold mb-6 text-center text-balance tracking-tight"
-          data-animate
-        >
-          Private reporting is still broken.
-        </h2>
-        <p
-          class="text-muted-foreground text-center mb-16 max-w-2xl mx-auto"
-          data-animate
-          data-delay="100"
-        >
-          Most teams either overshare dashboards, email dead PDFs, or buy
-          expensive viewer seats just to get the right report in front of the
-          right people.
-        </p>
-
-        <div class="grid md:grid-cols-3 gap-6">
-          <div
-            class="rounded-xl border border-border bg-surface-raised p-8"
-            data-animate
-            data-delay="150"
-          >
-            <p
-              class="text-xs font-semibold uppercase tracking-wide text-primary mb-3"
-            >
-              Sensitive Reports
+    <section class="py-28 border-b border-border dotted-grid relative">
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+          <div data-animate>
+            <span class="section-eyebrow">01 — The shift</span>
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 tracking-tight leading-[1.08]">
+              Spend Monday on the analysis. <span class="text-gradient">Not the deck.</span>
+            </h2>
+            <p class="text-muted-foreground leading-relaxed text-[17px] mb-6">
+              The first draft is waiting when you sit down. Vetori reads your data and ships a real report — the right charts, the right framing, captions in your voice. You review, edit what you'd say differently, send.
             </p>
-            <h3 class="text-xl font-semibold mb-3">
-              PDFs and screenshots kill the useful parts
-            </h3>
-            <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Once a report is private and high-stakes, people still need to
-              search, filter, zoom, and inspect the data. Static files remove
-              the point of sending it.
-            </p>
+            <ul class="space-y-3 text-[15px]">
+              <li class="flex gap-3 items-start">
+                <span class="text-primary mt-1.5">▸</span>
+                <span class="text-foreground/85"><strong class="text-foreground">Three days down to a few hours</strong> — what FP&amp;A teams report after switching off manual board books.</span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="text-primary mt-1.5">▸</span>
+                <span class="text-foreground/85"><strong class="text-foreground">No more rebuilding from scratch.</strong> Next month: same story, fresh data, one click.</span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span class="text-primary mt-1.5">▸</span>
+                <span class="text-foreground/85"><strong class="text-foreground">No more v44.</strong> One source. One link. The version everyone reviews is the version that ships.</span>
+              </li>
+            </ul>
           </div>
 
-          <div
-            class="rounded-xl border border-border bg-surface-raised p-8"
-            data-animate
-            data-delay="250"
-          >
-            <p
-              class="text-xs font-semibold uppercase tracking-wide text-primary mb-3"
-            >
-              BI Access
-            </p>
-            <h3 class="text-xl font-semibold mb-3">
-              Viewer-seat sprawl is expensive and clunky
-            </h3>
-            <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Giving every stakeholder a full BI login is expensive, slow to
-              manage, and usually overkill for people who only need to view a
-              report.
-            </p>
-          </div>
-
-          <div
-            class="rounded-xl border border-border bg-surface-raised p-8"
-            data-animate
-            data-delay="350"
-          >
-            <p
-              class="text-xs font-semibold uppercase tracking-wide text-primary mb-3"
-            >
-              Delivery
-            </p>
-            <h3 class="text-xl font-semibold mb-3">
-              Sharing breaks when delivery and auth are separate
-            </h3>
-            <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Teams need one workflow centered on secure private delivery, with
-              public publishing available only when it supports distribution,
-              marketing, or broader visibility.
-            </p>
+          <!-- Output mockup — what the delivered report looks like, not how it's built -->
+          <div class="output-card" data-animate data-delay="200">
+            <div class="output-card__head">
+              <div class="output-card__brand">
+                <div class="output-card__logo"></div>
+                <span>Acme &amp; Co · Q4 Board Review</span>
+              </div>
+              <span class="output-card__meta">Delivered to 12 · audited</span>
+            </div>
+            <div class="output-card__title">Revenue rebounded in three of five regions</div>
+            <div class="output-card__chart">
+              <span style="height: 38%"></span>
+              <span style="height: 62%"></span>
+              <span style="height: 84%"></span>
+              <span style="height: 50%"></span>
+              <span style="height: 70%"></span>
+            </div>
+            <div class="output-card__caption">
+              West led with <strong>+32%</strong> YoY — the largest single-region jump since 2024. Two regions still trail Q3 plan; details on slide 4.
+            </div>
+            <div class="output-card__foot">
+              <span>5 slides · 4 min read</span>
+              <span class="output-card__action">Drill in →</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════ -->
-    <!-- 5. USE CASES                               -->
+    <!-- 5. PROBLEMS                                -->
     <!-- ═══════════════════════════════════════════ -->
-    <section id="use-cases" class="py-28">
+    <section class="py-24 border-b border-border">
       <div class="max-w-6xl mx-auto px-6">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold mb-6 text-center text-balance tracking-tight"
-          data-animate
-        >
-          Built for teams that send reports, not dashboards.
-        </h2>
-        <p
-          class="text-muted-foreground text-center mb-16 max-w-lg mx-auto"
-          data-animate
-          data-delay="100"
-        >
-          Best for recurring internal and external reporting where access
-          matters as much as the visual itself.
-        </p>
+        <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
+          <span class="section-eyebrow justify-center">02 — Why now</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 text-balance tracking-tight">
+            Reporting is the recurring fire drill nobody fixed.
+          </h2>
+          <p class="text-muted-foreground">
+            Finance teams spend ~85% of their cycle on assembly and ~15% on insight. Deal teams pull all-nighters to the v44. Consulting analysts spend Friday on a deck instead of analysis. Same shape of pain, three industries.
+          </p>
+        </div>
 
-        <div class="grid sm:grid-cols-2 gap-6">
-          <!-- Card 1 -->
-          <div
-            class="use-case-card rounded-xl border border-border bg-surface-raised p-8"
-            data-animate
-            data-delay="150"
-          >
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  class="text-primary"
-                >
-                  <path
-                    d="M9 2L11 7H15L12 10L13 15L9 12L5 15L6 10L3 7H7L9 2Z"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linejoin="round"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold">
-                Internal Ops &amp; Leadership Reviews
-              </h3>
-            </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="150">
+            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">For finance</p>
+            <h3 class="text-xl font-semibold mb-3">Three days on the board book. Every month.</h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Deliver recurring KPI, operating, or geography reports to
-              internal stakeholders without buying everyone a full BI seat.
+              Pulling data from six tabs and four systems. Rewriting the same variance story. Catching a broken formula at 11pm before the board meeting. Hero mode is not a workflow.
             </p>
           </div>
 
-          <!-- Card 2 -->
-          <div
-            class="use-case-card rounded-xl border border-border bg-surface-raised p-8"
-            data-animate
-            data-delay="250"
-          >
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  class="text-accent"
-                >
-                  <rect
-                    x="2"
-                    y="2"
-                    width="6"
-                    height="6"
-                    rx="1.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                  <rect
-                    x="10"
-                    y="2"
-                    width="6"
-                    height="6"
-                    rx="1.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                  <rect
-                    x="2"
-                    y="10"
-                    width="6"
-                    height="6"
-                    rx="1.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                  <rect
-                    x="10"
-                    y="10"
-                    width="6"
-                    height="6"
-                    rx="1.5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold">Client &amp; Partner Reporting</h3>
-            </div>
+          <div class="rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="250">
+            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">For deal teams</p>
+            <h3 class="text-xl font-semibold mb-3">Pitch books that spiral to v44.</h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Send polished interactive reports to clients, franchisees, or
-              partners through a dedicated viewer flow instead of shipping
-              attachments around.
+              Associate wants one thing, VP wants another, MD wants something else. Three to four weeks of revisions. Most of it doesn't change the deal — but the deck still has to ship.
             </p>
           </div>
 
-          <!-- Card 3 -->
-          <div
-            class="use-case-card rounded-xl border border-border bg-surface-raised p-8"
-            data-animate
-            data-delay="350"
-          >
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  class="text-primary"
-                >
-                  <path
-                    d="M3 14L7 3L11 10L15 5"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold">
-                Board, Executive &amp; Investor Updates
-              </h3>
-            </div>
+          <div class="rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="350">
+            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">For consultants</p>
+            <h3 class="text-xl font-semibold mb-3">The deck eats Friday. Then the client emails Sunday.</h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Give high-trust recipients a clean report they can open securely,
-              explore quickly, and revisit between review meetings.
-            </p>
-          </div>
-
-          <!-- Card 4 -->
-          <div
-            class="use-case-card rounded-xl border border-border bg-surface-raised p-8"
-            data-animate
-            data-delay="450"
-          >
-            <div class="flex items-center gap-3 mb-4">
-              <div
-                class="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center"
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  class="text-accent"
-                >
-                  <circle
-                    cx="9"
-                    cy="7"
-                    r="3"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                  <path
-                    d="M9 10C9 10 15 13 15 15H3C3 13 9 10 9 10Z"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                </svg>
-              </div>
-              <h3 class="text-lg font-semibold">
-                Public Embeds as a Secondary Channel
-              </h3>
-            </div>
-            <p class="text-muted-foreground leading-relaxed text-[15px]">
-              The same publication pipeline can still power embeds, campaign
-              pages, and public-facing releases, but those are a distribution
-              flywheel around the core secure-reporting workflow.
+              Senior analyst billable on PowerPoint. Static PDF goes cold the moment you send it. Client emails 9pm: "can you send me the underlying numbers?" That's where the next engagement is won or lost.
             </p>
           </div>
         </div>
@@ -830,39 +474,33 @@
     <!-- ═══════════════════════════════════════════ -->
     <!-- 6. HOW IT WORKS (3 steps)                  -->
     <!-- ═══════════════════════════════════════════ -->
-    <section id="how-it-works" class="py-28 border-t border-border">
+    <section id="how-it-works" class="py-28 border-b border-border">
       <div class="max-w-6xl mx-auto px-6">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold mb-20 text-center text-balance tracking-tight"
-          data-animate
-        >
-          From source data to secure report delivery.
-        </h2>
+        <div class="text-center mb-20" data-animate>
+          <span class="section-eyebrow justify-center">03 — Workflow</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-balance tracking-tight">
+            From source data to delivered report in three steps.
+          </h2>
+        </div>
 
         <div class="grid md:grid-cols-3 gap-12">
           <!-- Step 1 -->
           <div class="relative step-connector" data-animate data-delay="100">
             <div class="flex items-center gap-3 mb-6">
-              <span
-                class="font-display text-sm font-bold text-primary bg-primary/10 rounded-lg w-8 h-8 flex items-center justify-center"
-                >01</span
-              >
-              <h3 class="text-xl font-semibold">Upload the report data</h3>
+              <span class="font-mono text-xs font-bold text-primary bg-primary/10 rounded-lg w-9 h-9 flex items-center justify-center">01</span>
+              <h3 class="text-xl font-semibold">Upload the data</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Bring operational, financial, program, or location data in a CSV.
-              Vetori auto-detects fields, types, and coordinates.
+              Drop in a CSV — operating metrics, deal pipeline, portfolio KPIs, geographic data. Vetori auto-detects fields, types, and coordinates.
             </p>
             <div class="rounded-lg border border-border bg-background/40 p-4">
-              <div
-                class="font-mono text-xs text-muted-foreground/60 leading-relaxed"
-              >
-                <span class="text-primary/60">program</span>,
-                <span class="text-primary/60">lat</span>,
-                <span class="text-primary/60">lng</span>,
-                <span class="text-primary/60">people_served</span><br />
-                "Food Relief", 40.71, -74.00, 1240<br />
-                "After School", 34.05, -118.24, 380
+              <div class="font-mono text-xs text-muted-foreground/60 leading-relaxed">
+                <span class="text-primary/60">product</span>,
+                <span class="text-primary/60">region</span>,
+                <span class="text-primary/60">revenue</span>,
+                <span class="text-primary/60">growth</span><br />
+                "Apex Pro", "West", 812000, 0.28<br />
+                "Helix Studio", "West", 694000, 0.19
               </div>
             </div>
           </div>
@@ -870,112 +508,34 @@
           <!-- Step 2 -->
           <div class="relative step-connector" data-animate data-delay="250">
             <div class="flex items-center gap-3 mb-6">
-              <span
-                class="font-display text-sm font-bold text-primary bg-primary/10 rounded-lg w-8 h-8 flex items-center justify-center"
-                >02</span
-              >
-              <h3 class="text-xl font-semibold">Build the chart or dashboard</h3>
+              <span class="font-mono text-xs font-bold text-primary bg-primary/10 rounded-lg w-9 h-9 flex items-center justify-center">02</span>
+              <h3 class="text-xl font-semibold">AI generates the first draft</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Create the visual, map the fields, and tune the presentation so
-              the report looks ready for internal, executive, or client
-              delivery.
+              The authoring agent reads your data, finds the story, proposes a complete report — slides, charts, captions. You refine the framing and ship.
             </p>
-            <!-- Viz type cards — larger and more readable -->
             <div class="grid grid-cols-3 gap-2">
-              <div
-                class="viz-card rounded-lg border border-border bg-background/40 p-3 flex flex-col items-center gap-2"
-              >
+              <div class="viz-card rounded-lg border border-border bg-background/40 p-3 flex flex-col items-center gap-2">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <circle
-                    cx="14"
-                    cy="10"
-                    r="4"
-                    stroke="oklch(0.646 0.222 160)"
-                    stroke-width="1.5"
-                    fill="oklch(0.646 0.222 160 / 15%)"
-                  />
-                  <path
-                    d="M14 14C14 14 20 18 20 22H8C8 18 14 14 14 14Z"
-                    stroke="oklch(0.646 0.222 160)"
-                    stroke-width="1.5"
-                    fill="oklch(0.646 0.222 160 / 8%)"
-                  />
+                  <circle cx="14" cy="10" r="4" stroke="oklch(0.646 0.222 160)" stroke-width="1.5" fill="oklch(0.646 0.222 160 / 15%)"/>
+                  <path d="M14 14C14 14 20 18 20 22H8C8 18 14 14 14 14Z" stroke="oklch(0.646 0.222 160)" stroke-width="1.5" fill="oklch(0.646 0.222 160 / 8%)"/>
                 </svg>
                 <span class="text-xs font-medium text-foreground/70">Map</span>
               </div>
-              <div
-                class="viz-card rounded-lg border border-border bg-background/40 p-3 flex flex-col items-center gap-2"
-              >
+              <div class="viz-card rounded-lg border border-border bg-background/40 p-3 flex flex-col items-center gap-2">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <rect
-                    x="4"
-                    y="12"
-                    width="5"
-                    height="12"
-                    rx="1"
-                    stroke="oklch(0.706 0.196 262)"
-                    stroke-width="1.5"
-                    fill="oklch(0.706 0.196 262 / 15%)"
-                  />
-                  <rect
-                    x="11.5"
-                    y="6"
-                    width="5"
-                    height="18"
-                    rx="1"
-                    stroke="oklch(0.706 0.196 262)"
-                    stroke-width="1.5"
-                    fill="oklch(0.706 0.196 262 / 15%)"
-                  />
-                  <rect
-                    x="19"
-                    y="14"
-                    width="5"
-                    height="10"
-                    rx="1"
-                    stroke="oklch(0.706 0.196 262)"
-                    stroke-width="1.5"
-                    fill="oklch(0.706 0.196 262 / 15%)"
-                  />
+                  <rect x="4" y="12" width="5" height="12" rx="1" stroke="oklch(0.646 0.222 160)" stroke-width="1.5" fill="oklch(0.646 0.222 160 / 15%)"/>
+                  <rect x="11.5" y="6" width="5" height="18" rx="1" stroke="oklch(0.646 0.222 160)" stroke-width="1.5" fill="oklch(0.646 0.222 160 / 15%)"/>
+                  <rect x="19" y="14" width="5" height="10" rx="1" stroke="oklch(0.646 0.222 160)" stroke-width="1.5" fill="oklch(0.646 0.222 160 / 15%)"/>
                 </svg>
                 <span class="text-xs font-medium text-foreground/70">Bar</span>
               </div>
-              <div
-                class="viz-card rounded-lg border border-border bg-background/40 p-3 flex flex-col items-center gap-2"
-              >
+              <div class="viz-card rounded-lg border border-border bg-background/40 p-3 flex flex-col items-center gap-2">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <polyline
-                    points="4,20 10,13 16,16 24,6"
-                    stroke="oklch(0.646 0.222 160)"
-                    stroke-width="1.5"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <polyline
-                    points="4,20 10,13 16,16 24,6"
-                    stroke="none"
-                    fill="oklch(0.646 0.222 160 / 8%)"
-                  />
-                  <circle
-                    cx="10"
-                    cy="13"
-                    r="2"
-                    fill="oklch(0.646 0.222 160 / 30%)"
-                  />
-                  <circle
-                    cx="16"
-                    cy="16"
-                    r="2"
-                    fill="oklch(0.646 0.222 160 / 30%)"
-                  />
-                  <circle
-                    cx="24"
-                    cy="6"
-                    r="2"
-                    fill="oklch(0.646 0.222 160 / 30%)"
-                  />
+                  <polyline points="4,20 10,13 16,16 24,6" stroke="oklch(0.646 0.222 160)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="10" cy="13" r="2" fill="oklch(0.646 0.222 160 / 30%)"/>
+                  <circle cx="16" cy="16" r="2" fill="oklch(0.646 0.222 160 / 30%)"/>
+                  <circle cx="24" cy="6" r="2" fill="oklch(0.646 0.222 160 / 30%)"/>
                 </svg>
                 <span class="text-xs font-medium text-foreground/70">Line</span>
               </div>
@@ -985,36 +545,17 @@
           <!-- Step 3 -->
           <div class="relative" data-animate data-delay="400">
             <div class="flex items-center gap-3 mb-6">
-              <span
-                class="font-display text-sm font-bold text-primary bg-primary/10 rounded-lg w-8 h-8 flex items-center justify-center"
-                >03</span
-              >
-              <h3 class="text-xl font-semibold">
-                Deliver privately first, then publish more broadly if needed
-              </h3>
+              <span class="font-mono text-xs font-bold text-primary bg-primary/10 rounded-lg w-9 h-9 flex items-center justify-center">03</span>
+              <h3 class="text-xl font-semibold">Deliver privately, with audit</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Invite recipients by email, send a secure link, and keep the main
-              workflow private. Public embeds and standalone exports are there
-              when you want a website surface, a campaign page, or a controlled
-              handoff.
+              Invite recipients by email, send a branded secure link. Per-recipient access, audit trail, no viewer seats. Public embeds are there when you want them.
             </p>
             <div class="rounded-lg border border-border bg-background/40 p-4">
-              <div
-                class="font-mono text-xs text-muted-foreground/60 leading-relaxed"
-              >
-                <span class="text-primary/60">private_link</span>=<span
-                  class="text-foreground/40"
-                  >"secure.vetori.ai/q2-ops"</span
-                ><br />
-                <span class="text-primary/60">embed</span>=<span
-                  class="text-foreground/40"
-                  >"&lt;iframe src='...'&gt;"</span
-                ><br />
-                <span class="text-primary/60">artifact</span>=<span
-                  class="text-foreground/40"
-                  >"q2-ops.html"</span
-                >
+              <div class="font-mono text-xs text-muted-foreground/60 leading-relaxed">
+                <span class="text-primary/60">share_with</span>=<span class="text-foreground/40">"cfo@acme.com"</span><br />
+                <span class="text-primary/60">brand</span>=<span class="text-foreground/40">"acme.report.com"</span><br />
+                <span class="text-primary/60">audit</span>=<span class="text-foreground/40">enabled</span>
               </div>
             </div>
           </div>
@@ -1023,50 +564,135 @@
     </section>
 
     <!-- ═══════════════════════════════════════════ -->
-    <!-- 7. LIVE DEMO                               -->
+    <!-- 7. AUDIENCE BEHAVIOR — watch / drill in    -->
     <!-- ═══════════════════════════════════════════ -->
-    <section
-      id="examples"
-      class="py-28 border-t border-border relative overflow-hidden"
-    >
-      <!-- Background glow -->
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] -z-10 rounded-full opacity-20"
-        style="
-          background: radial-gradient(
-            ellipse at center,
-            oklch(0.706 0.196 262 / 25%),
-            transparent 70%
-          );
-        "
-      ></div>
+    <section id="dual-mode" class="py-28 border-b border-border">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto mb-16" data-animate>
+          <span class="section-eyebrow justify-center">04 — What recipients do</span>
+          <h2 class="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-[1.05]">
+            Watch when they have a minute.<br />
+            <span class="text-gradient">Drill in when they have a question.</span>
+          </h2>
+          <p class="text-muted-foreground text-lg leading-relaxed">
+            One link. The CFO opens it on their phone, watches the 4-minute recap. The board chair opens it on a laptop and clicks into the regional breakdown. Nobody emails you to ask "can you also send me the underlying spreadsheet."
+          </p>
+        </div>
 
-      <div class="max-w-7xl mx-auto px-6">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold mb-4 text-center tracking-tight"
-          data-animate
-        >
-          A public sample from a private-reporting product.
-        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- Lean in (promoted to first — the differentiator) -->
+          <div class="dual-mode-card lean-in" data-animate data-delay="100">
+            <span class="mode-tag">When they have a question</span>
+            <h3 class="font-display text-2xl font-semibold tracking-tight">They drill in. You stay off the call.</h3>
+            <p class="text-muted-foreground text-[15px] leading-relaxed">
+              Filter, search, click into a row, change a dimension. On the same link. No "can you also send me…" follow-up. No second tool. No BI seat upgrade.
+            </p>
+            <div class="mode-illustration">
+              <div class="explore-bar">
+                <div class="search-pill">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+                  <span>Why is West up?</span>
+                </div>
+                <span class="filter-chip">region: West <span style="opacity:.5">×</span></span>
+              </div>
+              <div class="mini-bars">
+                <span style="height: 60%"></span>
+                <span style="height: 90%"></span>
+                <span style="height: 70%"></span>
+                <span style="height: 40%"></span>
+                <span style="height: 80%"></span>
+                <span style="height: 55%"></span>
+                <span style="height: 75%"></span>
+              </div>
+            </div>
+          </div>
 
-        <p
-          class="text-muted-foreground text-center mb-16 max-w-xl mx-auto"
-          data-animate
-          data-delay="100"
-        >
-          This sample is public because it is the easiest way to demo the
-          player. Vetori's main use case is secure private reporting; embeds
-          and public pages are the secondary distribution layer around it.
+          <!-- Lean back -->
+          <div class="dual-mode-card lean-back" data-animate data-delay="250">
+            <span class="mode-tag">When they have a minute</span>
+            <h3 class="font-display text-2xl font-semibold tracking-tight">They hit play. The report tells itself.</h3>
+            <p class="text-muted-foreground text-[15px] leading-relaxed">
+              Animated, paced for the room, captioned. Good for the inbox, the phone, the 6am board prep. They'll have read it before the meeting starts.
+            </p>
+            <div class="mode-illustration"></div>
+          </div>
+        </div>
+
+        <p class="text-center text-muted-foreground mt-10 text-base tracking-wide" data-animate data-delay="400">
+          One link. Branded as yours. Logged end-to-end.
         </p>
+      </div>
+    </section>
 
-        <div
-          class="glow-pulse rounded-xl max-w-6xl mx-auto"
-          data-animate
-          data-delay="200"
-        >
-          <div
-            class="rounded-xl border border-border overflow-hidden bg-surface"
-          >
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 8. USE CASES (narrowed to 3)               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="use-cases" class="py-28 border-b border-border">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-16" data-animate>
+          <span class="section-eyebrow justify-center">05 — Audience</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-balance tracking-tight">
+            Built for the partners and leaders who sign off on the report.
+          </h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 — Finance leads (most reachable / most vocal pain) -->
+          <div class="use-case-card rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="150">
+            <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-4">Finance &amp; FP&amp;A</p>
+            <h3 class="text-xl font-semibold mb-3">Replace the monthly board PDF with a live link.</h3>
+            <p class="text-muted-foreground leading-relaxed text-[15px]">
+              The CFO clicks. Sees the variance. Drills into the segment. Doesn't email you back. Next month: regenerate against fresh data, ship.
+            </p>
+            <p class="font-mono text-[11px] text-muted-foreground/60 mt-5 pt-4 border-t border-border">
+              Mid-market CFO · VP Finance · Director of FP&amp;A
+            </p>
+          </div>
+
+          <!-- Card 2 — Deal teams -->
+          <div class="use-case-card rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="250">
+            <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-4">Deal teams</p>
+            <h3 class="text-xl font-semibold mb-3">Send deal materials. Audit who saw what, when.</h3>
+            <p class="text-muted-foreground leading-relaxed text-[15px]">
+              One branded link per stakeholder. Recipients drill into the model without breaking the NDA chain. Audit log for the file. Three weeks of redlines compressed.
+            </p>
+            <p class="font-mono text-[11px] text-muted-foreground/60 mt-5 pt-4 border-t border-border">
+              M&amp;A advisory · Investment banking · Corp dev
+            </p>
+          </div>
+
+          <!-- Card 3 — Consulting -->
+          <div class="use-case-card rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="350">
+            <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-4">Consulting firms</p>
+            <h3 class="text-xl font-semibold mb-3">Ship the deliverable Friday. Win the engagement next quarter.</h3>
+            <p class="text-muted-foreground leading-relaxed text-[15px]">
+              Client opens it, finds the answer, doesn't email Sunday. The interactive version is the second conversation — the one where the next phase gets scoped.
+            </p>
+            <p class="font-mono text-[11px] text-muted-foreground/60 mt-5 pt-4 border-t border-border">
+              Strategy · M&amp;A · Transaction services
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════ -->
+    <!-- 9. LIVE DEMO                               -->
+    <!-- ═══════════════════════════════════════════ -->
+    <section id="examples" class="py-28 border-b border-border relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16" data-animate>
+          <span class="section-eyebrow justify-center">06 — See it</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-balance tracking-tight">
+            A real, live Vetori report.
+          </h2>
+          <p class="text-muted-foreground mt-4 max-w-xl mx-auto">
+            This one's public so you can play with it. Try the search and filter — that's what your CFO sees when she has a question.
+          </p>
+        </div>
+
+        <div class="glow-pulse rounded-xl max-w-6xl mx-auto" data-animate data-delay="200">
+          <div class="rounded-xl border border-border overflow-hidden bg-surface">
             <div
               id="vetori-examples"
               class="vetori-embed"
@@ -1089,47 +715,13 @@
                 </div>
                 <p class="vetori-embed__loading-text">Loading…</p>
                 <div class="vetori-embed__error">
-                  <svg
-                    width="32"
-                    height="32"
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="3"
-                      y="18"
-                      width="5"
-                      height="11"
-                      rx="1.5"
-                      fill="currentColor"
-                    />
-                    <rect
-                      x="10.5"
-                      y="12"
-                      width="5"
-                      height="17"
-                      rx="1.5"
-                      fill="currentColor"
-                    />
-                    <rect
-                      x="18"
-                      y="6"
-                      width="5"
-                      height="23"
-                      rx="1.5"
-                      fill="currentColor"
-                    />
-                    <rect
-                      x="25.5"
-                      y="3"
-                      width="5"
-                      height="26"
-                      rx="1.5"
-                      fill="currentColor"
-                    />
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="18" width="5" height="11" rx="1.5" fill="currentColor" />
+                    <rect x="10.5" y="12" width="5" height="17" rx="1.5" fill="currentColor" />
+                    <rect x="18" y="6" width="5" height="23" rx="1.5" fill="currentColor" />
+                    <rect x="25.5" y="3" width="5" height="26" rx="1.5" fill="currentColor" />
                   </svg>
-                  <h3>Vetori Subhero</h3>
+                  <h3>Sample interactive report</h3>
                   <p>This content is temporarily unavailable</p>
                   <a
                     href="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/1c31e9e8-32fd-484d-a552-681d10c0d792/sites/a31c2082-1634-49bb-bd56-a92141113926/share"
@@ -1141,97 +733,79 @@
               </div>
               <iframe
                 src="https://29346fc3-51b6-4ca4-880e-b6860e707cfa.vetori.site/publications/1c31e9e8-32fd-484d-a552-681d10c0d792/sites/a31c2082-1634-49bb-bd56-a92141113926/embed"
-                title="Vetori Subhero"
+                title="Vetori Sample"
                 allow="fullscreen"
               ></iframe>
               <script>
                 ;(function () {
                   var e = document.getElementById('vetori-examples')
                   if (!e) return
-                  var f = e.querySelector('iframe'),
-                    st = 'idle',
-                    l,
-                    t
-                  function u(v) {
-                    st = v
-                    e.setAttribute('data-state', v)
-                  }
-                  l = setTimeout(function () {
-                    if (st === 'idle') u('loading')
-                  }, 2000)
-                  t = setTimeout(function () {
-                    if (st !== 'loaded') {
-                      u('error')
-                      clearTimeout(l)
-                    }
-                  }, 15000)
-                  f.onload = function () {
-                    clearTimeout(l)
-                    clearTimeout(t)
-                    u('loaded')
-                  }
-                  f.onerror = function () {
-                    clearTimeout(l)
-                    clearTimeout(t)
-                    u('error')
-                  }
+                  var f = e.querySelector('iframe'), st = 'idle', l, t
+                  function u(v) { st = v; e.setAttribute('data-state', v) }
+                  l = setTimeout(function () { if (st === 'idle') u('loading') }, 2000)
+                  t = setTimeout(function () { if (st !== 'loaded') { u('error'); clearTimeout(l) } }, 15000)
+                  f.onload = function () { clearTimeout(l); clearTimeout(t); u('loaded') }
+                  f.onerror = function () { clearTimeout(l); clearTimeout(t); u('error') }
                 })()
               </script>
             </div>
           </div>
         </div>
 
-        <p
-          class="font-mono text-sm text-primary text-center mt-8 tracking-wide"
-          data-animate
-          data-delay="400"
-        >
-          Built from spreadsheet data. Secure reporting first. Public embeds
-          when they help distribution.
+        <p class="font-mono text-sm text-primary text-center mt-8 tracking-wide" data-animate data-delay="400">
+          Drafted from a CSV. Shipped in an afternoon. Read by people who don't open dashboards.
         </p>
       </div>
     </section>
 
     <!-- ═══════════════════════════════════════════ -->
-    <!-- 8. WHY VETORI (4 differentiator rows)      -->
+    <!-- 10. WHY VETORI (3 differentiator rows)     -->
     <!-- ═══════════════════════════════════════════ -->
-    <section id="why-vetori" class="py-28 border-t border-border">
+    <section id="why-vetori" class="py-28 border-b border-border">
       <div class="max-w-6xl mx-auto px-6">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold mb-20 text-center text-balance tracking-tight"
-          data-animate
-        >
-          Why teams use Vetori for secure report delivery
-        </h2>
+        <div class="text-center mb-20" data-animate>
+          <span class="section-eyebrow justify-center">07 — Why teams pick Vetori</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold text-balance tracking-tight">
+            Outcomes other tools keep promising
+          </h2>
+        </div>
 
         <div class="space-y-24">
-          <!-- Row 1 -->
+          <!-- Row 1 — time saved (the headline outcome) -->
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
             <div>
-              <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Built for recipients, not power users
+              <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-primary mb-3 block">Buy back your week</span>
+              <h3 class="font-display text-3xl font-bold mb-4 tracking-tight leading-tight">
+                Three days on the board book becomes <span class="text-gradient">a few hours.</span>
               </h3>
-              <p class="text-muted-foreground leading-relaxed">
-                Give recipients something they can actually explore. They can
-                filter, search, and inspect the report without learning a full
-                BI interface or getting dropped into an authoring app.
+              <p class="text-muted-foreground leading-relaxed text-[16px]">
+                You stop pulling the same data, formatting the same charts, rewriting the same variance story. Vetori reads your data and ships a real first draft. You spend the time you used to lose on assembly on actual analysis.
               </p>
             </div>
-            <div
-              class="feature-visual rounded-xl border border-border bg-surface-raised p-10 flex flex-col items-center justify-center min-h-[220px] gap-4"
-            >
-              <div class="flex items-center gap-3 w-full max-w-[220px]">
-                <div
-                  class="flex-1 h-8 rounded-lg bg-background/60 border border-border flex items-center px-3"
-                >
-                  <span class="font-mono text-xs text-muted-foreground/50"
-                    >Search...</span
-                  >
+            <div class="feature-visual rounded-xl border border-border bg-surface-raised p-10 flex flex-col items-center justify-center min-h-[260px] gap-5">
+              <div class="text-center">
+                <div class="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground mb-2">Before</div>
+                <div class="font-display text-3xl font-bold text-muted-foreground/70 line-through">3 days</div>
+              </div>
+              <div class="font-mono text-[10px] uppercase tracking-[0.2em] text-primary">↓</div>
+              <div class="text-center">
+                <div class="font-mono text-[11px] uppercase tracking-[0.16em] text-primary mb-2">After</div>
+                <div class="font-display text-4xl font-bold text-foreground">A few hours</div>
+              </div>
+              <span class="font-mono text-[10px] tracking-[0.16em] uppercase text-muted-foreground/50">per board cycle</span>
+            </div>
+          </div>
+
+          <!-- Row 2 — the audience finds it themselves -->
+          <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
+            <div class="feature-visual rounded-xl border border-border bg-surface-raised p-10 flex flex-col items-center justify-center min-h-[220px] gap-4 md:order-first">
+              <div class="flex items-center gap-3 w-full max-w-[280px]">
+                <div class="flex-1 h-9 rounded-lg bg-background/60 border border-border flex items-center px-3 gap-2">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-muted-foreground/60"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3-3"/></svg>
+                  <span class="font-mono text-xs text-muted-foreground/70">Why is West up?</span>
                 </div>
-                <div
-                  class="h-8 px-3 rounded-lg bg-primary/10 border border-primary/20 flex items-center"
-                >
-                  <span class="font-mono text-xs text-primary/70">Filter</span>
+                <div class="h-9 px-3 rounded-lg bg-primary/10 border border-primary/20 flex items-center">
+                  <span class="font-mono text-xs text-primary/80">▼ Filter</span>
                 </div>
               </div>
               <div class="flex gap-2.5">
@@ -1241,175 +815,43 @@
                 <div class="w-2.5 h-2.5 rounded-full bg-accent/50 mt-1"></div>
                 <div class="w-3.5 h-3.5 rounded-full bg-primary/45"></div>
               </div>
-              <span class="font-mono text-xs text-muted-foreground/40"
-                >3 of 847 results</span
-              >
+              <span class="font-mono text-xs text-muted-foreground/40">CFO answered her own question · 11:42am</span>
+            </div>
+            <div>
+              <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-primary mb-3 block">No more 9pm follow-up</span>
+              <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
+                Recipients answer their own questions.
+              </h3>
+              <p class="text-muted-foreground leading-relaxed">
+                The board chair wants to see Q3 by region. The CFO wants the segment breakdown. They click. They find it. They close the tab. You don't get the email. The most expensive thing about a static report is everything that happens *after* you send it.
+              </p>
             </div>
           </div>
 
-          <!-- Row 2 (reversed) -->
+          <!-- Row 3 — institutional credibility -->
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
-            <div
-              class="feature-visual rounded-xl border border-border bg-surface-raised p-10 flex flex-col items-center justify-center min-h-[220px] gap-4 md:order-first"
-            >
+            <div>
+              <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-primary mb-3 block">Looks institutional. Behaves institutional.</span>
+              <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
+                Branded as yours. Logged who saw what, when.
+              </h3>
+              <p class="text-muted-foreground leading-relaxed">
+                Your subdomain, your colors, no Vetori chrome on paid plans. Per-recipient access. View log for every link. The kind of governance audit committees and deal counsel expect — without you having to architect it.
+              </p>
+            </div>
+            <div class="feature-visual rounded-xl border border-border bg-surface-raised p-10 flex flex-col items-center justify-center min-h-[220px] gap-4">
               <div class="flex items-center gap-4">
-                <div
-                  class="w-7 h-7 rounded-full"
-                  style="background: oklch(0.646 0.222 160)"
-                ></div>
-                <div
-                  class="w-7 h-7 rounded-full"
-                  style="background: oklch(0.706 0.196 262)"
-                ></div>
-                <div
-                  class="w-7 h-7 rounded-full"
-                  style="background: oklch(0.279 0.041 260)"
-                ></div>
-                <div
-                  class="w-7 h-7 rounded-full"
-                  style="background: oklch(0.984 0.003 248)"
-                ></div>
+                <div class="w-7 h-7 rounded-full" style="background: oklch(0.646 0.222 160)"></div>
+                <div class="w-7 h-7 rounded-full" style="background: oklch(0.706 0.196 262)"></div>
+                <div class="w-7 h-7 rounded-full" style="background: oklch(0.279 0.041 260)"></div>
+                <div class="w-7 h-7 rounded-full" style="background: oklch(0.984 0.003 248)"></div>
               </div>
-              <div
-                class="w-full max-w-[200px] rounded-lg border border-border bg-background/40 p-3"
-              >
-                <div class="text-xs font-semibold mb-1.5 text-foreground/70">
-                  Your Brand
-                </div>
+              <div class="w-full max-w-[260px] rounded-lg border border-border bg-background/40 p-3">
+                <div class="text-xs font-semibold mb-1.5 text-foreground/70">Your Brand · acme.report.com</div>
                 <div class="h-1.5 rounded-full bg-primary/60 w-3/4 mb-1"></div>
                 <div class="h-1.5 rounded-full bg-primary/40 w-1/2"></div>
               </div>
-              <span class="font-mono text-xs text-muted-foreground/40"
-                >no watermark</span
-              >
-            </div>
-            <div>
-              <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Give recipients a clean, branded viewer
-              </h3>
-              <p class="text-muted-foreground leading-relaxed">
-                Tune colors and presentation so internal and external
-                stakeholders open something that feels owned and intentional.
-                Paid plans remove Vetori branding completely.
-              </p>
-            </div>
-          </div>
-
-          <!-- Row 3 -->
-          <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
-            <div>
-              <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Public distribution without changing the core workflow
-              </h3>
-              <p class="text-muted-foreground leading-relaxed">
-                When you do want broader reach, the same publication pipeline
-                can power a website embed, campaign page, or public highlight
-                without forcing the product positioning to revolve around
-                embeds.
-              </p>
-            </div>
-            <div
-              class="feature-visual rounded-xl border border-border bg-surface-raised p-10 flex flex-col items-center justify-center min-h-[220px] gap-3"
-            >
-              <div class="flex items-center gap-2.5">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  class="text-primary/60"
-                >
-                  <path
-                    d="M13 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V9l-7-7z"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                  <polyline
-                    points="13,2 13,9 20,9"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                </svg>
-                <span class="font-mono text-sm font-medium text-foreground/60"
-                  >export.html</span
-                >
-              </div>
-              <div
-                class="font-mono text-xs text-muted-foreground/40 text-center leading-relaxed"
-              >
-                42 KB &middot; standalone &middot; works offline<br />
-                no CDN &middot; no API keys &middot; forever
-              </div>
-            </div>
-          </div>
-
-          <!-- Row 4 (reversed) -->
-          <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
-            <div
-              class="feature-visual rounded-xl border border-border bg-surface-raised p-10 flex flex-col items-center justify-center min-h-[220px] gap-4 md:order-first"
-            >
-              <div class="grid grid-cols-3 gap-3 w-full max-w-[210px]">
-                <!-- Mini map -->
-                <div
-                  class="col-span-2 h-[72px] rounded-lg bg-background/40 border border-border relative overflow-hidden"
-                >
-                  <div
-                    class="absolute inset-0 flex items-center justify-center"
-                  >
-                    <div class="w-2.5 h-2.5 rounded-full bg-primary/60"></div>
-                    <div
-                      class="absolute top-3 right-4 w-2 h-2 rounded-full bg-accent/50"
-                    ></div>
-                    <div
-                      class="absolute bottom-4 left-5 w-2 h-2 rounded-full bg-primary/40"
-                    ></div>
-                  </div>
-                </div>
-                <!-- Mini bar chart -->
-                <div
-                  class="h-[72px] rounded-lg bg-background/40 border border-border flex items-end justify-center gap-1.5 p-2.5"
-                >
-                  <div
-                    class="w-2.5 bg-primary/50 rounded-t"
-                    style="height: 60%"
-                  ></div>
-                  <div
-                    class="w-2.5 bg-primary/70 rounded-t"
-                    style="height: 90%"
-                  ></div>
-                  <div
-                    class="w-2.5 bg-primary/40 rounded-t"
-                    style="height: 40%"
-                  ></div>
-                </div>
-                <!-- Mini line chart -->
-                <div
-                  class="col-span-3 h-14 rounded-lg bg-background/40 border border-border flex items-center justify-center px-4"
-                >
-                  <svg viewBox="0 0 100 24" class="w-full h-6" fill="none">
-                    <polyline
-                      points="0,18 20,12 40,16 60,6 80,10 100,4"
-                      stroke="oklch(0.706 0.196 262 / 60%)"
-                      stroke-width="2"
-                      fill="none"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Portable when policy requires handoff
-              </h3>
-              <p class="text-muted-foreground leading-relaxed">
-                Use secure links by default, then export a standalone HTML
-                artifact when a recipient needs offline delivery, controlled
-                archival, or a no-backend handoff.
-              </p>
+              <span class="font-mono text-[10px] tracking-[0.16em] uppercase text-muted-foreground/50">12 viewers · 47 min total · 0 forwards</span>
             </div>
           </div>
         </div>
@@ -1417,225 +859,105 @@
     </section>
 
     <!-- ═══════════════════════════════════════════ -->
-    <!-- 9. FAQ                                     -->
+    <!-- 11. FAQ                                    -->
     <!-- ═══════════════════════════════════════════ -->
-    <section id="faq" class="py-28 border-t border-border">
+    <section id="faq" class="py-28 border-b border-border">
       <div class="max-w-3xl mx-auto px-6">
-        <h2
-          class="font-display text-4xl md:text-5xl font-bold mb-16 text-center tracking-tight"
-          data-animate
-        >
-          Frequently asked questions
-        </h2>
+        <div class="text-center mb-16" data-animate>
+          <span class="section-eyebrow justify-center">08 — FAQ</span>
+          <h2 class="font-display text-4xl md:text-5xl font-bold tracking-tight">
+            Questions buyers actually ask
+          </h2>
+        </div>
 
         <div class="space-y-3" data-animate data-delay="200">
-          <details
-            class="faq-item group rounded-xl border border-border bg-surface-raised"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
-            >
+          <details class="faq-item group rounded-xl border border-border bg-surface-raised">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
               Who is Vetori for?
-              <span
-                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
-                >&#9662;</span
-              >
+              <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
-            <div
-              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
-            >
-              Vetori is best for operations, finance, agency, consulting, and
-              program teams that send recurring internal, executive, client, or
-              partner reports.
+            <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
+              Finance leaders (CFO, VP Finance, FP&A), deal teams (M&A advisory, corp dev, IB), and consulting partners — anyone whose monthly or quarterly deliverable is a report that lands in front of an executive.
             </div>
           </details>
 
-          <details
-            class="faq-item group rounded-xl border border-border bg-surface-raised"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
-            >
-              What data do you support?
-              <span
-                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
-                >&#9662;</span
-              >
+          <details class="faq-item group rounded-xl border border-border bg-surface-raised">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
+              Can the audience interact with the report?
+              <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
-            <div
-              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
-            >
-              Currently CSV. Upload impact, program, funding, or location data
-              and Vetori auto-detects columns, field types, and coordinates.
+            <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
+              Yes. Recipients can play the narrated story OR take over and explore — filter, search, drill into a row, change a dimension. Same artifact, two consumption modes.
             </div>
           </details>
 
-          <details
-            class="faq-item group rounded-xl border border-border bg-surface-raised"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
-            >
-              Can we share reports privately or publicly?
-              <span
-                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
-                >&#9662;</span
-              >
+          <details class="faq-item group rounded-xl border border-border bg-surface-raised">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
+              How is this different from Tableau or Looker?
+              <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
-            <div
-              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
-            >
-              Yes. Vetori is built for secure recipient delivery first. Public
-              embeds and self-hosted HTML exports are available when you want a
-              website, campaign page, or controlled handoff.
+            <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
+              Tableau and Looker are BI tools for analysts. Vetori is a delivery layer for executives. We don't replace your data warehouse — we replace the slide deck your analyst makes from your data warehouse.
             </div>
           </details>
 
-          <details
-            class="faq-item group rounded-xl border border-border bg-surface-raised"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
-            >
-              Is Vetori mainly an embed tool?
-              <span
-                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
-                >&#9662;</span
-              >
+          <details class="faq-item group rounded-xl border border-border bg-surface-raised">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
+              How is this different from Flourish or Gamma?
+              <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
-            <div
-              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
-            >
-              No. Vetori's core workflow is secure private reporting for
-              internal and external recipients. Public embeds are a secondary
-              distribution channel and marketing flywheel, not the center of
-              the product.
+            <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
+              Flourish makes pretty charts; Gamma makes pretty slides. Neither connects to your live data, neither manages per-recipient access, and neither generates the report from your CSV. Vetori does all three.
             </div>
           </details>
 
-          <details
-            class="faq-item group rounded-xl border border-border bg-surface-raised"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
-            >
-              Do viewers need a full Vetori account?
-              <span
-                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
-                >&#9662;</span
-              >
+          <details class="faq-item group rounded-xl border border-border bg-surface-raised">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
+              What data formats do you support?
+              <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
-            <div
-              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
-            >
-              No. Vetori is designed so recipients can access shared reports
-              through a dedicated viewer flow instead of needing authoring
-              access.
+            <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
+              Currently CSV. Vetori auto-detects columns, types, and coordinates. Native data-warehouse connectors are on the roadmap.
             </div>
           </details>
 
-          <details
-            class="faq-item group rounded-xl border border-border bg-surface-raised"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
-            >
-              Can viewers interact with the report?
-              <span
-                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
-                >&#9662;</span
-              >
+          <details class="faq-item group rounded-xl border border-border bg-surface-raised">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
+              Are AI-authored stories live yet?
+              <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
-            <div
-              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
-            >
-              Yes. Viewers can filter, search, click data points, zoom, and
-              pan. Everything runs in their browser.
+            <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
+              Yes. AI-authored stories ship in the closed beta. Audio narration over the playback is the next item on the roadmap.
             </div>
           </details>
 
-          <details
-            class="faq-item group rounded-xl border border-border bg-surface-raised"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
-            >
+          <details class="faq-item group rounded-xl border border-border bg-surface-raised">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
+              What if the AI hallucinates the data?
+              <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
+            </summary>
+            <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
+              The AI works from your CSV — no hallucination on numbers. You review and approve every narrative before it ships. Audit trail logs all versions.
+            </div>
+          </details>
+
+          <details class="faq-item group rounded-xl border border-border bg-surface-raised">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
+              Do recipients need an account?
+              <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
+            </summary>
+            <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
+              No. Recipients access shared reports through a dedicated viewer flow — magic-link or password-protected — without needing an authoring account.
+            </div>
+          </details>
+
+          <details class="faq-item group rounded-xl border border-border bg-surface-raised">
+            <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
               Can we match the brand for each report?
-              <span
-                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
-                >&#9662;</span
-              >
+              <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
-            <div
-              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
-            >
-              Yes. Customize colors and presentation to match the client site,
-              destination site, campaign, or reporting context. Paid plans
-              remove Vetori branding completely.
-            </div>
-          </details>
-
-          <details
-            class="faq-item group rounded-xl border border-border bg-surface-raised"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
-            >
-              Does the export work outside Vetori?
-              <span
-                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
-                >&#9662;</span
-              >
-            </summary>
-            <div
-              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
-            >
-              Yes. Vetori exports a self-hosted HTML artifact designed for
-              portability, so teams can host or hand off the report outside
-              their Vetori account.
-            </div>
-          </details>
-
-          <details
-            class="faq-item group rounded-xl border border-border bg-surface-raised"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
-            >
-              Do we need a developer for every report?
-              <span
-                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
-                >&#9662;</span
-              >
-            </summary>
-            <div
-              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
-            >
-              No. Vetori is designed for teams that need polished recurring
-              reports without commissioning a custom interactive build every
-              time.
-            </div>
-          </details>
-
-          <details
-            class="faq-item group rounded-xl border border-border bg-surface-raised"
-          >
-            <summary
-              class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium"
-            >
-              Are stories live yet?
-              <span
-                class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180"
-                >&#9662;</span
-              >
-            </summary>
-            <div
-              class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]"
-            >
-              Today the focus is charts and dashboards you can deliver as
-              private report artifacts first, with public publishing available
-              when needed. Guided stories and narrative playback are the next
-              step on the roadmap.
+            <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
+              Yes. Custom subdomain, tunable colors, paid plans remove Vetori branding entirely. Each report can be branded for the specific client or stakeholder.
             </div>
           </details>
         </div>
@@ -1643,77 +965,53 @@
     </section>
 
     <!-- ═══════════════════════════════════════════ -->
-    <!-- 10. CTA + FOOTER                           -->
+    <!-- 12. CTA + WAITLIST FORM                    -->
     <!-- ═══════════════════════════════════════════ -->
-    <section
-      class="py-28 border-t border-border relative overflow-hidden topo-grid"
-    >
-      <!-- Ambient glow -->
+    <section class="py-28 border-t border-border relative overflow-hidden topo-grid">
+      <!-- Single ambient glow -->
       <div
-        class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] -z-10 rounded-full opacity-20"
-        style="
-          background: radial-gradient(
-            ellipse at center,
-            oklch(0.646 0.222 160 / 30%),
-            transparent 70%
-          );
-        "
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] -z-10 rounded-full opacity-15"
+        style="background: radial-gradient(ellipse at center, oklch(0.646 0.222 160 / 30%), transparent 70%);"
       ></div>
 
-      <div class="max-w-3xl mx-auto px-6 text-center relative z-10">
+      <div class="max-w-2xl mx-auto px-6 text-center relative z-10">
+        <span class="section-eyebrow justify-center" data-animate>09 — Closed beta</span>
         <h2
-          class="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight"
-          data-animate
-        >
-          Make private reporting the default, not an afterthought.
-        </h2>
-
-        <p
-          class="text-muted-foreground mb-10 text-lg"
+          class="font-display text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-[1.05]"
           data-animate
           data-delay="100"
         >
-          Start with one chart or dashboard, deliver it securely to recipients,
-          and use public embeds only when they help distribution, marketing, or
-          awareness.
+          Stop rebuilding the same report.<br />
+          <span class="text-gradient">Start shipping the answer.</span>
+        </h2>
+
+        <p
+          class="text-muted-foreground mb-10 text-lg max-w-xl mx-auto"
+          data-animate
+          data-delay="200"
+        >
+          If your job depends on a recurring report — board book, deal materials, client deliverable — request access. We're onboarding 10 design partners in Q2 2026.
         </p>
 
-        <div data-animate data-delay="200">
-          <div
-            class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4"
-          >
+        <!-- CTA buttons — redirect to the app's waitlist page -->
+        <div data-animate data-delay="300">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="mailto:info@vetori.ai?subject=Vetori%20Demo%20Request"
-              class="cta-button inline-flex items-center justify-center rounded-lg text-lg font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg shadow-primary/20"
+              href="javascript:void(0)"
+              onclick="handleWaitlist()"
+              class="cta-button inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg shadow-primary/20"
             >
-              Request a Demo
+              Request access
             </a>
             <a
               href="#examples"
-              class="inline-flex items-center justify-center rounded-lg text-lg font-semibold transition-colors border border-border bg-surface-raised text-foreground hover:bg-surface h-14 px-10"
+              class="inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors border border-border bg-surface-raised text-foreground hover:bg-surface h-14 px-10"
             >
-              See the Sample Report
+              See it live
             </a>
           </div>
-          <p class="text-sm text-muted-foreground" data-waitlist-cta>
-            <span data-closed-text class="hidden"
-              >Vetori is in closed beta.</span
-            >
-            <span data-open-text>Want to test secure private reporting?</span>
-            <a
-              href="javascript:void(0)"
-              data-closed-text
-              class="hidden text-foreground underline underline-offset-4 hover:text-primary transition-colors"
-              onclick="handleWaitlist()"
-              >Join the waitlist</a
-            >
-            <a
-              href="javascript:void(0)"
-              data-open-text
-              class="text-foreground underline underline-offset-4 hover:text-primary transition-colors"
-              onclick="handleSignUp()"
-              >Create a free account</a
-            >
+          <p class="text-sm text-muted-foreground mt-4">
+            Two minutes. We'll get back to you within a few days if you match the closed-beta profile.
           </p>
         </div>
       </div>
@@ -1741,127 +1039,56 @@
                   </linearGradient>
                 </defs>
               </svg>
-              <span class="font-display text-base font-bold tracking-tight"
-                >Vetori</span
-              >
+              <span class="font-display text-base font-bold tracking-tight">Vetori</span>
             </div>
             <p class="text-sm text-muted-foreground leading-relaxed">
-              Secure private reporting first.<br />Public embeds when useful.
+              AI-authored interactive reports.<br/>Delivered privately. Audited end-to-end.
             </p>
           </div>
 
           <!-- Product -->
           <div>
-            <h4
-              class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4"
-            >
-              Product
-            </h4>
+            <h4 class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Product</h4>
             <ul class="space-y-2.5 text-sm">
-              <li>
-                <a
-                  href="#use-cases"
-                  class="text-muted-foreground hover:text-foreground transition-colors"
-                  >Use Cases</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#how-it-works"
-                  class="text-muted-foreground hover:text-foreground transition-colors"
-                  >How It Works</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#examples"
-                  class="text-muted-foreground hover:text-foreground transition-colors"
-                  >Examples</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/embed"
-                  class="text-muted-foreground hover:text-foreground transition-colors"
-                  >Public Embeds</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#faq"
-                  class="text-muted-foreground hover:text-foreground transition-colors"
-                  >FAQ</a
-                >
-              </li>
+              <li><a href="#how-it-works" class="text-muted-foreground hover:text-foreground transition-colors">How it works</a></li>
+              <li><a href="#dual-mode" class="text-muted-foreground hover:text-foreground transition-colors">Two modes</a></li>
+              <li><a href="#use-cases" class="text-muted-foreground hover:text-foreground transition-colors">Who it's for</a></li>
+              <li><a href="#examples" class="text-muted-foreground hover:text-foreground transition-colors">See it live</a></li>
+              <li><a href="#faq" class="text-muted-foreground hover:text-foreground transition-colors">FAQ</a></li>
+              <li><a href="/embed.html" class="text-muted-foreground hover:text-foreground transition-colors">Public embeds →</a></li>
             </ul>
           </div>
 
           <!-- Resources -->
           <div>
-            <h4
-              class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4"
-            >
-              Resources
-            </h4>
+            <h4 class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Resources</h4>
             <ul class="space-y-2.5 text-sm">
-              <li>
-                <a
-                  href="/support"
-                  class="text-muted-foreground hover:text-foreground transition-colors"
-                  >Support</a
-                >
-              </li>
-              <li>
-                <a
-                  href="mailto:info@vetori.ai"
-                  class="text-muted-foreground hover:text-foreground transition-colors"
-                  >Sales</a
-                >
-              </li>
+              <li><a href="/support" class="text-muted-foreground hover:text-foreground transition-colors">Support</a></li>
+              <li><a href="mailto:info@vetori.ai" class="text-muted-foreground hover:text-foreground transition-colors">Sales</a></li>
             </ul>
           </div>
 
           <!-- Company -->
           <div>
-            <h4
-              class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4"
-            >
-              Company
-            </h4>
+            <h4 class="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-4">Company</h4>
             <ul class="space-y-2.5 text-sm">
-              <li>
-                <a
-                  href="/terms"
-                  class="text-muted-foreground hover:text-foreground transition-colors"
-                  >Terms</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/privacy"
-                  class="text-muted-foreground hover:text-foreground transition-colors"
-                  >Privacy</a
-                >
-              </li>
+              <li><a href="/terms" class="text-muted-foreground hover:text-foreground transition-colors">Terms</a></li>
+              <li><a href="/privacy" class="text-muted-foreground hover:text-foreground transition-colors">Privacy</a></li>
             </ul>
           </div>
         </div>
 
-        <div
-          class="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4"
-        >
+        <div class="border-t border-border pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div class="text-xs text-muted-foreground">
             &copy; 2026 Vetori Inc. All rights reserved.
           </div>
-          <div
-            class="font-mono text-[10px] text-muted-foreground/40 tracking-wider"
-          >
-            PRIVATE REPORTS &middot; PUBLIC EMBEDS &middot; OFFLINE EXPORTS
+          <div class="font-mono text-[10px] text-muted-foreground/40 tracking-wider">
+            AI AUTHORING · LEAN-BACK + LEAN-IN · BRANDED PRIVATE DELIVERY
           </div>
         </div>
       </div>
     </footer>
 
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/pages/private.js"></script>
   </body>
 </html>

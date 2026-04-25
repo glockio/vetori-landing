@@ -1,0 +1,85 @@
+/* ──────────────────────────────────────────────────────────────────────
+ * Embed landing page — page-specific styles
+ *
+ * The embed page mostly uses brand utilities (use-case-card,
+ * feature-visual, vetori-embed shell, glow-pulse, topo-grid, etc).
+ * Anything specific to this page lands here.
+ * ────────────────────────────────────────────────────────────────────── */
+
+/* Snippet code block — used in the hero "drop this iframe in" mockup */
+.snippet-block {
+  background: linear-gradient(180deg, oklch(0.18 0.04 264 / 95%), oklch(0.14 0.04 264 / 95%));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+  position: relative;
+  overflow: hidden;
+}
+
+.snippet-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: 0.6;
+}
+
+.snippet-block .tag    { color: oklch(0.72 0.13 200); }
+.snippet-block .attr   { color: var(--primary); }
+.snippet-block .val    { color: var(--foreground); }
+.snippet-block .punct  { opacity: 0.5; }
+
+/* Surface comparison — public vs private */
+.surface-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--surface-raised);
+}
+
+.surface-row > div {
+  padding: 28px;
+}
+
+.surface-row > div + div {
+  border-left: 1px solid var(--border);
+}
+
+.surface-row .surface-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  margin-bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.surface-row .surface-tag.--public::before,
+.surface-row .surface-tag.--private::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.surface-row .surface-tag.--public::before  { background: var(--accent); }
+.surface-row .surface-tag.--private::before { background: var(--primary); }
+
+@media (max-width: 768px) {
+  .surface-row { grid-template-columns: 1fr; }
+  .surface-row > div + div {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+  }
+}

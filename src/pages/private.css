@@ -1,0 +1,288 @@
+/* ──────────────────────────────────────────────────────────────────────
+ * Private landing page — page-specific styles
+ *
+ * Components used only on the Vetori Private (executive reporting)
+ * landing page. Anything used on more than one page belongs in
+ * src/brand.css.
+ *
+ * Components:
+ *   - .output-card       — stylized "delivered report" mockup
+ *   - .dual-mode-card    — watch / drill-in side-by-side cards
+ *   - .dotted-grid       — subtle dotted-grid section underlay
+ * ────────────────────────────────────────────────────────────────────── */
+
+/* ── Output card — what a delivered report looks like (hero of "shift") ─ */
+.output-card {
+  background: linear-gradient(180deg, oklch(0.22 0.04 264 / 95%), oklch(0.18 0.04 264 / 95%));
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 24px 20px;
+  box-shadow: 0 30px 60px -20px oklch(0 0 0 / 50%), 0 0 0 1px oklch(1 0 0 / 4%);
+  position: relative;
+  overflow: hidden;
+}
+
+.output-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  opacity: 0.7;
+}
+
+.output-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  margin-bottom: 18px;
+}
+
+.output-card__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Sora', system-ui, sans-serif;
+  font-weight: 500;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
+  font-size: 12px;
+}
+
+.output-card__logo {
+  width: 14px; height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+}
+
+.output-card__meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.output-card__title {
+  font-family: 'Sora', system-ui, sans-serif;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.output-card__chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 110px;
+  padding: 8px 0;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.output-card__chart > span {
+  flex: 1;
+  background: linear-gradient(180deg, var(--primary), oklch(0.646 0.222 160 / 50%));
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+  transition: opacity 0.4s;
+}
+
+.output-card__chart > span:nth-child(3) {
+  background: linear-gradient(180deg, var(--accent), oklch(0.706 0.196 262 / 50%));
+}
+
+.output-card__caption {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--foreground);
+  margin-bottom: 18px;
+  opacity: 0.92;
+}
+
+.output-card__caption strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.output-card__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  letter-spacing: 0.04em;
+}
+
+.output-card__action {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+/* ── Dual-mode cards (watch / drill in) ──────────────────────────────── */
+.dual-mode-card {
+  position: relative;
+  border: 1px solid var(--border);
+  background: var(--surface-raised);
+  border-radius: 16px;
+  padding: 28px;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  transition: border-color 0.4s, transform 0.3s;
+}
+
+.dual-mode-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+.dual-mode-card .mode-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dual-mode-card .mode-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.dual-mode-card.lean-back .mode-tag::before {
+  background: var(--accent);
+  opacity: 0.85;
+}
+
+.dual-mode-card .mode-illustration {
+  flex: 1;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: oklch(0.16 0.03 264 / 60%);
+  position: relative;
+  overflow: hidden;
+  min-height: 140px;
+}
+
+/* Animated playback bars (lean-back) */
+.lean-back .mode-illustration::before {
+  content: '';
+  position: absolute;
+  inset: 24px;
+  background:
+    linear-gradient(to top, var(--accent) 0%, var(--accent) 38%, transparent 38%) 0    100% / 14% 100% no-repeat,
+    linear-gradient(to top, var(--accent) 0%, var(--accent) 62%, transparent 62%) 20%  100% / 14% 100% no-repeat,
+    linear-gradient(to top, var(--accent) 0%, var(--accent) 84%, transparent 84%) 40%  100% / 14% 100% no-repeat,
+    linear-gradient(to top, var(--accent) 0%, var(--accent) 50%, transparent 50%) 60%  100% / 14% 100% no-repeat,
+    linear-gradient(to top, var(--accent) 0%, var(--accent) 70%, transparent 70%) 80%  100% / 14% 100% no-repeat;
+  opacity: 0.5;
+  animation: bars-pulse 4s ease-in-out infinite;
+}
+
+.lean-back .mode-illustration::after {
+  content: '▶';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px; height: 44px;
+  background: var(--accent);
+  color: var(--background);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px;
+  box-shadow: 0 0 24px oklch(0.706 0.196 262 / 50%);
+}
+
+@keyframes bars-pulse {
+  0%, 100% { opacity: 0.45; }
+  50%      { opacity: 0.7; }
+}
+
+/* Inline explore-bar mock (lean-in) */
+.lean-in .mode-illustration {
+  padding: 20px;
+}
+
+.lean-in .explore-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--muted-foreground);
+  margin-bottom: 14px;
+}
+
+.lean-in .explore-bar .search-pill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 4px;
+}
+
+.lean-in .explore-bar .filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  background: oklch(0.646 0.222 160 / 12%);
+  color: var(--primary);
+  border-radius: 999px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+
+.lean-in .mini-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 70px;
+  padding: 8px 4px 0;
+}
+
+.lean-in .mini-bars span {
+  flex: 1;
+  background: var(--primary);
+  opacity: 0.7;
+  border-radius: 3px 3px 0 0;
+  transition: opacity 0.4s;
+}
+
+.lean-in .mini-bars span:nth-child(2) { opacity: 0.85; }
+.lean-in .mini-bars span:nth-child(4) { opacity: 0.5; }
+
+/* ── Dotted-grid underlay (used on the "shift" section) ──────────────── */
+.dotted-grid {
+  position: relative;
+}
+
+.dotted-grid::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(oklch(1 0 0 / 5%) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}

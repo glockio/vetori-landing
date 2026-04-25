@@ -1,4 +1,4 @@
-import './style.css'
+import './brand.css'
 
 // Support form handler — opens the user's email client with pre-filled fields
 document.getElementById('support-form').addEventListener('submit', (e) => {

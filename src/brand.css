@@ -1,6 +1,26 @@
+/* ──────────────────────────────────────────────────────────────────────
+ * Vetori — shared brand foundation
+ *
+ * Single source of truth for visual identity used across every Vetori
+ * landing page (private, embed, support, future pages). Anything specific
+ * to one page lives in src/pages/<page>.css, not here.
+ *
+ * Sections:
+ *   1. Tailwind import + theme tokens
+ *   2. Color palette (CSS vars) + body defaults
+ *   3. Font family utilities
+ *   4. Vetori embed shell (used wherever an iframe demo is rendered)
+ *   5. Brand utilities (text-gradient, glow-pulse, topo-grid)
+ *   6. Section components (use-case-card, feature-visual, viz-card,
+ *      step-connector, faq-item, credibility-text, cta-button,
+ *      audience-badge, nav-link, section-eyebrow)
+ *   7. Page chrome (noise overlay, focus, selection, footer link, scroll)
+ *   8. Animations + scroll-reveal hook
+ * ────────────────────────────────────────────────────────────────────── */
+
 @import 'tailwindcss';
 
-/* ── Dark palette (no light theme) ── */
+/* ── 2. Palette + body defaults ───────────────────────────────────────── */
 @layer base {
   :root {
     --background: oklch(0.129 0.042 264.695);
@@ -29,7 +49,7 @@
   }
 }
 
-/* ── Tailwind theme tokens ── */
+/* ── 1. Theme tokens ──────────────────────────────────────────────────── */
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
@@ -43,7 +63,7 @@
   --color-border-hover: var(--border-hover);
 }
 
-/* ── Font families ── */
+/* ── 3. Font families ─────────────────────────────────────────────────── */
 .font-display {
   font-family: 'Sora', system-ui, sans-serif;
 }
@@ -52,7 +72,9 @@
   font-family: 'JetBrains Mono', ui-monospace, monospace;
 }
 
-/* ── Shared Vetori embed shell ── */
+/* ── 4. Vetori embed shell ────────────────────────────────────────────── */
+/* Used wherever a published Vetori report is rendered inside an iframe.   */
+/* Drives the loading shimmer + error fallback. CSS-vars set per-instance. */
 .vetori-embed {
   position: relative;
   width: 100%;
@@ -162,35 +184,14 @@
   animation: vetori-pulse 1s ease-in-out infinite alternate;
 }
 
-.vetori-embed__bar:nth-child(1) {
-  height: 40%;
-  animation-delay: 0s;
-}
-
-.vetori-embed__bar:nth-child(2) {
-  height: 70%;
-  animation-delay: 0.15s;
-}
-
-.vetori-embed__bar:nth-child(3) {
-  height: 55%;
-  animation-delay: 0.3s;
-}
-
-.vetori-embed__bar:nth-child(4) {
-  height: 85%;
-  animation-delay: 0.45s;
-}
+.vetori-embed__bar:nth-child(1) { height: 40%; animation-delay: 0s; }
+.vetori-embed__bar:nth-child(2) { height: 70%; animation-delay: 0.15s; }
+.vetori-embed__bar:nth-child(3) { height: 55%; animation-delay: 0.3s; }
+.vetori-embed__bar:nth-child(4) { height: 85%; animation-delay: 0.45s; }
 
 @keyframes vetori-pulse {
-  0% {
-    transform: scaleY(0.4);
-    opacity: 0.4;
-  }
-  100% {
-    transform: scaleY(1);
-    opacity: 1;
-  }
+  0%   { transform: scaleY(0.4); opacity: 0.4; }
+  100% { transform: scaleY(1);   opacity: 1; }
 }
 
 .vetori-embed__loading-text {
@@ -217,10 +218,7 @@
   display: flex;
 }
 
-.vetori-embed__error svg {
-  color: var(--vt-muted);
-  opacity: 0.5;
-}
+.vetori-embed__error svg { color: var(--vt-muted); opacity: 0.5; }
 
 .vetori-embed__error h3 {
   color: var(--vt-fg);
@@ -251,9 +249,7 @@
   border: 0;
 }
 
-.vetori-embed__error a:hover {
-  opacity: 0.9;
-}
+.vetori-embed__error a:hover { opacity: 0.9; }
 
 .vetori-embed__error small {
   color: var(--vt-muted);
@@ -262,7 +258,9 @@
   line-height: 1.4;
 }
 
-/* ── Hero text gradient ── */
+/* ── 5. Brand utilities ───────────────────────────────────────────────── */
+
+/* Hero/headline gradient — green → blue brand sweep */
 .text-gradient {
   background: linear-gradient(135deg, var(--primary), var(--accent));
   -webkit-background-clip: text;
@@ -270,21 +268,7 @@
   background-clip: text;
 }
 
-/* ── Scroll animations ── */
-[data-animate] {
-  opacity: 0;
-  transform: translateY(16px);
-  transition:
-    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-[data-animate].animate-in {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ── Glow-pulse for embeds ── */
+/* Glow pulse — used to halo embedded reports */
 @keyframes glow-pulse {
   0%, 100% {
     box-shadow:
@@ -302,7 +286,7 @@
   animation: glow-pulse 4s ease-in-out infinite;
 }
 
-/* ── Topographic grid background ── */
+/* Topographic grid — atmospheric section background */
 .topo-grid {
   position: relative;
   overflow: hidden;
@@ -322,7 +306,9 @@
   z-index: 0;
 }
 
-/* ── Use case cards ── */
+/* ── 6. Section components ────────────────────────────────────────────── */
+
+/* Use-case card — hover lift with brand top-edge highlight */
 .use-case-card {
   transition: border-color 0.4s, transform 0.3s, box-shadow 0.4s;
   position: relative;
@@ -332,9 +318,7 @@
 .use-case-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--primary), transparent);
   opacity: 0;
@@ -347,11 +331,9 @@
   box-shadow: 0 8px 32px oklch(0 0 0 / 40%), 0 0 0 1px oklch(1 0 0 / 4%);
 }
 
-.use-case-card:hover::before {
-  opacity: 1;
-}
+.use-case-card:hover::before { opacity: 1; }
 
-/* ── Feature visual panels ── */
+/* Feature visual panel — dotted texture backdrop */
 .feature-visual {
   position: relative;
   overflow: hidden;
@@ -370,11 +352,9 @@
   pointer-events: none;
 }
 
-/* ── How it works step connector ── */
+/* How-it-works step connector */
 @media (min-width: 768px) {
-  .step-connector {
-    position: relative;
-  }
+  .step-connector { position: relative; }
 
   .step-connector::after {
     content: '';
@@ -387,12 +367,10 @@
     opacity: 0.2;
   }
 
-  .step-connector:last-child::after {
-    display: none;
-  }
+  .step-connector:last-child::after { display: none; }
 }
 
-/* ── Mini viz cards in "Pick a visualization" step ── */
+/* Mini viz cards */
 .viz-card {
   transition: border-color 0.3s, background-color 0.3s;
 }
@@ -402,22 +380,15 @@
   background-color: oklch(0.208 0.042 265.755 / 80%);
 }
 
-/* ── FAQ accordion ── */
-.faq-item summary {
-  list-style: none;
-}
-
-.faq-item summary::-webkit-details-marker {
-  display: none;
-}
+/* FAQ accordion */
+.faq-item summary { list-style: none; }
+.faq-item summary::-webkit-details-marker { display: none; }
 
 .faq-item {
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.faq-item:hover {
-  border-color: var(--border-hover);
-}
+.faq-item:hover { border-color: var(--border-hover); }
 
 .faq-item[open] {
   border-color: var(--border-hover);
@@ -429,19 +400,13 @@
 }
 
 @keyframes faq-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Credibility strip animation ── */
+/* Credibility strip — shimmering text per word */
 @keyframes shimmer {
-  0% { background-position: -200% center; }
+  0%   { background-position: -200% center; }
   100% { background-position: 200% center; }
 }
 
@@ -459,7 +424,7 @@
   animation: shimmer 8s linear infinite;
 }
 
-/* ── CTA button enhanced ── */
+/* CTA button — gradient ring on hover */
 .cta-button {
   position: relative;
   overflow: hidden;
@@ -478,19 +443,17 @@
   animation: gradient-shift 3s ease-in-out infinite;
 }
 
-.cta-button:hover::before {
-  opacity: 1;
-}
+.cta-button:hover::before { opacity: 1; }
 
 @keyframes gradient-shift {
   0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  50%      { background-position: 100% 50%; }
 }
 
-/* ── Audience badge pulse ── */
+/* Audience badge — subtle brand pulse */
 @keyframes badge-glow {
   0%, 100% { box-shadow: 0 0 0 0 oklch(0.646 0.222 160 / 0%); }
-  50% { box-shadow: 0 0 12px 2px oklch(0.646 0.222 160 / 12%); }
+  50%      { box-shadow: 0 0 12px 2px oklch(0.646 0.222 160 / 12%); }
 }
 
 .audience-badge {
@@ -498,10 +461,8 @@
   animation-delay: 2s;
 }
 
-/* ── Nav link hover indicator ── */
-.nav-link {
-  position: relative;
-}
+/* Nav link — animated underline */
+.nav-link { position: relative; }
 
 .nav-link::after {
   content: '';
@@ -519,24 +480,43 @@
   left: 0;
 }
 
-/* ── Smooth scroll ── */
-html {
-  scroll-behavior: smooth;
+/* Section eyebrow — mono uppercase label with leading rule */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  margin-bottom: 24px;
 }
 
-/* ── Focus ring ── */
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--primary);
+}
+
+/* ── 7. Page chrome ───────────────────────────────────────────────────── */
+
+html { scroll-behavior: smooth; }
+
 button:focus-visible,
 a:focus-visible {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
-/* ── Selection ── */
 ::selection {
   background: oklch(0.646 0.222 160 / 20%);
 }
 
-/* ── Noise texture overlay ── */
+/* Noise overlay — fixed, ultra-subtle */
 .noise-overlay {
   position: fixed;
   inset: 0;
@@ -548,10 +528,8 @@ a:focus-visible {
   background-size: 256px 256px;
 }
 
-/* ── Footer link hover ── */
-footer a {
-  position: relative;
-}
+/* Footer link underline */
+footer a { position: relative; }
 
 footer a::after {
   content: '';
@@ -564,6 +542,18 @@ footer a::after {
   transition: width 0.25s;
 }
 
-footer a:hover::after {
-  width: 100%;
+footer a:hover::after { width: 100%; }
+
+/* ── 8. Scroll-reveal animation hook ──────────────────────────────────── */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animate].animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
