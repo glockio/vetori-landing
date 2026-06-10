@@ -557,3 +557,82 @@ footer a:hover::after { width: 100%; }
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── 9. Light theme (Pulse) ───────────────────────────────────────────── */
+/* Opt-in per page via <html data-theme="light">. Dark stays the default   */
+/* so embed.html and support.html are unaffected. Light pages use Inter    */
+/* Tight for display and Inter for body (load them in that page's head).  */
+[data-theme='light'] {
+  --background: oklch(0.985 0.002 247.86);
+  --surface: oklch(0.967 0.003 264.5);
+  --surface-raised: oklch(1 0 0);
+  --foreground: oklch(0.208 0.042 265.755);
+  --muted-foreground: oklch(0.446 0.03 256.8);
+  --primary: oklch(0.55 0.15 160);
+  --primary-foreground: oklch(1 0 0);
+  --accent: oklch(0.546 0.215 262.88);
+  --border: oklch(0 0 0 / 10%);
+  --border-hover: oklch(0 0 0 / 18%);
+}
+
+[data-theme='light'] body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+[data-theme='light'] .font-display {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+}
+
+[data-theme='light'] .noise-overlay {
+  display: none;
+}
+
+[data-theme='light'] .topo-grid::before {
+  background-image:
+    linear-gradient(oklch(0 0 0 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0 0 0 / 4%) 1px, transparent 1px);
+}
+
+@keyframes glow-pulse-light {
+  0%, 100% {
+    box-shadow:
+      0 0 32px 4px oklch(0.55 0.15 160 / 10%),
+      0 0 64px 12px oklch(0.546 0.215 262.88 / 5%);
+  }
+  50% {
+    box-shadow:
+      0 0 48px 10px oklch(0.55 0.15 160 / 16%),
+      0 0 96px 24px oklch(0.546 0.215 262.88 / 8%);
+  }
+}
+
+[data-theme='light'] .glow-pulse {
+  animation: glow-pulse-light 4s ease-in-out infinite;
+}
+
+[data-theme='light'] .use-case-card:hover {
+  box-shadow: 0 8px 28px oklch(0 0 0 / 10%), 0 0 0 1px oklch(0 0 0 / 3%);
+}
+
+[data-theme='light'] .faq-item[open] {
+  box-shadow: 0 4px 16px oklch(0 0 0 / 8%);
+}
+
+[data-theme='light'] .viz-card:hover {
+  background-color: oklch(0.967 0.003 264.5 / 80%);
+}
+
+[data-theme='light'] ::selection {
+  background: oklch(0.55 0.15 160 / 18%);
+}
+
+@keyframes badge-glow-light {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.55 0.15 160 / 0%); }
+  50%      { box-shadow: 0 0 12px 2px oklch(0.55 0.15 160 / 14%); }
+}
+
+[data-theme='light'] .audience-badge {
+  animation: badge-glow-light 4s ease-in-out infinite;
+  animation-delay: 2s;
+  background: var(--surface-raised);
+}
