@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vetori — Board books in hours, not days</title>
+    <title>Vetori — AI-Built Board Reports From Your Spreadsheets</title>
     <meta
       name="description"
-      content="Stop rebuilding the same report from scratch every month. Vetori drafts the narrative from your data, branded as yours, delivered to the people who need it — and they can drill into a number without emailing you at 9pm."
+      content="Vetori turns your spreadsheets into a board-ready report in hours, not days — branded as yours, every number provably correct, and your board can drill in themselves. Board reporting software for venture-backed startups."
     />
     <link rel="canonical" href="https://vetori.ai/" />
     <meta name="theme-color" content="#0a1628" />
@@ -20,11 +20,11 @@
     <meta property="og:url" content="https://vetori.ai/" />
     <meta
       property="og:title"
-      content="Vetori — Board books in hours, not days"
+      content="Vetori — The board deck builds itself"
     />
     <meta
       property="og:description"
-      content="Stop rebuilding the same report from scratch. Drafted from your data, branded as yours, delivered to the people who need it."
+      content="Turn your spreadsheets into a board-ready report in hours — branded as yours, every number provably correct, and your board can drill in themselves."
     />
     <meta property="og:image" content="https://vetori.ai/og-image.png" />
 
@@ -32,11 +32,11 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Vetori — Board books in hours, not days"
+      content="Vetori — The board deck builds itself"
     />
     <meta
       name="twitter:description"
-      content="Stop rebuilding the same report from scratch. Branded as yours, delivered with audit."
+      content="Your spreadsheets become a board-ready report in hours. Every number provably correct. Built for the Chief of Staff and finance lead who own the board deck."
     />
     <meta name="twitter:image" content="https://vetori.ai/og-image.png" />
 
@@ -48,6 +48,23 @@
       rel="stylesheet"
     />
 
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Vetori Inc.",
+        "url": "https://vetori.ai",
+        "logo": "https://vetori.ai/favicon.svg",
+        "description": "Vetori builds board reports from your spreadsheets — branded as yours, with every number traceable to its source query.",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "info@vetori.ai",
+          "contactType": "sales"
+        }
+      }
+    </script>
+
     <!-- JSON-LD: WebApplication -->
     <script type="application/ld+json">
       {
@@ -55,8 +72,8 @@
         "@type": "WebApplication",
         "name": "Vetori",
         "url": "https://vetori.ai",
-        "description": "AI-authored interactive reports for executive audiences. Generate the report from your data, brand it as yours, deliver privately to specific recipients.",
-        "applicationCategory": "DataVisualization",
+        "description": "Board reporting software for venture-backed startups. Turn your spreadsheets into a board-ready report in hours — branded as yours, every number provably correct, and your board can drill in themselves.",
+        "applicationCategory": "BusinessApplication",
         "operatingSystem": "Web",
         "offers": {
           "@type": "Offer",
@@ -88,39 +105,39 @@
             "name": "Who is Vetori for?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Finance leaders (CFO, VP Finance, FP&A), deal teams (M&A advisory, corp dev, IB), and consulting partners — anyone whose monthly or quarterly deliverable is a report that lands in front of an executive."
+              "text": "The person who owns the board deck at a venture-backed startup — Chief of Staff, Head of Finance, VP Finance, or BizOps. If you rebuild the board update from spreadsheets every cycle, Vetori is for you."
             }
           },
           {
             "@type": "Question",
-            "name": "Can the audience interact with the report?",
+            "name": "How is this different from Visible or Foundersuite?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Recipients can play the narrated story OR take over and explore — filter, search, drill into a row, change a dimension. Same artifact, two consumption modes."
+              "text": "Visible and Foundersuite are KPI dashboards and investor-email tools — you still build the actual report. Vetori writes the board report itself from your data: the charts, the framing, the narrative. Then your board can drill into any number."
             }
           },
           {
             "@type": "Question",
-            "name": "How is this different from Tableau or Looker?",
+            "name": "How is this different from Gamma or PowerPoint?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Tableau and Looker are BI tools for analysts. Vetori is a delivery layer for executives. We do not replace your data warehouse — we replace the slide deck your analyst makes from your data warehouse."
+              "text": "Gamma and PowerPoint make pretty slides, but you paste the numbers in by hand and they can be wrong. Vetori generates the report from your spreadsheet, so every figure is computed from your data and one click from the query behind it."
             }
           },
           {
             "@type": "Question",
-            "name": "How is this different from Flourish or Gamma?",
+            "name": "What if the AI gets a number wrong?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Flourish makes pretty charts. Gamma makes pretty slides. Neither connects to your live data, neither manages per-recipient access, and neither generates the report from your CSV. Vetori does all three."
+              "text": "It can't invent numbers. Every figure is computed by a query against your spreadsheet, and any number in the report is one click from the exact query that produced it. You review and approve every narrative before it ships, with an audit trail of versions."
             }
           },
           {
             "@type": "Question",
-            "name": "Are AI-authored stories live yet?",
+            "name": "Can the board interact with the report?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. AI-authored stories ship in the closed beta. Audio narration over the playback is the next item on the roadmap."
+              "text": "Yes. Recipients can play the narrated recap OR take over and explore — filter, search, drill into a row, change a dimension — on the same link, with no account and no BI seat."
             }
           }
         ]
@@ -176,7 +193,6 @@
           <a href="#use-cases" class="nav-link hover:text-foreground transition-colors">Who it's for</a>
           <a href="#examples" class="nav-link hover:text-foreground transition-colors">See it live</a>
           <a href="#faq" class="nav-link hover:text-foreground transition-colors">FAQ</a>
-          <a href="/embed.html" class="nav-link hover:text-foreground transition-colors">Public embeds →</a>
           <a href="javascript:void(0)" onclick="handleSignIn()" class="nav-link hover:text-foreground transition-colors">Sign in</a>
         </div>
 
@@ -186,7 +202,7 @@
           onclick="handleWaitlist()"
           class="inline-flex items-center justify-center rounded-lg text-sm font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-9 px-5"
         >
-          Request access
+          Get early access
         </a>
       </div>
     </nav>
@@ -211,7 +227,7 @@
         <div data-animate>
           <span
             class="audience-badge inline-block text-xs font-medium tracking-wide text-muted-foreground border border-border rounded-full px-4 py-1.5 mb-8"
-          >For finance leaders, deal teams, and consulting partners</span>
+          >For the Chief of Staff &amp; finance lead who own the board deck</span>
         </div>
 
         <!-- Headline -->
@@ -220,8 +236,8 @@
           data-animate
           data-delay="100"
         >
-          The board update<br />
-          <span class="text-gradient">your CFO actually opens.</span>
+          The board deck<br />
+          <span class="text-gradient">builds itself.</span>
         </h1>
 
         <!-- Subhead -->
@@ -230,7 +246,7 @@
           data-animate
           data-delay="300"
         >
-          Stop rebuilding the same report from scratch every month. Vetori drafts it from your data, brands it as yours, and lets recipients drill into a number themselves — without the 9pm follow-up email.
+          Vetori turns your spreadsheets into a board-ready report in hours — branded as yours, every number one click from its source, and your board can drill in without emailing you back.
         </p>
 
         <!-- CTA -->
@@ -241,13 +257,13 @@
               onclick="handleWaitlist()"
               class="cta-button inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg shadow-primary/20"
             >
-              Request access
+              Get early access
             </a>
             <a
               href="#examples"
-              class="inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors border border-border bg-surface-raised text-foreground hover:bg-surface h-14 px-10"
+              class="inline-flex items-center justify-center text-base font-medium text-muted-foreground hover:text-foreground transition-colors h-14 px-4"
             >
-              See a real one
+              See a live board report →
             </a>
           </div>
           <p class="text-sm text-muted-foreground mt-4">
@@ -356,15 +372,15 @@
       <div class="max-w-5xl mx-auto px-6 text-center">
         <p class="text-sm tracking-wide flex flex-wrap items-center justify-center gap-x-6 gap-y-2" data-animate>
           <span class="text-muted-foreground">Used for</span>
-          <span class="credibility-text font-medium">Q3 ops reviews</span>
+          <span class="credibility-text font-medium">Board meetings</span>
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span class="credibility-text font-medium" style="animation-delay: -1s">M&amp;A integration plans</span>
+          <span class="credibility-text font-medium" style="animation-delay: -1s">Monthly investor updates</span>
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span class="credibility-text font-medium" style="animation-delay: -2s">Board updates</span>
+          <span class="credibility-text font-medium" style="animation-delay: -2s">QBRs</span>
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span class="credibility-text font-medium" style="animation-delay: -3s">Portfolio KPI digests</span>
+          <span class="credibility-text font-medium" style="animation-delay: -3s">Fundraise data rooms</span>
           <span class="hidden sm:inline text-muted-foreground/30">/</span>
-          <span class="credibility-text font-medium" style="animation-delay: -4s">Annual reports</span>
+          <span class="credibility-text font-medium" style="animation-delay: -4s">Portfolio KPI digests</span>
         </p>
       </div>
     </section>
@@ -394,7 +410,7 @@
               </li>
               <li class="flex gap-3 items-start">
                 <span class="text-primary mt-1.5">▸</span>
-                <span class="text-foreground/85"><strong class="text-foreground">No more v44.</strong> One source. One link. The version everyone reviews is the version that ships.</span>
+                <span class="text-foreground/85"><strong class="text-foreground">No more version sprawl.</strong> One source, one link. The version the board reviews is the version that's live.</span>
               </li>
             </ul>
           </div>
@@ -436,35 +452,35 @@
         <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
           <span class="section-eyebrow justify-center">02 — Why now</span>
           <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 text-balance tracking-tight">
-            Reporting is the recurring fire drill nobody fixed.
+            The board deck is the recurring fire drill nobody fixed.
           </h2>
           <p class="text-muted-foreground">
-            Finance teams spend ~85% of their cycle on assembly and ~15% on insight. Deal teams pull all-nighters to the v44. Consulting analysts spend Friday on a deck instead of analysis. Same shape of pain, three industries.
+            Finance teams spend ~85% of the cycle on assembly and ~15% on insight. The numbers live across Stripe, the CRM, the cap table, and six spreadsheet tabs. So the deck eats days — and it's already stale by the time the meeting starts.
           </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
           <div class="rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="150">
-            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">For finance</p>
-            <h3 class="text-xl font-semibold mb-3">Three days on the board book. Every month.</h3>
+            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">Spreadsheet sprawl</p>
+            <h3 class="text-xl font-semibold mb-3">Three days, six tabs, four systems.</h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Pulling data from six tabs and four systems. Rewriting the same variance story. Catching a broken formula at 11pm before the board meeting. Hero mode is not a workflow.
+              Pull ARR from Stripe, pipeline from the CRM, burn from the model. Reconcile it. Rebuild the same charts. Rewrite the same variance story. Every single month.
             </p>
           </div>
 
           <div class="rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="250">
-            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">For deal teams</p>
-            <h3 class="text-xl font-semibold mb-3">Pitch books that spiral to v44.</h3>
+            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">The stale deck</p>
+            <h3 class="text-xl font-semibold mb-3">Built Monday. Outdated by Thursday.</h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Associate wants one thing, VP wants another, MD wants something else. Three to four weeks of revisions. Most of it doesn't change the deal — but the deck still has to ship.
+              A number changes after you've exported it to slides, and now you're hand-patching figures across twelve pages the night before the board meeting. Static decks go cold the moment you build them.
             </p>
           </div>
 
           <div class="rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="350">
-            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">For consultants</p>
-            <h3 class="text-xl font-semibold mb-3">The deck eats Friday. Then the client emails Sunday.</h3>
+            <p class="text-xs font-semibold uppercase tracking-wide text-primary mb-3">Wrong-number dread</p>
+            <h3 class="text-xl font-semibold mb-3">One broken formula. In front of the board.</h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Senior analyst billable on PowerPoint. Static PDF goes cold the moment you send it. Client emails 9pm: "can you send me the underlying numbers?" That's where the next engagement is won or lost.
+              A pasted-in figure nobody can trace. A board member asks where it came from and you're guessing live. The most expensive number in the deck is the one you can't defend.
             </p>
           </div>
         </div>
@@ -491,16 +507,16 @@
               <h3 class="text-xl font-semibold">Upload the data</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Drop in a CSV — operating metrics, deal pipeline, portfolio KPIs, geographic data. Vetori auto-detects fields, types, and coordinates.
+              Drop in a CSV — ARR, burn, pipeline, headcount, whatever you export from your model and your CRM. Vetori auto-detects fields, types, and time periods.
             </p>
             <div class="rounded-lg border border-border bg-background/40 p-4">
               <div class="font-mono text-xs text-muted-foreground/60 leading-relaxed">
-                <span class="text-primary/60">product</span>,
-                <span class="text-primary/60">region</span>,
-                <span class="text-primary/60">revenue</span>,
-                <span class="text-primary/60">growth</span><br />
-                "Apex Pro", "West", 812000, 0.28<br />
-                "Helix Studio", "West", 694000, 0.19
+                <span class="text-primary/60">month</span>,
+                <span class="text-primary/60">arr</span>,
+                <span class="text-primary/60">net_new</span>,
+                <span class="text-primary/60">burn</span><br />
+                "2026-04", 4200000, 310000, 680000<br />
+                "2026-05", 4480000, 280000, 655000
               </div>
             </div>
           </div>
@@ -512,7 +528,7 @@
               <h3 class="text-xl font-semibold">AI generates the first draft</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              The authoring agent reads your data, finds the story, proposes a complete report — slides, charts, captions. You refine the framing and ship.
+              The authoring agent reads your data, finds the story, and proposes a complete board report — slides, charts, captions. Every number is computed from your data, not pasted in. You refine the framing and ship.
             </p>
             <div class="grid grid-cols-3 gap-2">
               <div class="viz-card rounded-lg border border-border bg-background/40 p-3 flex flex-col items-center gap-2">
@@ -549,11 +565,11 @@
               <h3 class="text-xl font-semibold">Deliver privately, with audit</h3>
             </div>
             <p class="text-muted-foreground leading-relaxed mb-5">
-              Invite recipients by email, send a branded secure link. Per-recipient access, audit trail, no viewer seats. Public embeds are there when you want them.
+              Send each board member a branded secure link. Per-recipient access, audit trail, no viewer seats. They open it, drill into any number, and answer their own questions.
             </p>
             <div class="rounded-lg border border-border bg-background/40 p-4">
               <div class="font-mono text-xs text-muted-foreground/60 leading-relaxed">
-                <span class="text-primary/60">share_with</span>=<span class="text-foreground/40">"cfo@acme.com"</span><br />
+                <span class="text-primary/60">share_with</span>=<span class="text-foreground/40">"board@acme.com"</span><br />
                 <span class="text-primary/60">brand</span>=<span class="text-foreground/40">"acme.report.com"</span><br />
                 <span class="text-primary/60">audit</span>=<span class="text-foreground/40">enabled</span>
               </div>
@@ -630,46 +646,49 @@
     <section id="use-cases" class="py-28 border-b border-border">
       <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-16" data-animate>
-          <span class="section-eyebrow justify-center">05 — Audience</span>
+          <span class="section-eyebrow justify-center">05 — Who it's for</span>
           <h2 class="font-display text-4xl md:text-5xl font-bold text-balance tracking-tight">
-            Built for the partners and leaders who sign off on the report.
+            Built for the person who owns the board deck.
           </h2>
+          <p class="text-muted-foreground mt-4 max-w-xl mx-auto">
+            Chief of Staff, Head of Finance, VP Finance, BizOps — whoever rebuilds the board update every cycle. Here's how Vetori shows up across it.
+          </p>
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Card 1 — Finance leads (most reachable / most vocal pain) -->
+          <!-- Card 1 — Before the meeting -->
           <div class="use-case-card rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="150">
-            <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-4">Finance &amp; FP&amp;A</p>
-            <h3 class="text-xl font-semibold mb-3">Replace the monthly board PDF with a live link.</h3>
+            <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-4">Before the meeting</p>
+            <h3 class="text-xl font-semibold mb-3">The pre-read writes itself.</h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              The CFO clicks. Sees the variance. Drills into the segment. Doesn't email you back. Next month: regenerate against fresh data, ship.
+              Drop in this month's numbers, get a board-ready report the same afternoon. Board members open the link, watch the 4-minute recap on their phone, and walk in already up to speed.
             </p>
             <p class="font-mono text-[11px] text-muted-foreground/60 mt-5 pt-4 border-t border-border">
-              Mid-market CFO · VP Finance · Director of FP&amp;A
+              Chief of Staff · Head of Finance
             </p>
           </div>
 
-          <!-- Card 2 — Deal teams -->
+          <!-- Card 2 — In the meeting -->
           <div class="use-case-card rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="250">
-            <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-4">Deal teams</p>
-            <h3 class="text-xl font-semibold mb-3">Send deal materials. Audit who saw what, when.</h3>
+            <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-4">In the meeting</p>
+            <h3 class="text-xl font-semibold mb-3">Every number defends itself.</h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              One branded link per stakeholder. Recipients drill into the model without breaking the NDA chain. Audit log for the file. Three weeks of redlines compressed.
+              A board member questions a figure. You drill in on the same link and show the exact query behind it — live, no scramble. The numbers are provable, so the conversation stays on strategy.
             </p>
             <p class="font-mono text-[11px] text-muted-foreground/60 mt-5 pt-4 border-t border-border">
-              M&amp;A advisory · Investment banking · Corp dev
+              VP Finance · Founder / CEO
             </p>
           </div>
 
-          <!-- Card 3 — Consulting -->
+          <!-- Card 3 — After the meeting -->
           <div class="use-case-card rounded-xl border border-border bg-surface-raised p-8" data-animate data-delay="350">
-            <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-4">Consulting firms</p>
-            <h3 class="text-xl font-semibold mb-3">Ship the deliverable Friday. Win the engagement next quarter.</h3>
+            <p class="font-mono text-[10px] tracking-[0.18em] uppercase text-primary mb-4">After the meeting</p>
+            <h3 class="text-xl font-semibold mb-3">No "send me the model" email.</h3>
             <p class="text-muted-foreground leading-relaxed text-[15px]">
-              Client opens it, finds the answer, doesn't email Sunday. The interactive version is the second conversation — the one where the next phase gets scoped.
+              Board members explore the breakdown themselves instead of emailing you. Next month, regenerate against fresh data in one click — same format, new numbers.
             </p>
             <p class="font-mono text-[11px] text-muted-foreground/60 mt-5 pt-4 border-t border-border">
-              Strategy · M&amp;A · Transaction services
+              BizOps · RevOps · Finance lead
             </p>
           </div>
         </div>
@@ -831,12 +850,12 @@
           <!-- Row 3 — institutional credibility -->
           <div class="grid md:grid-cols-2 gap-12 items-center" data-animate>
             <div>
-              <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-primary mb-3 block">Looks institutional. Behaves institutional.</span>
+              <span class="font-mono text-[10px] tracking-[0.2em] uppercase text-primary mb-3 block">Numbers you can defend</span>
               <h3 class="font-display text-2xl font-bold mb-4 tracking-tight">
-                Branded as yours. Logged who saw what, when.
+                Every figure traces to its source.
               </h3>
               <p class="text-muted-foreground leading-relaxed">
-                Your subdomain, your colors, no Vetori chrome on paid plans. Per-recipient access. View log for every link. The kind of governance audit committees and deal counsel expect — without you having to architect it.
+                Click any number in the report and see the exact query that produced it — computed from your data, never pasted or guessed. Branded as your company, per-recipient access, a view log for every link. The governance your board and investors expect, without you architecting it.
               </p>
             </div>
             <div class="feature-visual rounded-xl border border-border bg-surface-raised p-10 flex flex-col items-center justify-center min-h-[220px] gap-4">
@@ -877,37 +896,37 @@
               <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
             <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
-              Finance leaders (CFO, VP Finance, FP&A), deal teams (M&A advisory, corp dev, IB), and consulting partners — anyone whose monthly or quarterly deliverable is a report that lands in front of an executive.
+              The person who owns the board deck at a venture-backed startup — Chief of Staff, Head of Finance, VP Finance, or BizOps. If you rebuild the board update from spreadsheets every cycle, Vetori is for you.
             </div>
           </details>
 
           <details class="faq-item group rounded-xl border border-border bg-surface-raised">
             <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
-              Can the audience interact with the report?
+              Can the board interact with the report?
               <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
             <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
-              Yes. Recipients can play the narrated story OR take over and explore — filter, search, drill into a row, change a dimension. Same artifact, two consumption modes.
+              Yes. Board members can play the narrated recap OR take over and explore — filter, search, drill into a row, change a dimension — on the same link, with no account and no BI seat.
             </div>
           </details>
 
           <details class="faq-item group rounded-xl border border-border bg-surface-raised">
             <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
-              How is this different from Tableau or Looker?
+              How is this different from Visible or Foundersuite?
               <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
             <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
-              Tableau and Looker are BI tools for analysts. Vetori is a delivery layer for executives. We don't replace your data warehouse — we replace the slide deck your analyst makes from your data warehouse.
+              Visible and Foundersuite are KPI dashboards and investor-email tools — you still build the actual report. Vetori writes the board report itself from your data: the charts, the framing, the narrative. Then your board can drill into any number.
             </div>
           </details>
 
           <details class="faq-item group rounded-xl border border-border bg-surface-raised">
             <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
-              How is this different from Flourish or Gamma?
+              How is this different from Gamma or PowerPoint?
               <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
             <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
-              Flourish makes pretty charts; Gamma makes pretty slides. Neither connects to your live data, neither manages per-recipient access, and neither generates the report from your CSV. Vetori does all three.
+              Gamma and PowerPoint make pretty slides, but you paste the numbers in by hand and they can be wrong. Vetori generates the report from your spreadsheet, so every figure is computed from your data and one click from the query behind it. And it's a live link, not a static file — your board can explore it.
             </div>
           </details>
 
@@ -933,21 +952,21 @@
 
           <details class="faq-item group rounded-xl border border-border bg-surface-raised">
             <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
-              What if the AI hallucinates the data?
+              What if the AI gets a number wrong?
               <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
             <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
-              The AI works from your CSV — no hallucination on numbers. You review and approve every narrative before it ships. Audit trail logs all versions.
+              It can't invent numbers. Every figure is computed by a query against your spreadsheet, and any number in the report is one click from the exact query that produced it. You review and approve every narrative before it ships, with an audit trail of versions.
             </div>
           </details>
 
           <details class="faq-item group rounded-xl border border-border bg-surface-raised">
             <summary class="flex items-center justify-between cursor-pointer px-6 py-5 text-base font-medium">
-              Do recipients need an account?
+              Do board members need an account?
               <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
             <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
-              No. Recipients access shared reports through a dedicated viewer flow — magic-link or password-protected — without needing an authoring account.
+              No. Board members open the report through a dedicated viewer flow — magic-link or password-protected — without needing an authoring account or a BI seat.
             </div>
           </details>
 
@@ -957,7 +976,7 @@
               <span class="faq-chevron ml-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180">&#9662;</span>
             </summary>
             <div class="faq-answer px-6 pb-5 text-muted-foreground leading-relaxed text-[15px]">
-              Yes. Custom subdomain, tunable colors, paid plans remove Vetori branding entirely. Each report can be branded for the specific client or stakeholder.
+              Yes. Custom subdomain, tunable colors, paid plans remove Vetori branding entirely — so the board report looks like it came straight from your company.
             </div>
           </details>
         </div>
@@ -981,7 +1000,7 @@
           data-animate
           data-delay="100"
         >
-          Stop rebuilding the same report.<br />
+          Stop rebuilding the board deck.<br />
           <span class="text-gradient">Start shipping the answer.</span>
         </h2>
 
@@ -990,7 +1009,7 @@
           data-animate
           data-delay="200"
         >
-          If your job depends on a recurring report — board book, deal materials, client deliverable — request access. We're onboarding 10 design partners in Q2 2026.
+          If you own the board update — the monthly investor email, the quarterly board deck — get early access. We're onboarding 10 design partners in Q2 2026.
         </p>
 
         <!-- CTA buttons — redirect to the app's waitlist page -->
@@ -1001,13 +1020,13 @@
               onclick="handleWaitlist()"
               class="cta-button inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors bg-primary text-primary-foreground hover:bg-primary/85 h-14 px-10 shadow-lg shadow-primary/20"
             >
-              Request access
+              Get early access
             </a>
             <a
               href="#examples"
-              class="inline-flex items-center justify-center rounded-lg text-base font-semibold transition-colors border border-border bg-surface-raised text-foreground hover:bg-surface h-14 px-10"
+              class="inline-flex items-center justify-center text-base font-medium text-muted-foreground hover:text-foreground transition-colors h-14 px-4"
             >
-              See it live
+              See a live board report →
             </a>
           </div>
           <p class="text-sm text-muted-foreground mt-4">
@@ -1042,7 +1061,7 @@
               <span class="font-display text-base font-bold tracking-tight">Vetori</span>
             </div>
             <p class="text-sm text-muted-foreground leading-relaxed">
-              AI-authored interactive reports.<br/>Delivered privately. Audited end-to-end.
+              Board reports, built from your spreadsheets.<br/>Branded as yours. Every number provable.
             </p>
           </div>
 
@@ -1055,7 +1074,6 @@
               <li><a href="#use-cases" class="text-muted-foreground hover:text-foreground transition-colors">Who it's for</a></li>
               <li><a href="#examples" class="text-muted-foreground hover:text-foreground transition-colors">See it live</a></li>
               <li><a href="#faq" class="text-muted-foreground hover:text-foreground transition-colors">FAQ</a></li>
-              <li><a href="/embed.html" class="text-muted-foreground hover:text-foreground transition-colors">Public embeds →</a></li>
             </ul>
           </div>
 
@@ -1083,7 +1101,7 @@
             &copy; 2026 Vetori Inc. All rights reserved.
           </div>
           <div class="font-mono text-[10px] text-muted-foreground/40 tracking-wider">
-            AI AUTHORING · LEAN-BACK + LEAN-IN · BRANDED PRIVATE DELIVERY
+            BUILT FROM YOUR DATA · EVERY NUMBER PROVABLE · BRANDED &amp; PRIVATE
           </div>
         </div>
       </div>
